@@ -279,12 +279,13 @@ nav {
   background: radial-gradient(circle, rgba(0,200,83,0.06) 0%, transparent 65%);
 }
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 48px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 .hero-badge {
   display: inline-flex;
@@ -317,19 +318,29 @@ nav {
   color: var(--text);
   margin-bottom: 24px;
 }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 760px;
+}
 .hero-sub {
   font-size: 17px;
   font-weight: 300;
   color: var(--text2);
   line-height: 1.75;
   margin-bottom: 28px;
-  max-width: 480px;
+  max-width: 580px;
 }
 .hero-bullets {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-bottom: 32px;
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
 }
 .bullet {
   display: flex;
@@ -352,6 +363,7 @@ nav {
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 16px;
@@ -359,6 +371,7 @@ nav {
 .hero-urgency {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 13px;
   font-weight: 500;
@@ -378,6 +391,8 @@ nav {
   gap: 8px;
   padding-top: 22px;
   border-top: 1px solid var(--border);
+  align-items: center;
+  width: 100%;
 }
 .trust-item {
   display: flex;
@@ -453,6 +468,26 @@ nav {
   border: 1px solid var(--g3);
   padding: 3px 9px;
   border-radius: 99px;
+}
+
+/* HERO RIGHT — centered full-width video */
+.hero-right {
+  width: 100%;
+  max-width: 900px;
+}
+.hero-right .video-card {
+  width: 100%;
+}
+.hero-right .play-circle {
+  width: 80px;
+  height: 80px;
+}
+.hero-right .play-circle svg {
+  width: 32px;
+  height: 32px;
+}
+.hero-right .play-label {
+  font-size: 16px;
 }
 
 /* SEATS CARD */
@@ -1436,7 +1471,7 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-inner { gap: 32px; }
   .hero-h1 { font-size: 38px; }
   .learn-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: 1fr 1fr; }
