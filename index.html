@@ -403,56 +403,85 @@
     <div class="section-label">Hear It From Them</div>
     <h2 class="section-title">Watch what our students say.<br><span class="grad-text">In their own words.</span></h2>
     <p class="section-sub" style="text-align:center;max-width:560px;margin:0 auto 48px;">Real video reviews from students who went through the program — no scripts, no actors, just honest results.</p>
-    <div class="video-testi-wrap">
-      <div class="video-testi-main">
-        <div class="video-testi-card" id="testiVideoWrap">
-          <div class="video-testi-label-row">
-            <span class="video-label">Student Testimonial</span>
-            <span class="video-duration">Video Review</span>
+
+    <!-- Vertical Short: centered video column -->
+    <div class="testi-vertical-wrap">
+
+      <!-- Video Short Player -->
+      <div class="testi-short-card" id="testiVideoWrap">
+        <div class="testi-short-header">
+          <div class="testi-short-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube Short
           </div>
-          <div class="video-embed-wrap" id="testiVideoEmbed">
-            <div class="video-placeholder" id="testiPlaceholder" style="background:linear-gradient(135deg,#1a2a1a 0%,#0d1f0d 100%);cursor:pointer;" onclick="loadTestiVideo()">
-              <div class="play-circle">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="#030a04"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
-              </div>
-              <p class="play-label" style="color:#e2f0d4;">Watch student testimonial</p>
-              <div class="testi-video-overlay-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                YouTube Short
-              </div>
+          <span class="testi-short-label">Student Testimonial</span>
+        </div>
+
+        <div class="testi-short-embed" id="testiVideoEmbed">
+          <div class="testi-short-placeholder" id="testiPlaceholder" onclick="loadTestiVideo()">
+            <div class="testi-short-glow"></div>
+            <div class="play-circle">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="#030a04"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
             </div>
+            <p class="play-label">Tap to watch</p>
+            <p class="play-sublabel">Honest review · No script</p>
           </div>
-          <div class="video-footer">
-            <div class="video-tags">
-              <span class="vtag">Real Student</span>
-              <span class="vtag">Honest Review</span>
-              <span class="vtag">Pakistan</span>
-            </div>
-            <a href="https://youtube.com/shorts/qBRPqkjVTck?feature=share" target="_blank" class="testi-yt-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              Watch on YouTube →
-            </a>
+        </div>
+
+        <div class="testi-short-footer">
+          <div class="video-tags">
+            <span class="vtag">Real Student</span>
+            <span class="vtag">Honest Review</span>
+            <span class="vtag">Pakistan</span>
           </div>
+          <a href="https://youtube.com/shorts/qBRPqkjVTck?feature=share" target="_blank" class="testi-yt-link">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch on YouTube →
+          </a>
         </div>
       </div>
-      <div class="video-testi-sidebar">
-        <div class="testi-sidebar-card">
-          <div class="testi-sidebar-icon">🎓</div>
-          <h4>From zero to deployed</h4>
-          <p>Students in this cohort build and ship real systems — not just follow along. Watch their journey.</p>
+
+      <!-- Stats row below video -->
+      <div class="testi-stats-row">
+        <div class="testi-stat">
+          <div class="testi-stat-icon">🎓</div>
+          <div class="testi-stat-num">100%</div>
+          <div class="testi-stat-label">Built real systems</div>
         </div>
-        <div class="testi-sidebar-card">
-          <div class="testi-sidebar-icon">💰</div>
+        <div class="testi-stat-divider"></div>
+        <div class="testi-stat">
+          <div class="testi-stat-icon">💰</div>
+          <div class="testi-stat-num">Week 3</div>
+          <div class="testi-stat-label">First client landed</div>
+        </div>
+        <div class="testi-stat-divider"></div>
+        <div class="testi-stat">
+          <div class="testi-stat-icon">🚀</div>
+          <div class="testi-stat-num">27+</div>
+          <div class="testi-stat-label">Live projects shipped</div>
+        </div>
+      </div>
+
+      <!-- Proof cards grid -->
+      <div class="testi-proof-grid">
+        <div class="testi-proof-card">
+          <div class="testi-proof-icon">🎓</div>
+          <h4>From zero to deployed</h4>
+          <p>Students build and ship real systems — not just follow along. Watch their journey.</p>
+        </div>
+        <div class="testi-proof-card">
+          <div class="testi-proof-icon">💰</div>
           <h4>First client in Week 3</h4>
           <p>Multiple students land their first paid client within the first 3 weeks of the program.</p>
         </div>
-        <div class="testi-sidebar-card">
-          <div class="testi-sidebar-icon">🚀</div>
+        <div class="testi-proof-card">
+          <div class="testi-proof-icon">🚀</div>
           <h4>27 live projects shipped</h4>
-          <p>Every class has a live build. By Week 9, your portfolio speaks for itself to paying clients.</p>
+          <p>Every class has a live build. By Week 9, your portfolio speaks for itself.</p>
         </div>
-        <a href="#apply" class="btn-cta btn-cta-full" style="margin-top:8px;">Join the Next Cohort →</a>
       </div>
+
+      <a href="#apply" class="btn-cta" style="align-self:center;margin-top:8px;">Join the Next Cohort →</a>
     </div>
   </div>
 </section>
