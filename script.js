@@ -114,3 +114,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     }
   });
 });
+
+// ── TESTIMONIAL VIDEO PLACEHOLDER CLICK → EMBED ──
+function loadTestiVideo() {
+  var videoId = 'qBRPqkjVTck';
+  var embed = document.getElementById('testiVideoEmbed');
+  if (embed) {
+    embed.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" title="Student Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>';
+  }
+}
