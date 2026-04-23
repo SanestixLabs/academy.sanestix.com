@@ -335,7 +335,7 @@ footer a:hover { color: #888; }
   .countdown { gap: 10px; }
   .cd-sep { font-size: 36px; }
   .cd-num { font-size: 42px; }
-}
+
 </style>
 </head>
 <body>
@@ -507,13 +507,23 @@ function submitForm() {
   var phone = document.getElementById('s-phone').value.trim();
   if (!name)  { document.getElementById('s-name').focus(); return; }
   if (!phone) { document.getElementById('s-phone').focus(); return; }
+
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Saving your spot...';
-  setTimeout(function() {
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHYXIZ1O_-dnTUvVmKXNDecWZbkb40g3RByXcODEk1hvq0uAqDw0xYeZCRwCI8A0eU/exec';
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, phone: phone, source: 'Seminar Page' })
+  })
+  .finally(function() {
     document.getElementById('formBody').style.display = 'none';
     document.getElementById('successState').style.display = 'block';
-  }, 900);
+  });
 }
 </script>
 </body>

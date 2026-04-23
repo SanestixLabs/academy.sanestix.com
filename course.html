@@ -1018,17 +1018,27 @@ function closeOnBg(e) {
   if (e.target === document.getElementById('overlay')) closeModal();
 }
 function submitForm() {
-  var name = document.getElementById('m-name').value.trim();
+  var name  = document.getElementById('m-name').value.trim();
   var phone = document.getElementById('m-phone').value.trim();
-  if (!name) { document.getElementById('m-name').focus(); return; }
+  if (!name)  { document.getElementById('m-name').focus(); return; }
   if (!phone) { document.getElementById('m-phone').focus(); return; }
+
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.innerHTML = 'Saving...';
-  setTimeout(function() {
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHYXIZ1O_-dnTUvVmKXNDecWZbkb40g3RByXcODEk1hvq0uAqDw0xYeZCRwCI8A0eU/exec';
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, phone: phone, source: 'Course Page' })
+  })
+  .finally(function() {
     document.getElementById('formBody').style.display = 'none';
     document.getElementById('successState').style.display = 'block';
-  }, 800);
+  });
 }
 </script>
 </body>

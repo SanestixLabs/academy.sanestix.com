@@ -1554,11 +1554,18 @@ function handleLeadSubmit() {
   btn.disabled = true;
   document.getElementById('leadBtnText').textContent = 'Saving...';
 
-  // Frontend only — swap to success state after short delay
-  setTimeout(function() {
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHYXIZ1O_-dnTUvVmKXNDecWZbkb40g3RByXcODEk1hvq0uAqDw0xYeZCRwCI8A0eU/exec';
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, phone: phone, source: 'Home Page' })
+  })
+  .finally(function() {
     document.getElementById('leadFormBody').style.display = 'none';
     document.getElementById('leadSuccess').style.display = 'block';
-  }, 900);
+  });
 }
 </script>
 
