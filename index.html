@@ -172,8 +172,12 @@ a { color: inherit; text-decoration: none; }
 .testi-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 20px;
   margin-bottom: 28px;
+  /* Short-form vertical cards — keep columns tight */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tcard {
   background: var(--bg3);
@@ -183,6 +187,8 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   transition: border-color .25s, transform .25s, box-shadow .25s;
+  /* Phone-like vertical card feel */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 .tcard:hover {
   border-color: rgba(34,197,94,0.3);
@@ -209,7 +215,7 @@ a { color: inherit; text-decoration: none; }
 .tcard-video:hover .tcard-video-bg { transform: scale(1.04); opacity: 0.88; }
 .tcard-video-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(160deg, transparent 35%, rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.18) 40%, transparent 65%);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 8px;
 }
@@ -225,10 +231,19 @@ a { color: inherit; text-decoration: none; }
 .yt-badge {
   position: absolute; top: 10px; left: 10px;
   display: flex; align-items: center; gap: 5px;
-  background: rgba(0,0,0,0.65); backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 100px; padding: 3px 10px;
-  font-size: 10px; color: #ccc;
+  background: rgba(0,0,0,0.72); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 100px; padding: 4px 10px;
+  font-size: 10px; color: #fff; font-weight: 600;
+  letter-spacing: .03em;
+}
+/* Shorts duration pill at bottom-right */
+.tcard-duration {
+  position: absolute; bottom: 66px; right: 10px;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+  border-radius: 4px; padding: 2px 6px;
+  font-size: 10px; color: rgba(255,255,255,0.85); font-weight: 500;
+  letter-spacing: .02em;
 }
 
 /* Quote-bg cards */
@@ -470,6 +485,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
   border-radius: 999px;
   box-shadow: inset 0 1px 0 var(--glass-highlight), 0 18px 40px rgba(0,0,0,0.28);
   transition: background .3s, box-shadow .3s, border-color .3s;
+  /* Critical: allow dropdown to overflow the pill without clipping */
+  overflow: visible;
 }
 .navbar::before {
   content: "";
@@ -716,23 +733,27 @@ body { padding-top: 98px; }
   opacity: 0.5;
 }
 .nav-item:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+
+/* Active state for nav-item button when dropdown is open */
+.nav-item:hover > a {
+  color: var(--text) !important;
+  background: rgba(255,255,255,0.11) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
 .nav-dropdown {
-  position: absolute; top: calc(100% + 10px); left: 50%;
-  transform: translateX(-50%);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-    rgba(14,14,14,0.84);
-  border: 1px solid rgba(255,255,255,0.10);
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(10,10,10,0.96);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 18px;
   padding: 8px;
   min-width: 220px;
   opacity: 0; visibility: hidden;
-  transform: translateX(-50%) translateY(-6px);
   transition: opacity .18s, transform .18s, visibility .18s;
   z-index: 200;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 56px rgba(0,0,0,0.36);
-  backdrop-filter: blur(24px) saturate(1.45);
-  -webkit-backdrop-filter: blur(24px) saturate(1.45);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  /* No backdrop-filter here — causes stacking context issue with pill navbar */
 }
 .nav-item:hover .nav-dropdown {
   opacity: 1; visibility: visible;
@@ -743,6 +764,7 @@ body { padding-top: 98px; }
   padding: 9px 12px !important; border-radius: 8px !important;
   font-size: 13px !important; color: var(--text2) !important;
   background: transparent !important;
+  border: none !important;
   transition: background .12s, color .12s !important;
   white-space: nowrap;
 }
@@ -792,10 +814,12 @@ body { padding-top: 98px; }
 
 /* ════════════════════════════════
    TESTIMONIAL THUMBNAIL OVERRIDES
+   — YouTube Shorts / 9:16 format
 ════════════════════════════════ */
 .tcard-video {
-  aspect-ratio: 4/3 !important;
+  aspect-ratio: 9 / 16 !important;
   max-height: none !important;
+  border-radius: 12px 12px 0 0;
 }
 .tcard-thumb-meta {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -842,6 +866,35 @@ body { padding-top: 98px; }
   border-radius: 100px; padding: 4px 12px;
   font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.4);
   letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* ────────────────────────────────────
+   SHORT-FORM CARDS — Responsive
+──────────────────────────────────── */
+@media (max-width: 860px) {
+  .testi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .testi-grid {
+    /* Show two vertical cards side by side on small screens */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 100%;
+  }
+  /* Hide third card on very small screens to avoid clutter */
+  .testi-grid .tcard:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 380px) {
+  .testi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
 }
 
 </style>
@@ -1114,7 +1167,7 @@ body { padding-top: 98px; }
         <div class="tcard-video" id="tv1" onclick="loadTestiVideo(this,'qBRPqkjVTck')">
           <img class="tcard-video-bg" src="https://img.youtube.com/vi/qBRPqkjVTck/maxresdefault.jpg" alt="Ebbad Ur Rehman review" onerror="this.src='https://img.youtube.com/vi/qBRPqkjVTck/hqdefault.jpg'">
           <div class="tcard-video-overlay">
-            <div class="yt-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>Watch review</div>
+            <div class="yt-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>Shorts</div>
             <div class="tcard-play"><svg width="16" height="16" viewBox="0 0 22 22" fill="#000"><path d="M5 3.5l14 7.5-14 7.5z"/></svg></div>
             <span class="tcard-play-label">Tap to watch</span>
           </div>
