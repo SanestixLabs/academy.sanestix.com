@@ -1412,104 +1412,324 @@ body { padding-top: 64px; }
 <!-- ═══════════════════════════════════
      REAL-WORLD PROJECT LIBRARY
 ═══════════════════════════════════ -->
-<section class="projects-bonus-section">
+<!-- ═══════════════════════════════════
+     LEAD CAPTURE SECTION
+═══════════════════════════════════ -->
+<section class="lead-capture-section" id="reserve-seat">
+  <div class="lead-capture-bg-glow"></div>
   <div class="container">
-    <div style="text-align:center; margin-bottom:52px;">
-      <div class="eyebrow">Bonus Project Library</div>
-      <h2 class="section-title">7 Real Client-Ready Systems</h2>
-      <p class="section-sub" style="margin:0 auto; max-width:560px;">In addition to 27 class projects, you ship these production n8n systems for actual business niches — portfolio-ready on day one.</p>
-    </div>
-    <div class="projects-grid">
+    <div class="lead-capture-inner">
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <rect x="6" y="16" width="36" height="26" rx="3" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M6 24h36" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M16 16V12a8 8 0 0116 0v4" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="24" cy="34" r="3" fill="#f59e0b" opacity=".45"/>
-          </svg>
-        </div>
-        <h4>Hotel Reservation Bot</h4>
-        <p>Guest texts → checks availability → confirms booking → SMS via Twilio → logs to Notion CRM.</p>
+      <div class="lead-capture-left">
+        <div class="eyebrow" style="justify-content:flex-start;">Reserve Your Seat</div>
+        <h2 class="lead-capture-heading">
+          Claim Your <span class="lead-accent">Free Spot</span><br>Before It's Gone
+        </h2>
+        <p class="lead-capture-sub">Only 40 seats per cohort. The last batch filled in under 72 hours. Enter your details and we'll notify you the moment enrollment opens.</p>
+        <ul class="lead-perks">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#a3e635" stroke-width="1.6"/><polyline points="6,10 9,13 14,7" stroke="#a3e635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Early-bird pricing locked for you
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#a3e635" stroke-width="1.6"/><polyline points="6,10 9,13 14,7" stroke="#a3e635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            First to know when cohort opens
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#a3e635" stroke-width="1.6"/><polyline points="6,10 9,13 14,7" stroke="#a3e635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No commitment, no spam
+          </li>
+        </ul>
       </div>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <path d="M8 38V18a2 2 0 012-2h28a2 2 0 012 2v20" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M4 38h40" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M20 38V28h8v10" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M14 23h4M30 23h4" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-          </svg>
-        </div>
-        <h4>Restaurant Order &amp; Table Mgmt</h4>
-        <p>Order webhook → kitchen Slack → updates Airtable inventory → WhatsApp receipt to customer.</p>
-      </div>
+      <div class="lead-capture-right">
+        <div class="lead-form-card">
+          <div class="lead-form-header">
+            <div class="lead-form-badge">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z" fill="#a3e635"/></svg>
+              Free Registration
+            </div>
+            <h3>Get Notified First</h3>
+            <p>Enter your details below — we'll reach out the moment seats open.</p>
+          </div>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <path d="M24 6L6 22h5v20h12V30h2v12h12V22h5L24 6z" stroke="#f59e0b" stroke-width="2.2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h4>Real Estate Lead Qualifier</h4>
-        <p>Inbound form → Claude qualifies budget/location → books viewing via Cal.com → AI summary in Notion.</p>
-      </div>
+          <div class="lead-form-body" id="leadFormBody">
+            <div class="lead-field-wrap">
+              <label class="lead-label" for="lc-name">Full Name</label>
+              <div class="lead-input-wrap">
+                <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="#6b7280" stroke-width="1.5"/><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <input type="text" id="lc-name" class="lead-input" placeholder="Your full name" autocomplete="name">
+              </div>
+            </div>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <circle cx="24" cy="16" r="8" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M12 40c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M34 22l5 3-5 3" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
-          </svg>
-        </div>
-        <h4>Gym Member Re-engagement</h4>
-        <p>Lapsed member list → personalised SMS via Twilio → positive replies trigger free-trial offer + booking.</p>
-      </div>
+            <div class="lead-field-wrap">
+              <label class="lead-label" for="lc-phone">Phone Number</label>
+              <div class="lead-input-wrap">
+                <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 2h3.5l1.5 4-2 1.5a11 11 0 004.5 4.5L13 10l4 1.5V15a2 2 0 01-2 2C7.163 17 3 12.837 3 7.5A2 2 0 014 5.5" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <input type="tel" id="lc-phone" class="lead-input" placeholder="+92 300 0000000" autocomplete="tel">
+              </div>
+            </div>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <rect x="8" y="10" width="32" height="28" rx="3" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M16 22h16M16 28h10" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M16 16h8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-            <circle cx="37" cy="37" r="7" fill="#111" stroke="#f59e0b" stroke-width="2"/>
-            <path d="M34 37h6M37 34v6" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h4>Ecommerce Returns Automation</h4>
-        <p>Shopify webhook → Claude reads order history → auto-approves/denies → branded email + Airtable.</p>
-      </div>
+            <button class="lead-submit-btn" onclick="handleLeadSubmit()">
+              <span id="leadBtnText">Reserve My Free Spot</span>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <circle cx="24" cy="25" r="15" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M24 17v8l5 5" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 9l-3-3M34 9l3-3" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-          </svg>
-        </div>
-        <h4>Medical Appointment Reminder</h4>
-        <p>Calendar sync → 48hr &amp; 2hr reminders via SMS + WhatsApp → tracks confirmations → reschedules no-shows.</p>
-      </div>
+            <p class="lead-privacy">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1.5" stroke="#6b7280" stroke-width="1.4"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="#6b7280" stroke-width="1.4" stroke-linecap="round"/></svg>
+              We hate spam and will never share your info.
+            </p>
+          </div>
 
-      <div class="project-card">
-        <div class="proj-icon-wrap">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
-            <rect x="8" y="12" width="32" height="24" rx="3" stroke="#f59e0b" stroke-width="2.2"/>
-            <path d="M16 24h16M16 30h8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
-            <path d="M24 8v4M17 9l1.5 3.5M31 9l-1.5 3.5" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-          </svg>
+          <div class="lead-success" id="leadSuccess" style="display:none;">
+            <div class="lead-success-icon">
+              <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#a3e635" stroke-width="2"/><polyline points="12,20 17,26 28,14" stroke="#a3e635" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>You're on the list!</h4>
+            <p>We'll reach out on WhatsApp as soon as seats open. Keep an eye on your phone.</p>
+          </div>
+
         </div>
-        <h4>Invoice &amp; Payment Follow-up Agent</h4>
-        <p>Stripe overdue webhook → Claude writes personalised follow-up → escalates to Vapi phone call after 3 days.</p>
+        <p class="lead-slots-note">⚡ <strong>Limited to 40 seats</strong> per cohort — last batch sold out in 72 hrs.</p>
       </div>
 
     </div>
   </div>
 </section>
+
+<style>
+/* ─── Lead Capture Section ─────────────────────── */
+.lead-capture-section {
+  position: relative;
+  padding: 96px 0 100px;
+  background: #080808;
+  overflow: hidden;
+}
+.lead-capture-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(163,230,53,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lead-capture-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.lead-capture-heading {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 12px 0 18px;
+  letter-spacing: -0.02em;
+}
+.lead-accent {
+  color: #a3e635;
+}
+.lead-capture-sub {
+  color: #9ca3af;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+.lead-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lead-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+/* Card */
+.lead-form-card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 40px 36px;
+  position: relative;
+}
+.lead-form-header {
+  margin-bottom: 28px;
+}
+.lead-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(163,230,53,0.1);
+  border: 1px solid rgba(163,230,53,0.25);
+  color: #a3e635;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.lead-form-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.lead-form-header p {
+  color: #6b7280;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Fields */
+.lead-field-wrap {
+  margin-bottom: 16px;
+}
+.lead-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: 7px;
+}
+.lead-input-wrap {
+  position: relative;
+}
+.lead-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.lead-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 13px 14px 13px 40px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.lead-input::placeholder { color: #4b5563; }
+.lead-input:focus {
+  border-color: #a3e635;
+  box-shadow: 0 0 0 3px rgba(163,230,53,0.08);
+}
+
+/* Button */
+.lead-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #a3e635;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+.lead-submit-btn:hover {
+  background: #bef264;
+  transform: translateY(-1px);
+}
+.lead-submit-btn:active { transform: translateY(0); }
+
+.lead-privacy {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4b5563;
+  font-size: 12px;
+  margin: 12px 0 0;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Slots note */
+.lead-slots-note {
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 14px;
+}
+.lead-slots-note strong { color: #d1d5db; }
+
+/* Success */
+.lead-success {
+  text-align: center;
+  padding: 20px 0;
+}
+.lead-success-icon {
+  margin-bottom: 16px;
+}
+.lead-success h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.lead-success p {
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .lead-capture-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .lead-form-card {
+    padding: 28px 22px;
+  }
+}
+</style>
+
+<script>
+function handleLeadSubmit() {
+  var name = document.getElementById('lc-name').value.trim();
+  var phone = document.getElementById('lc-phone').value.trim();
+  var btn = document.querySelector('.lead-submit-btn');
+
+  if (!name) { document.getElementById('lc-name').focus(); return; }
+  if (!phone) { document.getElementById('lc-phone').focus(); return; }
+
+  btn.disabled = true;
+  document.getElementById('leadBtnText').textContent = 'Saving...';
+
+  // Frontend only — swap to success state after short delay
+  setTimeout(function() {
+    document.getElementById('leadFormBody').style.display = 'none';
+    document.getElementById('leadSuccess').style.display = 'block';
+  }, 900);
+}
+</script>
 
 
 <!-- ═══════════════════════════════════
