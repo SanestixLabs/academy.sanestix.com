@@ -1577,10 +1577,9 @@ function handleLeadSubmit() {
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHYXIZ1O_-dnTUvVmKXNDecWZbkb40g3RByXcODEk1hvq0uAqDw0xYeZCRwCI8A0eU/exec';
 
   fetch(SHEET_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, phone: phone, source: 'Home Page' })
+  method: 'POST',
+  headers: { 'Content-Type': 'text/plain' },  // ← key change
+  body: JSON.stringify({ name: name, phone: phone, source: 'Home Page' })
   })
   .finally(function() {
     document.getElementById('leadFormBody').style.display = 'none';
