@@ -3,876 +3,575 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic AI Mastery — Learn by Sanestix</title>
-<meta name="description" content="Pakistan's first practical, income-focused Agentic AI program. Build AI agents, automate businesses, start earning. By Sanestix — 50+ businesses automated across PK & UAE.">
+<title>Sanestix — Updated Sections Preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:    #000;
+  --bg2:   #0a0a0a;
+  --bg3:   #111;
+  --bg4:   #161616;
+  --g1:    #22c55e;
+  --g2:    #16a34a;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.12);
+  --text:  #fff;
+  --text2: #888;
+  --text3: #444;
+  --red:   #ef4444;
+  --amber: #f59e0b;
+  --purple:#a78bfa;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --font-head: 'Clash Display', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 88px 0; }
+.section-dark { background: var(--bg2); }
+
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--g1); margin-bottom: 14px;
+  font-family: var(--font-head);
+}
+.section-title {
+  font-family: var(--font-head); font-size: clamp(28px,4vw,44px);
+  font-weight: 700; line-height: 1.08; color: var(--text); margin-bottom: 10px;
+}
+.section-sub { font-size: 15px; color: var(--text2); font-weight: 300; margin-bottom: 48px; }
+
+/* ── BUTTONS ── */
+.btn-green {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--g1); color: #000; font-family: var(--font-head);
+  font-weight: 600; font-size: 14px; padding: 13px 28px;
+  border-radius: var(--radius); border: none; cursor: pointer;
+  transition: opacity .15s, transform .15s; white-space: nowrap;
+}
+.btn-green:hover { opacity: .88; transform: translateY(-1px); }
+.btn-green-lg { font-size: 16px; padding: 16px 36px; }
+
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: #fff; font-family: var(--font-head);
+  font-weight: 500; font-size: 14px; padding: 12px 24px;
+  border-radius: var(--radius); border: 1px solid var(--border2);
+  cursor: pointer; transition: border-color .15s, background .15s; white-space: nowrap;
+}
+.btn-white:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+
+/* ════════════════════════════════
+   HERO SECTION
+════════════════════════════════ */
+.hero {
+  padding: 72px 0 64px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* LEFT */
+.hero-left { display: flex; flex-direction: column; gap: 22px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(34,197,94,0.25); background: rgba(34,197,94,0.06);
+  color: var(--g1); font-size: 12px; font-weight: 500;
+  padding: 6px 16px; border-radius: 100px; width: fit-content;
+}
+.pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--g1); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+
+.hero h1 {
+  font-family: var(--font-head); font-size: clamp(34px,4.2vw,58px);
+  font-weight: 700; line-height: 1.06; color: var(--text); letter-spacing: -.01em;
+}
+.hero h1 .green { color: var(--g1); }
+.hero-sub { font-size: 15px; color: var(--text2); line-height: 1.75; font-weight: 300; max-width: 420px; }
+
+.bullets { display: flex; flex-direction: column; gap: 10px; }
+.bullet { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #ccc; }
+.tick {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.25);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.urgency { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #ef9999; }
+.red-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
+
+/* RIGHT */
+.hero-right { display: flex; flex-direction: column; gap: 12px; }
+
+.video-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.video-topbar {
+  display: flex; align-items: center; gap: 7px; padding: 10px 14px;
+  border-bottom: 1px solid var(--border); font-size: 12px; color: var(--text2);
+}
+.video-topbar span:nth-child(2) { flex: 1; color: #ccc; }
+.dur-badge {
+  font-size: 11px; background: var(--bg4); border: 1px solid var(--border);
+  color: var(--text3); padding: 2px 8px; border-radius: 4px;
+}
+.video-thumb {
+  aspect-ratio: 16/9; background: #0a0a0a; display: flex;
+  align-items: center; justify-content: center; cursor: pointer;
+  position: relative;
+}
+.video-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .6; }
+.play-btn {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--g1); display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 2; transition: transform .2s;
+}
+.video-thumb:hover .play-btn { transform: scale(1.08); }
+.video-foot { padding: 10px 14px; display: flex; gap: 6px; }
+.vtag {
+  background: var(--bg4); border: 1px solid var(--border);
+  color: var(--text3); font-size: 11px; padding: 3px 9px; border-radius: 100px;
+}
+
+.stats-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  background: var(--border); gap: 1px;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+}
+.stat-cell { background: var(--bg3); padding: 16px 12px; text-align: center; }
+.stat-num { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--g1); line-height: 1; }
+.stat-lbl { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+/* AUTHORITY STRIP */
+.auth-strip {
+  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: repeat(5,1fr);
+}
+.auth-cell {
+  padding: 18px 0; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.auth-cell:last-child { border-right: none; }
+.auth-val { font-size: 13px; font-weight: 500; color: var(--text); font-family: var(--font-head); }
+.auth-lbl { font-size: 10px; color: var(--text3); margin-top: 2px; text-transform: uppercase; letter-spacing: .08em; }
+
+
+/* ════════════════════════════════
+   TESTIMONIALS SECTION
+   Combined: each card has quote + video
+════════════════════════════════ */
+.testi-section { padding: 88px 0; background: var(--bg2); }
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+/* Each card = video on top, quote below — merged into one */
+.tcard {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .2s;
+}
+.tcard:hover { border-color: var(--border2); }
+
+/* VIDEO THUMB — 9:16 short aspect inside the card */
+.tcard-video {
+  aspect-ratio: 9/16;
+  max-height: 220px;
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.tcard-video-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: .55;
+}
+.tcard-video-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.35);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.tcard-play {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--g1); display: flex; align-items: center; justify-content: center;
+  transition: transform .2s;
+}
+.tcard-video:hover .tcard-play { transform: scale(1.1); }
+.tcard-play-label { font-size: 12px; color: #fff; font-weight: 500; }
+
+/* "Coming soon" state */
+.tcard-video.coming .tcard-video-overlay { background: rgba(0,0,0,.7); }
+.tcard-video.coming .tcard-play { background: var(--bg4); border: 1px solid var(--border2); }
+.tcard-soon-label { font-size: 11px; color: var(--text3); }
+
+/* YT badge on video */
+.yt-badge {
+  position: absolute; top: 10px; left: 10px;
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(0,0,0,.7); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 100px; padding: 3px 9px; font-size: 10px; color: #aaa;
+}
+
+/* QUOTE BODY */
+.tcard-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.tcard-top { display: flex; align-items: center; justify-content: space-between; }
+.stars { color: var(--amber); font-size: 12px; letter-spacing: 1px; }
+.badge-pill {
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  color: var(--g1); font-size: 10px; font-weight: 500;
+  padding: 3px 9px; border-radius: 100px; white-space: nowrap;
+}
+.badge-pill-muted {
+  background: var(--bg4); border: 1px solid var(--border);
+  color: var(--text3); font-size: 10px;
+  padding: 3px 9px; border-radius: 100px;
+}
+.tcard-quote { font-size: 13px; color: #aaa; line-height: 1.7; font-style: italic; flex: 1; }
+.tcard-author {
+  display: flex; align-items: center; gap: 10px;
+  border-top: 1px solid var(--border); padding-top: 12px;
+}
+.av {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600; font-family: var(--font-head);
+}
+.av-g { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); color: var(--g1); }
+.av-a { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); color: var(--amber); }
+.av-p { background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); color: var(--purple); }
+.tcard-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.tcard-role { font-size: 11px; color: var(--text3); }
+
+/* PROOF STRIP */
+.proof-strip {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  background: var(--border); gap: 1px;
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden; margin-bottom: 32px;
+}
+.proof-cell { background: var(--bg3); padding: 18px 16px; text-align: center; }
+.proof-num { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--text); line-height: 1; }
+.proof-lbl { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+.testi-cta { text-align: center; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero h1, .hero-sub { max-width: 100%; }
+  .hero-right { max-width: 500px; margin: 0 auto; width: 100%; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .auth-strip { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 600px) {
+  .testi-grid { grid-template-columns: 1fr; }
+  .proof-strip { grid-template-columns: 1fr 1fr; }
+  .hero-inner { gap: 32px; }
+  .auth-strip { grid-template-columns: 1fr 1fr; }
+}
+</style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <span class="topbar-dot"></span>
-  <strong>Cohort now forming</strong> — only 40 seats · 9 Weeks · 27 Classes · 27 Live Projects · PKR 14,999
-  <span class="topbar-dot"></span>
-</div>
-
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-inner">
-    <!-- LOGO -->
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="2,9 6,13 14,3" stroke="#030a04" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="logo-text">
-        <span class="logo-learn">Learn</span><span class="logo-dot-sep">.</span><span class="logo-brand">Sanestix</span>
-      </div>
-    </a>
-
-    <!-- DESKTOP LINKS -->
-    <div class="nav-links">
-      <a href="#curriculum" class="nav-link">Curriculum</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#testimonials-video" class="nav-link">Testimonials</a>
-      <a href="#instructors" class="nav-link">Instructors</a>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="nav-right">
-      <a href="https://wa.me/923014422951" target="_blank" class="nav-wa-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        WhatsApp
-      </a>
-      <a href="#apply" class="btn-cta nav-cta">Apply Now →</a>
-      <button class="nav-hamburger" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <!-- MOBILE MENU -->
-  <div class="nav-mobile" id="navMobile">
-    <a href="#curriculum">Curriculum</a>
-    <a href="#projects">Projects</a>
-    <a href="#testimonials-video">Testimonials</a>
-    <a href="#instructors">Instructors</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <div class="nav-mobile-actions">
-      <a href="https://wa.me/923014422951" target="_blank" class="nav-wa-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        WhatsApp
-      </a>
-      <a href="#apply" class="btn-cta" style="display:inline-flex;">Apply Now →</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <!-- Background layers -->
-  <div class="hero-grid-bg"></div>
-  <div class="hero-noise"></div>
-  <div class="hero-glow hero-glow-1"></div>
-  <div class="hero-glow hero-glow-2"></div>
-  <div class="hero-glow hero-glow-3"></div>
-
+<!-- ═══════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════ -->
+<section class="hero">
   <div class="container hero-inner">
 
-    <!-- LEFT COLUMN: TEXT -->
+    <!-- LEFT -->
     <div class="hero-left">
       <div class="hero-badge">
-        <span class="pulse-dot"></span>
+        <div class="pulse"></div>
         Pakistan's First Agentic AI Program · Cohort-Based
       </div>
 
-      <h1 class="hero-h1">
+      <h1>
         Build AI Agents.<br>
         Automate Businesses.<br>
-        <span class="grad-text">Start Earning.</span>
+        <span class="green">Start Earning.</span>
       </h1>
 
-      <p class="hero-sub">9 weeks · 27 live classes · 54 hours · 27 real projects. Built by Sanestix — the agency that has already automated 50+ businesses across Pakistan & UAE.</p>
+      <p class="hero-sub">9 weeks · 27 live classes · 27 real projects. Built by a real AI agency that has automated 50+ businesses across Pakistan & UAE.</p>
 
-      <div class="hero-bullets">
-        <div class="bullet"><span class="bullet-check">✓</span> 27 live projects — real builds, not demos</div>
-        <div class="bullet"><span class="bullet-check">✓</span> n8n, Claude API, Vapi, MCP & Vibe Coding</div>
-        <div class="bullet"><span class="bullet-check">✓</span> Go from zero to freelancing in 9 weeks</div>
-        <div class="bullet"><span class="bullet-check">✓</span> No prior coding experience needed</div>
+      <div class="bullets">
+        <div class="bullet">
+          <div class="tick">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+              <polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          27 live projects — real builds, not demos
+        </div>
+        <div class="bullet">
+          <div class="tick">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+              <polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          n8n · Claude API · Vapi · MCP · Vibe Coding
+        </div>
+        <div class="bullet">
+          <div class="tick">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+              <polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Go from zero to freelancing in 9 weeks
+        </div>
+        <div class="bullet">
+          <div class="tick">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
+              <polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          No prior coding experience needed
+        </div>
       </div>
 
-      <div class="hero-actions">
-        <a href="#apply" class="btn-cta btn-cta-lg">Reserve Your Spot →</a>
-        <a href="#curriculum" class="btn-ghost btn-ghost-lg">See Curriculum</a>
+      <div class="cta-row">
+        <a href="#apply" class="btn-green btn-green-lg">Reserve Your Spot →</a>
+        <a href="#curriculum" class="btn-white" style="font-size:15px; padding:15px 28px;">See Curriculum</a>
       </div>
 
-      <div class="hero-urgency">
-        <span class="urgency-dot"></span>
+      <div class="urgency">
+        <div class="red-dot"></div>
         Only 40 seats per cohort — filling fast
       </div>
-
     </div>
 
-    <!-- RIGHT COLUMN: PHOTO + VIDEO -->
+    <!-- RIGHT -->
     <div class="hero-right">
-
-      <!-- MAIN VISUAL CARD: photo left, video right -->
-      <div class="hero-media-grid">
-
-        <!-- PHOTO PANEL -->
-        <div class="hero-photo-card">
-          <div class="hero-photo-wrap">
-            <img src="media01" alt="Saad & Wahab — Sanestix Instructors" class="hero-photo" />
-            <div class="hero-photo-overlay"></div>
-            <div class="hero-photo-badge">
-              <span class="pulse-dot-sm"></span>
-              Live · Cohort 2026
-            </div>
-            <div class="hero-photo-bottom">
-              <div class="instructor-chips">
-                <div class="instructor-chip">
-                  <div class="instructor-av instructor-av-teal">SF</div>
-                  <span>Saad</span>
-                </div>
-                <div class="instructor-chip-sep">×</div>
-                <div class="instructor-chip">
-                  <div class="instructor-av instructor-av-purple">AW</div>
-                  <span>Wahab</span>
-                </div>
-              </div>
-              <p class="hero-photo-caption">Co-Founders, Sanestix</p>
-            </div>
+      <div class="video-card">
+        <div class="video-topbar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>Course Intro</span>
+          <span class="dur-badge">3 min</span>
+        </div>
+        <div class="video-thumb" id="heroThumb" onclick="loadHeroVideo()">
+          <img src="https://img.youtube.com/vi/FwOTs4UxQS4/maxresdefault.jpg" alt="Course intro thumbnail" id="heroThumbImg">
+          <div class="play-btn">
+            <svg width="16" height="16" viewBox="0 0 22 22" fill="#000"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
           </div>
         </div>
-
-        <!-- VIDEO PANEL -->
-        <div class="hero-video-card">
-          <div class="hero-video-label-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            <span>Course Intro</span>
-            <span class="hero-video-dur">3 min</span>
-          </div>
-          <div class="hero-video-embed-wrap" id="heroVideoWrap">
-            <div class="hero-video-placeholder" id="heroPlaceholder" style="background-image:url('https://img.youtube.com/vi/FwOTs4UxQS4/maxresdefault.jpg');background-size:cover;background-position:center;">
-              <div class="hero-video-dim"></div>
-              <div class="play-btn-ring">
-                <div class="play-circle">
-                  <svg width="18" height="18" viewBox="0 0 22 22" fill="#030a04"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
-                </div>
-              </div>
-              <p class="play-label">Watch intro</p>
-            </div>
-          </div>
-          <div class="hero-video-footer">
-            <div class="video-tags">
-              <span class="vtag">n8n</span>
-              <span class="vtag">Claude API</span>
-              <span class="vtag">Vapi</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- BOTTOM STATS ROW -->
-      <div class="hero-stats-row">
-        <div class="hero-stat-item">
-          <span class="hero-stat-num">50+</span>
-          <span class="hero-stat-lbl">Businesses Automated</span>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat-item">
-          <span class="hero-stat-num">1M+</span>
-          <span class="hero-stat-lbl">AI Messages Sent</span>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat-item">
-          <span class="hero-stat-num">27</span>
-          <span class="hero-stat-lbl">Live Projects Built</span>
+        <div class="video-foot">
+          <span class="vtag">n8n</span>
+          <span class="vtag">Claude API</span>
+          <span class="vtag">Vapi</span>
         </div>
       </div>
 
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num">50+</div>
+          <div class="stat-lbl">Businesses Automated</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">1M+</div>
+          <div class="stat-lbl">AI Messages Sent</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">27</div>
+          <div class="stat-lbl">Live Projects</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- AUTHORITY STRIP -->
-<div class="authority-strip">
-  <div class="authority-inner">
-    <div class="auth-cell"><div class="auth-label">Weeks</div><div class="auth-value">9 Weeks</div></div>
-    <div class="auth-cell"><div class="auth-label">Live Classes</div><div class="auth-value">27 Classes</div></div>
-    <div class="auth-cell"><div class="auth-label">Instruction Hours</div><div class="auth-value">54 Hours</div></div>
-    <div class="auth-cell"><div class="auth-label">Live Projects</div><div class="auth-value">27 Projects</div></div>
-    <div class="auth-cell"><div class="auth-label">Quiz Questions</div><div class="auth-value">81 Quizzes</div></div>
-  </div>
+<div class="auth-strip">
+  <div class="auth-cell"><div class="auth-val">9 Weeks</div><div class="auth-lbl">Duration</div></div>
+  <div class="auth-cell"><div class="auth-val">27 Classes</div><div class="auth-lbl">Live Sessions</div></div>
+  <div class="auth-cell"><div class="auth-val">54 Hours</div><div class="auth-lbl">Instruction</div></div>
+  <div class="auth-cell"><div class="auth-val">27 Projects</div><div class="auth-lbl">Hands-On Builds</div></div>
+  <div class="auth-cell"><div class="auth-val">81 Quizzes</div><div class="auth-lbl">Assessments</div></div>
 </div>
 
-<!-- PROBLEM SECTION -->
-<section class="section section-dark" id="problem">
-  <div class="container">
-    <div class="section-label">The Problem</div>
-    <h2 class="section-title">You're drowning in AI tools.<br>But earning nothing from them.</h2>
-    <div class="problem-grid">
-      <div class="problem-items">
-        <div class="problem-item">
-          <div class="problem-x">✕</div>
-          <div><h4>Too many tools, zero direction</h4><p>ChatGPT. Claude. Midjourney. You've tried them all. Still no clear path to income.</p></div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-x">✕</div>
-          <div><h4>YouTube tutorials that go nowhere</h4><p>10-minute videos. No real projects. Just theory that fades by morning.</p></div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-x">✕</div>
-          <div><h4>Courses that are already outdated</h4><p>The AI landscape moves fast. That course you bought six months ago? Already obsolete.</p></div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-x">✕</div>
-          <div><h4>No idea how to charge for this</h4><p>You've learned the tools. But you don't know what to sell, to who, or at what price.</p></div>
-        </div>
-      </div>
-      <div class="problem-callout">
-        <div class="callout-quote">"Most people spend 6+ months watching AI content and still can't build a single system that earns them money."</div>
-        <div class="callout-divider"></div>
-        <p class="callout-note">The problem isn't AI. It's the way it's being taught. We fix that — with real systems, real projects, and a structured path to income. The same systems we use daily at Sanestix for real paying clients.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CURRICULUM -->
-<section class="section" id="curriculum">
-  <div class="container">
-    <div class="section-label">Week-by-Week Curriculum</div>
-    <h2 class="section-title">9 weeks. 27 classes. 54 hours.<br>Practical. Outcome-driven.</h2>
-    <div class="curriculum-grid">
-      <div class="week-card">
-        <div class="week-tag">Week 01</div>
-        <h3>AI Foundations & n8n Automation</h3>
-        <ul>
-          <li>Agentic AI vs chatbots — planning, memory, tool use</li>
-          <li>Model Context Protocol (MCP) — the 2026 agent stack</li>
-          <li>Build your first AI workflow in n8n</li>
-          <li>Multi-agent orchestration patterns with Zapier + n8n</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 02</div>
-        <h3>n8n Intermediate — Data & APIs</h3>
-        <ul>
-          <li>Advanced data manipulation with Claude + Code node</li>
-          <li>REST APIs, OAuth, webhooks & paginated responses</li>
-          <li>Sub-workflows, LLM chains & agentic loops</li>
-          <li>Claude tool_use API + state management with Supabase</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 03</div>
-        <h3>n8n Advanced — Production & RAG</h3>
-        <ul>
-          <li>Self-hosted n8n on Docker with Postgres & Redis</li>
-          <li>RAG pipeline: ingest → chunk → embed → retrieve → generate</li>
-          <li>MCP servers as agent tools with persistent memory</li>
-          <li>Real project library: Hotel Bot, Real Estate Qualifier & more</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 04</div>
-        <h3>Voice Agents — Vapi & ElevenLabs</h3>
-        <ul>
-          <li>ASR → LLM → TTS pipeline & latency optimisation</li>
-          <li>ElevenLabs voice cloning for branded agents</li>
-          <li>BANT lead qualification + Google Calendar booking</li>
-          <li>Twilio outbound campaigns, SMS & TCPA compliance</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 05</div>
-        <h3>Vibe Coding — Lovable & Claude Code</h3>
-        <ul>
-          <li>Build full-stack SaaS apps with Lovable + Supabase</li>
-          <li>Claude Code CLI — agentic coding in the terminal</li>
-          <li>Cursor Composer — edit multiple files simultaneously</li>
-          <li>Deploy to Vercel, Railway & Netlify — client handoff SOPs</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 06</div>
-        <h3>Ecommerce + Meta Ads</h3>
-        <ul>
-          <li>Shopify AI store — product copy, chatbot & order automations</li>
-          <li>Meta Ads — ROAS, CTR, lookalike audiences explained</li>
-          <li>AI-generated ad creatives at scale with Claude + Canva AI</li>
-          <li>Auto-pause bot using Meta Ads API + n8n + Claude analysis</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 07</div>
-        <h3>Client Acquisition</h3>
-        <ul>
-          <li>Automated lead research — 50 leads in 20 min with Apollo.io</li>
-          <li>5-touch cold email + Vapi warm call outreach sequence</li>
-          <li>Discovery calls, SPIN questions & proposal building with Claude</li>
-          <li>Pricing retainers, handling objections & closing scripts</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 08 ✦ NEW</div>
-        <h3>Personal Branding & Content Authority</h3>
-        <ul>
-          <li>LinkedIn optimisation + YouTube channel setup for AI experts</li>
-          <li>Automated content engine — 1 idea → 10 pieces via Claude + n8n</li>
-          <li>Case studies, testimonials & inbound lead funnel</li>
-          <li>5-email nurture sequence → booked discovery calls on autopilot</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-tag">Week 09</div>
-        <h3>Freelancing & Agency Capstone</h3>
-        <ul>
-          <li>Build a full agency automation system worth $2,000/month retainer</li>
-          <li>Connect n8n, RAG agents, Vapi, Notion CRM & Slack in one system</li>
-          <li>Client handoff: exported JSONs, screen recordings & credentials vault</li>
-          <li>Pricing proposals, Stripe setup, Upwork positioning & agency OS</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COHORT SCHEDULE -->
-<section class="section section-dark" id="schedule">
-  <div class="container">
-    <div class="section-label">Cohort Schedule</div>
-    <h2 class="section-title">Know exactly what you're signing up for.</h2>
-    <div class="schedule-card">
-      <div class="sched-item">
-        <div class="sched-label">Next Cohort</div>
-        <div class="sched-value">May 2026</div>
-        <div class="sched-sub">Date shared on enrollment</div>
-      </div>
-      <div class="sched-sep"></div>
-      <div class="sched-item">
-        <div class="sched-label">Live Sessions</div>
-        <div class="sched-value">3× / week</div>
-        <div class="sched-sub">Evening PKT · recordings within 24h</div>
-      </div>
-      <div class="sched-sep"></div>
-      <div class="sched-item">
-        <div class="sched-label">Time Commitment</div>
-        <div class="sched-value">5–6 hrs/wk</div>
-        <div class="sched-sub">Live sessions + project work</div>
-      </div>
-      <div class="sched-sep"></div>
-      <div class="sched-item">
-        <div class="sched-label">Cohort Size</div>
-        <div class="sched-value">Max 40</div>
-        <div class="sched-sub">Direct access to instructors</div>
-      </div>
-      <div class="sched-sep"></div>
-      <div class="sched-item">
-        <div class="sched-label">Questions?</div>
-        <div class="sched-value"><a href="https://wa.me/923014422951" target="_blank" class="sched-link">WhatsApp us →</a></div>
-        <div class="sched-sub">+92 301 4422951</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-label">Hands-On Projects</div>
-    <h2 class="section-title">You won't just learn.<br>You'll build and ship.</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="proj-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1" fill="#f59e0b"/><circle cx="12" cy="10" r="1" fill="#f59e0b"/><circle cx="15" cy="10" r="1" fill="#f59e0b"/></svg>
-        </div>
-        <h4>AI Chatbot</h4>
-        <p>Custom chatbot trained on any business data. Deployable to websites — the same type Sanestix deploys for real clients.</p>
-      </div>
-      <div class="project-card">
-        <div class="proj-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <h4>Automation System</h4>
-        <p>End-to-end business workflow — form to CRM to follow-up email. Production-ready from day one.</p>
-      </div>
-      <div class="project-card">
-        <div class="proj-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <h4>Lead Gen Agent</h4>
-        <p>AI that finds leads, scrapes data, and prepares outreach — automatically, around the clock.</p>
-      </div>
-      <div class="project-card">
-        <div class="proj-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <h4>WhatsApp Automation Bot</h4>
-        <p>Full WhatsApp automation — 24/7 intelligent auto-reply, lead qualification, and CRM sync in one system.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STUDENT REVIEWS -->
-<!-- TESTIMONIALS — unified section -->
-<section class="section section-dark" id="testimonials-video">
+<!-- ═══════════════════════════════════
+     TESTIMONIALS SECTION
+     Combined card: video on top + quote below
+═══════════════════════════════════ -->
+<section class="testi-section" id="testimonials-video">
   <div class="container">
 
-    <!-- HEADER -->
-    <div class="testi-header">
-      <div class="section-label">Student Testimonials</div>
-      <h2 class="section-title">Real students.<br><span class="grad-text">Real outcomes.</span></h2>
-      <p class="testi-header-sub">No scripts. No actors. Just honest results from people who built real systems and landed real clients.</p>
-    </div>
+    <div class="eyebrow">Student Testimonials</div>
+    <h2 class="section-title">Real students. Real outcomes.</h2>
+    <p class="section-sub">No scripts. No actors. Honest results from people who built real systems.</p>
 
-    <!-- MAIN GRID: written cards left, video column right -->
-    <div class="testi-main-grid">
+    <div class="testi-grid">
 
-      <!-- LEFT: Written testimonial cards -->
-      <div class="testi-cards-col">
-
-        <div class="testi-card">
-          <div class="testi-card-top">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-badge-pill">Built system in Week 2</div>
-          </div>
-          <p class="testi-text">"This program completely changed how I think about AI. Within weeks I was building real automation systems and pitching them to clients. The hands-on approach is unlike anything I've seen online."</p>
-          <div class="testi-author">
-            <div class="testi-av testi-av-green">ER</div>
-            <div class="testi-author-info">
-              <div class="testi-name">Ebbad Ur Rehman</div>
-              <div class="testi-role">Student · Agentic AI Mastery Cohort</div>
+      <!-- CARD 1 — has real video -->
+      <div class="tcard">
+        <div class="tcard-video" id="tv1" onclick="loadTestiVideo(this,'qBRPqkjVTck')">
+          <img class="tcard-video-bg" src="https://img.youtube.com/vi/qBRPqkjVTck/maxresdefault.jpg" alt="">
+          <div class="tcard-video-overlay">
+            <div class="yt-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch review
             </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-card-top">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-badge-pill">First client in Week 3</div>
-          </div>
-          <p class="testi-text">"The WhatsApp automation module alone paid for the course 10 times over. I set up a client system in Week 3 and billed them PKR 45,000 for it."</p>
-          <div class="testi-author">
-            <div class="testi-av testi-av-amber">ZA</div>
-            <div class="testi-author-info">
-              <div class="testi-name">Zara Ahmed</div>
-              <div class="testi-role">Freelancer · Karachi</div>
+            <div class="tcard-play">
+              <svg width="14" height="14" viewBox="0 0 22 22" fill="#000"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
             </div>
+            <span class="tcard-play-label">Tap to watch</span>
           </div>
         </div>
-
-        <div class="testi-card">
-          <div class="testi-card-top">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-badge-pill">200+ DMs automated</div>
+        <div class="tcard-body">
+          <div class="tcard-top">
+            <div class="stars">★★★★★</div>
+            <span class="badge-pill">Built system in Week 2</span>
           </div>
-          <p class="testi-text">"Our clothing brand was getting 200+ Instagram DMs daily and we couldn't keep up. Sanestix built us a system that replies instantly, sends our catalogue, and captures the customer's number."</p>
-          <div class="testi-author">
-            <div class="testi-av testi-av-purple">SF</div>
-            <div class="testi-author-info">
-              <div class="testi-name">Sara Farouk</div>
-              <div class="testi-role">Fashion Brand · Karachi</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT: Video testimonials column -->
-      <div class="testi-video-col">
-
-        <div class="testi-video-col-label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Video Reviews
-        </div>
-
-        <!-- ─────────────────────────────────────────
-             VIDEO TESTIMONIAL 1 — ACTIVE
-             To add more: copy this block, change
-             data-video-id to your YouTube Short ID,
-             update name/role/badge below.
-        ───────────────────────────────────────── -->
-        <div class="tvid-card">
-          <div class="tvid-embed-wrap">
-            <div class="tvid-placeholder" onclick="loadTVid(this, 'qBRPqkjVTck')"
-                 style="background-image:url('https://img.youtube.com/vi/qBRPqkjVTck/maxresdefault.jpg');background-size:cover;background-position:center top;">
-              <div class="tvid-dim"></div>
-              <div class="tvid-yt-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                YouTube Short
-              </div>
-              <div class="tvid-play">
-                <svg width="20" height="20" viewBox="0 0 22 22" fill="#030a04"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
-              </div>
-              <p class="tvid-tap">Tap to watch</p>
-            </div>
-          </div>
-          <div class="tvid-info">
-            <div class="tvid-av testi-av-green">ER</div>
+          <p class="tcard-quote">"This completely changed how I think about AI. Within weeks I was building real automation systems and pitching them to clients."</p>
+          <div class="tcard-author">
+            <div class="av av-g">ER</div>
             <div>
-              <div class="tvid-name">Ebbad Ur Rehman</div>
-              <div class="tvid-role">Student · Cohort 1</div>
+              <div class="tcard-name">Ebbad Ur Rehman</div>
+              <div class="tcard-role">Student · Cohort 1</div>
             </div>
-            <span class="tvid-pill">Honest review</span>
           </div>
         </div>
+      </div>
 
-        <!-- ─────────────────────────────────────────
-             VIDEO TESTIMONIAL 2 — TEMPLATE
-             Replace YOUR_VIDEO_ID with a real YouTube
-             Short ID. Update thumbnail, name & role.
-             Remove the "coming-soon" class to activate.
-        ───────────────────────────────────────── -->
-        <div class="tvid-card coming-soon">
-          <div class="tvid-embed-wrap">
-            <div class="tvid-placeholder tvid-placeholder-empty">
-              <div class="tvid-coming-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              </div>
-              <p class="tvid-coming-text">Video coming soon</p>
-              <p class="tvid-coming-sub">Replace with YouTube Short ID</p>
+      <!-- CARD 2 — has real video (replace YOUR_VIDEO_ID) -->
+      <div class="tcard">
+        <div class="tcard-video" id="tv2" onclick="loadTestiVideo(this,'YOUR_VIDEO_ID')">
+          <img class="tcard-video-bg" src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tcard-video-overlay">
+            <div class="yt-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch review
             </div>
+            <div class="tcard-play">
+              <svg width="14" height="14" viewBox="0 0 22 22" fill="#000"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
+            </div>
+            <span class="tcard-play-label">Tap to watch</span>
           </div>
-          <div class="tvid-info">
-            <div class="tvid-av testi-av-purple">--</div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-top">
+            <div class="stars">★★★★★</div>
+            <span class="badge-pill">First client in Week 3</span>
+          </div>
+          <p class="tcard-quote">"The WhatsApp automation module alone paid for the course 10× over. I billed my first client PKR 45,000 in Week 3."</p>
+          <div class="tcard-author">
+            <div class="av av-a">ZA</div>
             <div>
-              <div class="tvid-name">Student Name</div>
-              <div class="tvid-role">Role · City</div>
+              <div class="tcard-name">Zara Ahmed</div>
+              <div class="tcard-role">Freelancer · Karachi</div>
             </div>
-            <span class="tvid-pill tvid-pill-muted">Template</span>
           </div>
         </div>
+      </div>
 
-        <!-- ─────────────────────────────────────────
-             VIDEO TESTIMONIAL 3 — TEMPLATE
-             Same instructions as above.
-        ───────────────────────────────────────── -->
-        <div class="tvid-card coming-soon">
-          <div class="tvid-embed-wrap">
-            <div class="tvid-placeholder tvid-placeholder-empty">
-              <div class="tvid-coming-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              </div>
-              <p class="tvid-coming-text">Video coming soon</p>
-              <p class="tvid-coming-sub">Replace with YouTube Short ID</p>
+      <!-- CARD 3 — coming soon video -->
+      <div class="tcard">
+        <div class="tcard-video coming">
+          <div class="tcard-video-overlay">
+            <div class="tcard-play" style="background:var(--bg4); border:1px solid var(--border2);">
+              <svg width="14" height="14" viewBox="0 0 22 22" fill="#444"><path d="M5 3.5l14 7.5-14 7.5z"/></svg>
             </div>
+            <span class="tcard-soon-label">Video coming soon</span>
           </div>
-          <div class="tvid-info">
-            <div class="tvid-av testi-av-amber">--</div>
+        </div>
+        <div class="tcard-body">
+          <div class="tcard-top">
+            <div class="stars">★★★★★</div>
+            <span class="badge-pill">200+ DMs automated</span>
+          </div>
+          <p class="tcard-quote">"Our clothing brand was drowning in 200+ DMs daily. Sanestix built a system that replies instantly, sends our catalogue, and captures leads."</p>
+          <div class="tcard-author">
+            <div class="av av-p">SF</div>
             <div>
-              <div class="tvid-name">Student Name</div>
-              <div class="tvid-role">Role · City</div>
+              <div class="tcard-name">Sara Farouk</div>
+              <div class="tcard-role">Fashion Brand · Karachi</div>
             </div>
-            <span class="tvid-pill tvid-pill-muted">Template</span>
           </div>
         </div>
+      </div>
 
-      </div><!-- end testi-video-col -->
-    </div><!-- end testi-main-grid -->
+    </div><!-- end testi-grid -->
 
-    <!-- BOTTOM PROOF STRIP -->
-    <div class="testi-proof-strip">
-      <div class="testi-proof-item">
-        <span class="testi-proof-num">100%</span>
-        <span class="testi-proof-lbl">Students built real systems</span>
+    <!-- PROOF STRIP -->
+    <div class="proof-strip">
+      <div class="proof-cell">
+        <div class="proof-num">100%</div>
+        <div class="proof-lbl">Students built real systems</div>
       </div>
-      <div class="testi-proof-sep"></div>
-      <div class="testi-proof-item">
-        <span class="testi-proof-num">Week 3</span>
-        <span class="testi-proof-lbl">First client landed</span>
+      <div class="proof-cell">
+        <div class="proof-num">Week 3</div>
+        <div class="proof-lbl">First client landed</div>
       </div>
-      <div class="testi-proof-sep"></div>
-      <div class="testi-proof-item">
-        <span class="testi-proof-num">27+</span>
-        <span class="testi-proof-lbl">Live projects shipped</span>
+      <div class="proof-cell">
+        <div class="proof-num">27+</div>
+        <div class="proof-lbl">Live projects shipped</div>
       </div>
-      <div class="testi-proof-sep"></div>
-      <div class="testi-proof-item">
-        <span class="testi-proof-num">PKR 45K</span>
-        <span class="testi-proof-lbl">First client billing (Week 3)</span>
+      <div class="proof-cell">
+        <div class="proof-num">PKR 45K</div>
+        <div class="proof-lbl">First client billing</div>
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:36px;">
-      <a href="#apply" class="btn-cta btn-cta-lg">Join the Next Cohort →</a>
+    <div class="testi-cta">
+      <a href="#apply" class="btn-green btn-green-lg">Join the Next Cohort →</a>
     </div>
 
   </div>
 </section>
 
-<!-- INSTRUCTORS -->
-<section class="section" id="instructors">
-  <div class="container">
-    <div class="section-label">Your Instructors</div>
-    <h2 class="section-title">Taught by the founders of<br>a real AI automation company.</h2>
-    <p class="section-sub">Not content creators. Not theory-pushers. The co-founders of Sanestix — Pakistan's AI-powered web development & automation agency, with 50+ deployed systems and 1M+ AI messages sent on behalf of real clients.</p>
-    <div class="founders-grid">
-      <div class="founder-card">
-        <div class="founder-top">
-          <div class="founder-av founder-av-teal">SF</div>
-          <div>
-            <div class="founder-name">Saad Faisal Qureshi</div>
-            <div class="founder-role">Co-Founder & CEO, Sanestix</div>
-          </div>
-        </div>
-        <p class="founder-bio">Visionary entrepreneur with deep expertise in AI strategy, business automation, and client growth. Leads all client relationships and overall product direction at Sanestix. Saad teaches the monetization, client delivery, and business strategy modules — because he lives them daily.</p>
-        <div class="founder-tags">
-          <span class="ftag">AI Strategy</span>
-          <span class="ftag">Client Growth</span>
-          <span class="ftag">Business Automation</span>
-          <span class="ftag">50+ deployments</span>
-        </div>
-        <div class="founder-links">
-          <a href="https://www.linkedin.com/in/saadfaisalqureshi" target="_blank" class="founder-link">LinkedIn →</a>
-          <a href="https://sanestix.com" target="_blank" class="founder-link">sanestix.com →</a>
-        </div>
-      </div>
-      <div class="founder-card">
-        <div class="founder-top">
-          <div class="founder-av founder-av-purple">AW</div>
-          <div>
-            <div class="founder-name">Abdul Wahab Siddiqi</div>
-            <div class="founder-role">Co-Founder & COO, Sanestix</div>
-          </div>
-        </div>
-        <p class="founder-bio">Technology expert specialising in AI systems architecture, web development, and automation infrastructure. Leads all technical delivery and quality control at Sanestix. Wahab teaches the technical modules — agents, n8n, APIs, and automation pipelines — from production-tested code, not slides.</p>
-        <div class="founder-tags">
-          <span class="ftag">AI Systems Architecture</span>
-          <span class="ftag">n8n & APIs</span>
-          <span class="ftag">Technical Delivery</span>
-          <span class="ftag">1M+ AI messages</span>
-        </div>
-        <div class="founder-links">
-          <a href="https://www.linkedin.com/in/abdulwahabsiddiqi" target="_blank" class="founder-link">LinkedIn →</a>
-          <a href="https://sanestix.com" target="_blank" class="founder-link">sanestix.com →</a>
-        </div>
-      </div>
-    </div>
-    <div class="instructor-note">
-      <p><strong>"We don't build websites. We build revenue systems that run on AI — and we stay with you after launch to make sure they actually deliver."</strong><br><br>Every technique in this program comes from live client projects. If it's in the curriculum, it's already running in production — at Sanestix, right now.</p>
-    </div>
-  </div>
-</section>
+<script>
+function loadHeroVideo() {
+  const wrap = document.getElementById('heroThumb');
+  const img = document.getElementById('heroThumbImg');
+  img.style.display = 'none';
+  wrap.style.cursor = 'default';
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/FwOTs4UxQS4?autoplay=1&rel=0';
+  iframe.allow = 'autoplay; encrypted-media';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+  wrap.style.position = 'relative';
+  wrap.innerHTML = '';
+  wrap.appendChild(iframe);
+}
 
-<!-- PRICING -->
-<section class="section section-dark" id="pricing">
-  <div class="container">
-    <div class="section-label">The Offer</div>
-    <h2 class="section-title">Everything you need to succeed.<br>Nothing you don't.</h2>
-    <div class="offer-grid">
-      <div class="offer-list">
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">Full 9-Week Live Program</span><span class="offer-desc">Instructor-led sessions with Saad & Wahab. 27 classes, 54 hours, 27 live projects. Real-time Q&A.</span></div></div>
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">All Session Recordings</span><span class="offer-desc">Miss a class? Rewatch everything. Uploaded within 24 hours. Lifetime access.</span></div></div>
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">Sanestix System Templates</span><span class="offer-desc">Real automation templates from our actual client projects — deployed in live businesses.</span></div></div>
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">n8n Workflow Library</span><span class="offer-desc">Pre-built workflows you can deploy immediately for your own clients.</span></div></div>
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">Client Proposal Kit</span><span class="offer-desc">Scripts, pricing guides, and proposal templates — exactly what Sanestix uses to close clients.</span></div></div>
-        <div class="offer-item"><div class="offer-check">✓</div><div><span class="offer-title">Private Cohort Community</span><span class="offer-desc">Peer support, networking, and direct access to both founders for 30 days.</span></div></div>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-badge">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Cohort Pricing
-        </div>
-        <div class="price-old">PKR 29,999</div>
-        <div class="price-main"><sup>PKR</sup>14,999</div>
-        <div class="price-note">One-time payment · Full access · All bonuses</div>
-        <a href="#apply" class="btn-cta btn-cta-full">Join the Cohort →</a>
-        <div class="price-scarcity"><span class="urgency-dot"></span> Limited seats — cohort capped at 40</div>
-        <div class="price-deadline">Message us to confirm next cohort date</div>
-        <div class="pricing-divider"></div>
-        <div class="installment-label">Need installments or have questions?</div>
-        <a href="https://wa.me/923014422951?text=Hi%2C%20I%27d%20like%20to%20know%20about%20installments" class="installment-link" target="_blank">Ask via WhatsApp → +92 301 4422951</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title" style="text-align:center">Questions answered.</h2>
-    <div class="faq-wrap">
-      <div class="faq-item open">
-        <button class="faq-q" onclick="toggleFaq(this)">Is this for beginners? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">Yes. We start from the foundations. You don't need to know how to code. You need curiosity and 5–6 hours per week. That's it.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Do I need coding experience? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">No. Most tools we use are visual (n8n, Make). We teach you just enough logic to understand what's happening. Zero developer skills required.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What days and times are live sessions? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">Sessions run twice a week in the evening (PKT). Exact timings are shared with enrolled students. Every session is recorded and uploaded within 24 hours.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How much time does it require? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">5 to 6 hours per week. 2 live sessions plus personal project work. Designed around a busy schedule.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Can I actually earn money after this? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">Yes — if you put in the work. Sanestix itself started as exactly this kind of operation and now has 50+ businesses automated across Pakistan & UAE, sending 1M+ AI messages on behalf of real clients. Week 7 covers client acquisition and Week 9's capstone is literally titled "The $2,000 Retainer Build" — from lived experience, not theory.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What if I miss a live session? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">Every session is recorded and uploaded within 24 hours. You'll never miss content — just the live Q&A energy.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Is there a refund policy? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">3-day refund window before the cohort begins. After that, we're fully committed to your success — and we expect you to be too. Questions? Email us at contact@sanestix.com.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Who are the instructors? <span class="faq-arrow">›</span></button>
-        <div class="faq-a">Saad Faisal Qureshi (CEO) and Abdul Wahab Siddiqi (COO) — the co-founders of Sanestix. They run a live AI automation agency with real clients. You can find them on LinkedIn and verify their work at sanestix.com.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENROLL FORM -->
-<section class="section section-dark" id="apply">
-  <div class="container">
-    <div class="section-label" style="text-align:center">Apply Now</div>
-    <h2 class="section-title" style="text-align:center">Claim your seat before<br>the cohort fills up.</h2>
-    <p class="section-sub" style="text-align:center;margin:0 auto 48px;">Takes 2 minutes. Saad or Wahab will reach out within 24 hours to confirm your spot and share cohort details.</p>
-    <div class="form-card">
-      <h3>Start Your Application</h3>
-      <p class="form-sub">Limited to 40 students · Taught by Sanestix founders</p>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="fName" placeholder="Your full name">
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" id="fEmail" placeholder="you@email.com">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Phone / WhatsApp</label>
-        <input type="tel" id="fPhone" placeholder="+92 300 0000000">
-      </div>
-      <div class="form-group">
-        <label>Your Experience Level</label>
-        <select id="fLevel">
-          <option value="" disabled selected>Select your level</option>
-          <option>Complete Beginner — New to AI</option>
-          <option>Some Experience — I've used ChatGPT or similar</option>
-          <option>Intermediate — I understand tools but can't build systems</option>
-          <option>Advanced — I build things but need structure</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>What do you want to achieve? <span class="label-opt">(optional)</span></label>
-        <input type="text" id="fGoal" placeholder="e.g. freelancing, automate my business, land a tech job…">
-      </div>
-      <button class="btn-cta btn-cta-full form-submit" id="formSubmit" onclick="handleApply()">Submit Application →</button>
-      <p class="form-privacy">Your info is never shared. We hate spam too. Questions? <a href="mailto:contact@sanestix.com">contact@sanestix.com</a></p>
-      <div class="form-or">
-        <hr><span>or reach us directly</span><hr>
-      </div>
-      <a href="https://wa.me/923014422951?text=Hi%2C%20I%27d%20like%20to%20apply%20for%20the%20Agentic%20AI%20Mastery%20Program" class="wa-btn" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Message on WhatsApp — +92 301 4422951
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">Learn<span class="footer-dot">.</span>Sanestix</div>
-      <p class="footer-desc">The learning division of Sanestix — Pakistan's AI automation agency, with 50+ deployed systems and 1M+ AI messages sent for real clients.</p>
-      <div class="footer-contact">
-        <span class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          <a href="mailto:contact@sanestix.com">contact@sanestix.com</a>
-        </span>
-        <span class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          <a href="https://wa.me/923014422951">+92 301 4422951</a>
-        </span>
-        <span class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.418-4.418-7-8.015-7-11a7 7 0 1 1 14 0c0 2.985-2.582 6.582-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          Lahore, Punjab, Pakistan
-        </span>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h5>Program</h5>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#projects">Projects</a>
-      <a href="#testimonials-video">Testimonials</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div class="footer-col">
-      <h5>Sanestix</h5>
-      <a href="https://sanestix.com" target="_blank" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        sanestix.com
-      </a>
-      <a href="https://www.linkedin.com/in/saadfaisalqureshi" target="_blank" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        Saad — LinkedIn
-      </a>
-      <a href="https://www.linkedin.com/in/abdulwahabsiddiqi" target="_blank" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        Wahab — LinkedIn
-      </a>
-    </div>
-    <div class="footer-col">
-      <h5>Legal</h5>
-      <a href="privacy.html" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Privacy Policy
-      </a>
-      <a href="terms.html" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        Terms & Conditions
-      </a>
-      <a href="refund.html" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
-        Refund Policy
-      </a>
-      <a href="mailto:contact@sanestix.com" class="footer-link-icon">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        Contact Us
-      </a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <span>© 2026 Learn by Sanestix. All rights reserved.</span>
-      <span>learn.sanestix.com · Built with AI in Lahore 🇵🇰</span>
-    </div>
-  </div>
-</footer>
-
-<!-- STICKY BOTTOM BAR -->
-<div class="sticky-bar" id="stickyBar">
-  <div class="sticky-text"><strong>Agentic AI Mastery</strong> — 9 Weeks · 27 Projects · 40 seats only</div>
-  <a href="#apply" class="btn-cta sticky-btn">Apply Now →</a>
-</div>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/923014422951?text=Hi%2C%20I'm%20interested%20in%20the%20Agentic%20AI%20Mastery%20Program" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  Chat on WhatsApp
-</a>
-
-<script src="script.js"></script>
+function loadTestiVideo(el, videoId) {
+  if (!videoId || videoId === 'YOUR_VIDEO_ID') return;
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+  iframe.allow = 'autoplay; encrypted-media';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'width:100%;height:100%;border:none;display:block;';
+  el.innerHTML = '';
+  el.appendChild(iframe);
+  el.onclick = null;
+  el.style.cursor = 'default';
+}
+</script>
 </body>
 </html>
