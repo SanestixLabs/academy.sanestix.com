@@ -221,9 +221,17 @@ nav.scrolled {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.nav-logo:hover { opacity: 0.82; }
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
 }
 .logo-mark {
   width: 34px; height: 34px;
@@ -1671,11 +1679,14 @@ footer {
   padding-bottom: 48px;
 }
 .footer-logo {
-  font-family: var(--font-head);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+.footer-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
 }
 .footer-dot { color: var(--g1); }
 .footer-desc {
