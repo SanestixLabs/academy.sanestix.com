@@ -1,0 +1,12 @@
+# robots.txt for academy.sanestix.com
+# https://academy.sanestix.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block non-essential asset files from crawling
+Disallow: /styles.css
+Disallow: /script.js
+
+# Sitemap location
+Sitemap: https://academy.sanestix.com/sitemap.xml
