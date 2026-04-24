@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="sanestix-logo.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Course Content — Agentic AI Mastery | Sanestix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,13 +65,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo {
-  font-size: 15px; font-weight: 700; letter-spacing: -0.01em;
-  display: flex; align-items: center; gap: 2px;
-  color: var(--text); text-decoration: none;
-}
-.nav-logo span { color: var(--g1); }
-.nav-logo:hover { opacity: 0.85; }
+
 .nav-back {
   display: flex; align-items: center; gap: 6px;
   font-size: 13px; color: var(--text2);
@@ -564,14 +559,19 @@ footer a { color: var(--g1); }
   .stats-strip { flex-wrap: wrap; }
   .stat-cell { min-width: 50%; border-bottom: 1px solid var(--border); }
 }
-</style>
+      .nav-logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; transition:opacity .2s; }
+    .nav-logo:hover { opacity:0.82; }
+    .nav-logo-img { height:40px; width:auto; object-fit:contain; display:block; background:transparent; }
+    .footer-logo { margin-bottom:14px; }
+    .footer-logo-img { height:46px; width:auto; object-fit:contain; display:block; background:transparent; }
+  </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Sanestix<span>.</span>Academy</a>
+    <a href="index.html" class="nav-logo"><img src="sanestix-logo.svg" alt="Sanestix Academy" class="nav-logo-img"></a>
     <a href="index.html" class="nav-back">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Back to Main
