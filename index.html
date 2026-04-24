@@ -510,12 +510,12 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
   min-height: 68px; display: flex; align-items: center; gap: 0;
 }
 .nav-logo {
-  font-family: var(--font-head); font-size: 17px; font-weight: 700;
-  color: var(--text); white-space: nowrap; flex-shrink: 0;
+  display: flex; align-items: center; flex-shrink: 0;
   text-decoration: none; margin-right: 32px;
-  letter-spacing: -0.01em;
+  transition: opacity .2s;
 }
-.nav-logo .dot { color: var(--g1); }
+.nav-logo:hover { opacity: 0.82; }
+.nav-logo-img { height: 46px; width: auto; display: block; }
 .nav-links {
   display: flex; align-items: center; gap: 8px;
   flex: 1;
@@ -2121,7 +2121,7 @@ function handleLeadSubmit() {
 
       <!-- Brand col -->
       <div>
-        <div class="footer-logo"><img src="sanestix-logo.svg" alt="Sanestix Academy" class="nav-logo-img"></div>
+        <div class="footer-logo"><img src="sanestix-logo.svg" alt="Sanestix Academy" class="footer-logo-img"></div>
         <p class="footer-desc">Pakistan's first cohort-based Agentic AI program. Built by a real AI agency. Taught by operators, not educators.</p>
         <div class="footer-contact">
           <div class="footer-contact-item">
