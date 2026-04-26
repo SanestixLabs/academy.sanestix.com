@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll — Sanestix Academy</title>
+<meta name="description" content="Secure your seat in Sanestix Academy's Agentic AI Mastery program. PKR 3,000 seat reservation.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:      #0a0f0b;
+    --bg2:     #0f1510;
+    --bg3:     #131a14;
+    --bg4:     #1a241b;
+    --border:  rgba(34,197,94,0.12);
+    --border2: rgba(34,197,94,0.22);
+    --g1:      #22c55e;
+    --g2:      #16a34a;
+    --g3:      #4ade80;
+    --text:    #f0fdf4;
+    --text2:   #d1fae5;
+    --text3:   #6b7280;
+    --text4:   #9ca3af;
+    --red:     #ef4444;
+    --font-head: 'Clash Display', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius:  14px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND GLOW ── */
+  .bg-glow {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 10%, rgba(34,197,94,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(22,163,74,0.05) 0%, transparent 60%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: relative; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,15,11,0.8);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-head); font-size: 18px; font-weight: 700;
+    color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span { color: var(--g1); }
+  .nav-back {
+    font-size: 13px; color: var(--text3); text-decoration: none;
+    display: flex; align-items: center; gap: 6px; transition: color .2s;
+  }
+  .nav-back:hover { color: var(--g1); }
+
+  /* ── MAIN WRAPPER ── */
+  .main {
+    position: relative; z-index: 1;
+    max-width: 680px; margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    color: var(--g1); text-transform: uppercase; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .page-eyebrow::before {
+    content: ''; display: block; width: 24px; height: 1px; background: var(--g1);
+  }
+  .page-title {
+    font-family: var(--font-head); font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700; line-height: 1.1; margin-bottom: 12px;
+  }
+  .page-title span { color: var(--g1); }
+  .page-sub {
+    font-size: 15px; color: var(--text3); line-height: 1.7; margin-bottom: 40px;
+  }
+
+  /* ── PROGRESS STEPS ── */
+  .steps {
+    display: flex; align-items: center; gap: 0; margin-bottom: 40px;
+  }
+  .step {
+    display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: ''; position: absolute; top: 16px; left: calc(50% + 16px);
+    width: calc(100% - 32px); height: 1px;
+    background: var(--border2); transition: background .4s;
+  }
+  .step.done:not(:last-child)::after { background: var(--g1); }
+  .step-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid var(--border2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600; color: var(--text3);
+    background: var(--bg2); transition: all .3s; position: relative; z-index: 1;
+  }
+  .step.active .step-circle {
+    border-color: var(--g1); color: var(--g1);
+    box-shadow: 0 0 0 4px rgba(34,197,94,0.1);
+  }
+  .step.done .step-circle {
+    background: var(--g1); border-color: var(--g1); color: #000;
+  }
+  .step-label {
+    font-size: 10px; color: var(--text3); letter-spacing: 0.08em;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .step.active .step-label { color: var(--g1); }
+  .step.done .step-label { color: var(--text4); }
+
+  /* ── FORM CARD ── */
+  .form-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--g1), transparent);
+    opacity: 0.6;
+  }
+
+  .step-panel { display: none; }
+  .step-panel.active { display: block; animation: fadeIn .3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .panel-title {
+    font-family: var(--font-head); font-size: 20px; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .panel-sub { font-size: 13.5px; color: var(--text3); margin-bottom: 28px; line-height: 1.6; }
+
+  /* ── FORM FIELDS ── */
+  .field-group { margin-bottom: 20px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field-label {
+    display: block; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text4); margin-bottom: 8px;
+  }
+  .field-input {
+    width: 100%; background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 10px; padding: 13px 16px;
+    color: var(--text); font-family: var(--font-body); font-size: 14px;
+    outline: none; transition: border-color .2s, box-shadow .2s;
+  }
+  .field-input::placeholder { color: var(--text3); }
+  .field-input:focus {
+    border-color: var(--g1);
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.1);
+  }
+  .field-input.error { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
+  .field-error { font-size: 12px; color: var(--red); margin-top: 5px; display: none; }
+  .field-error.show { display: block; }
+
+  select.field-input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  /* ── PAYMENT OPTIONS ── */
+  .payment-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .payment-option {
+    border: 1.5px solid var(--border2);
+    border-radius: 12px; padding: 18px 20px;
+    cursor: pointer; transition: all .2s;
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--bg3);
+    position: relative;
+  }
+  .payment-option:hover { border-color: var(--g1); background: var(--bg4); }
+  .payment-option.selected {
+    border-color: var(--g1); background: var(--bg4);
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.08);
+  }
+  .payment-option input[type="radio"] { display: none; }
+  .payment-radio {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 1.5px solid var(--border2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px; transition: all .2s;
+  }
+  .payment-option.selected .payment-radio {
+    border-color: var(--g1);
+    background: var(--g1);
+  }
+  .payment-option.selected .payment-radio::after {
+    content: ''; width: 8px; height: 8px; border-radius: 50%; background: #000;
+  }
+  .payment-info {}
+  .payment-name {
+    font-family: var(--font-head); font-size: 15px; font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .payment-desc { font-size: 13px; color: var(--text3); line-height: 1.5; }
+  .payment-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(34,197,94,0.12); color: var(--g1);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* ── PAYMENT DETAILS BOX ── */
+  .payment-details-box {
+    background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: 12px; padding: 20px;
+    margin-bottom: 24px; display: none;
+  }
+  .payment-details-box.show { display: block; animation: fadeIn .3s ease; }
+  .pdb-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--g1); margin-bottom: 14px;
+  }
+  .pdb-method { margin-bottom: 14px; }
+  .pdb-method:last-child { margin-bottom: 0; }
+  .pdb-method-label {
+    font-size: 11px; color: var(--text3); font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pdb-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg4); border-radius: 8px; padding: 10px 14px;
+    margin-bottom: 6px;
+  }
+  .pdb-row:last-child { margin-bottom: 0; }
+  .pdb-key { font-size: 12px; color: var(--text3); }
+  .pdb-val { font-size: 13px; font-weight: 500; color: var(--text2); font-family: monospace; }
+  .copy-btn {
+    background: none; border: 1px solid var(--border2); color: var(--text3);
+    font-size: 11px; padding: 3px 10px; border-radius: 6px; cursor: pointer;
+    transition: all .2s; font-family: var(--font-body);
+  }
+  .copy-btn:hover { border-color: var(--g1); color: var(--g1); }
+  .copy-btn.copied { border-color: var(--g1); color: var(--g1); }
+
+  /* ── UPLOAD AREA ── */
+  .upload-area {
+    border: 2px dashed var(--border2); border-radius: 12px;
+    padding: 36px 24px; text-align: center; cursor: pointer;
+    transition: all .2s; background: var(--bg3);
+    margin-bottom: 8px; position: relative;
+  }
+  .upload-area:hover, .upload-area.drag { border-color: var(--g1); background: var(--bg4); }
+  .upload-area.has-file { border-color: var(--g1); border-style: solid; }
+  .upload-icon { margin-bottom: 10px; opacity: 0.5; }
+  .upload-text { font-size: 14px; color: var(--text3); margin-bottom: 4px; }
+  .upload-text strong { color: var(--g1); }
+  .upload-hint { font-size: 12px; color: var(--text3); }
+  #screenshotInput { display: none; }
+  .upload-preview {
+    display: none; margin-top: 16px;
+    border: 1px solid var(--border2); border-radius: 10px; overflow: hidden;
+  }
+  .upload-preview img { width: 100%; max-height: 200px; object-fit: contain; background: var(--bg4); }
+  .upload-preview-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; background: var(--bg4);
+    font-size: 12px; color: var(--text3);
+  }
+  .upload-remove {
+    background: none; border: none; color: var(--red); cursor: pointer;
+    font-size: 12px; font-family: var(--font-body);
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    width: 100%; padding: 15px; border-radius: 10px; border: none;
+    background: var(--g1); color: #000;
+    font-family: var(--font-head); font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all .2s; letter-spacing: 0.02em;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--g3); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.3); }
+  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn-secondary {
+    background: none; border: 1px solid var(--border2); color: var(--text3);
+    font-family: var(--font-body); font-size: 14px; padding: 12px 20px;
+    border-radius: 10px; cursor: pointer; transition: all .2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .btn-secondary:hover { border-color: var(--g1); color: var(--g1); }
+  .btn-row { display: flex; gap: 12px; align-items: center; }
+  .btn-row .btn-secondary { flex-shrink: 0; }
+  .btn-row .btn-primary { flex: 1; }
+
+  /* ── SUCCESS STATE ── */
+  .success-panel {
+    display: none; text-align: center; padding: 20px 0;
+  }
+  .success-panel.show { display: block; animation: fadeIn .4s ease; }
+  .success-icon-wrap {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: rgba(34,197,94,0.1); border: 2px solid var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .success-title {
+    font-family: var(--font-head); font-size: 26px; font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .success-sub { font-size: 14px; color: var(--text3); line-height: 1.7; margin-bottom: 28px; }
+  .success-whatsapp {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #25d366; color: #fff;
+    font-family: var(--font-head); font-weight: 700; font-size: 14px;
+    padding: 13px 28px; border-radius: 100px; text-decoration: none;
+    transition: all .2s;
+  }
+  .success-whatsapp:hover { background: #1eb857; transform: translateY(-2px); }
+
+  /* ── SUMMARY BOX ── */
+  .summary-box {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px; margin-bottom: 24px;
+  }
+  .summary-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--text3); margin-bottom: 12px;
+  }
+  .summary-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .summary-row:last-child { border-bottom: none; }
+  .summary-key { color: var(--text3); }
+  .summary-val { color: var(--text2); font-weight: 500; text-align: right; }
+
+  /* ── FOOTER NOTE ── */
+  .footer-note {
+    text-align: center; font-size: 12px; color: var(--text3);
+    margin-top: 24px; line-height: 1.6;
+  }
+  .footer-note a { color: var(--g1); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 520px) {
+    .form-card { padding: 24px 18px; }
+    .field-row { grid-template-columns: 1fr; }
+    nav { padding: 16px 20px; }
+    .steps { gap: 0; }
+    .step-label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    Sanestix <span>Academy</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to home
+  </a>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="page-eyebrow">Cohort 3 · Starts May 12</div>
+  <h1 class="page-title">Secure Your <span>Seat</span></h1>
+  <p class="page-sub">Reserve your spot with PKR 3,000. Our team will confirm your enrollment on WhatsApp within 24 hours.</p>
+
+  <!-- PROGRESS -->
+  <div class="steps" id="stepsBar">
+    <div class="step active" id="s1"><div class="step-circle">1</div><div class="step-label">Your Info</div></div>
+    <div class="step" id="s2"><div class="step-circle">2</div><div class="step-label">Payment</div></div>
+    <div class="step" id="s3"><div class="step-circle">3</div><div class="step-label">Screenshot</div></div>
+    <div class="step" id="s4"><div class="step-circle">4</div><div class="step-label">Confirm</div></div>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="form-card">
+
+    <!-- STEP 1: YOUR INFO -->
+    <div class="step-panel active" id="panel1">
+      <div class="panel-title">Tell us about yourself</div>
+      <p class="panel-sub">We'll use this to set up your student profile and contact you on WhatsApp.</p>
+
+      <div class="field-row field-group">
+        <div>
+          <label class="field-label" for="e-name">Full Name</label>
+          <input type="text" id="e-name" class="field-input" placeholder="Ahmad Raza" autocomplete="name">
+          <div class="field-error" id="err-name">Please enter your full name</div>
+        </div>
+        <div>
+          <label class="field-label" for="e-city">City</label>
+          <select id="e-city" class="field-input">
+            <option value="">Select city</option>
+            <option>Karachi</option>
+            <option>Lahore</option>
+            <option>Islamabad</option>
+            <option>Rawalpindi</option>
+            <option>Faisalabad</option>
+            <option>Multan</option>
+            <option>Peshawar</option>
+            <option>Quetta</option>
+            <option>Hyderabad</option>
+            <option>Other</option>
+          </select>
+          <div class="field-error" id="err-city">Please select your city</div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="e-phone">WhatsApp Number</label>
+        <input type="tel" id="e-phone" class="field-input" placeholder="+92 300 0000000" autocomplete="tel">
+        <div class="field-error" id="err-phone">Please enter a valid WhatsApp number</div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="e-email">Email Address</label>
+        <input type="email" id="e-email" class="field-input" placeholder="ahmad@email.com" autocomplete="email">
+        <div class="field-error" id="err-email">Please enter a valid email address</div>
+      </div>
+
+      <button class="btn-primary" onclick="goStep2()">
+        Continue to Payment
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <!-- STEP 2: PAYMENT OPTION -->
+    <div class="step-panel" id="panel2">
+      <div class="panel-title">Choose payment method</div>
+      <p class="panel-sub">Select how you'd like to pay your PKR 3,000 seat reservation fee.</p>
+
+      <div class="payment-options">
+
+        <label class="payment-option" onclick="selectPayment(this,'jazzcash')">
+          <input type="radio" name="payment" value="jazzcash">
+          <div class="payment-radio"></div>
+          <div class="payment-info">
+            <div class="payment-name">JazzCash / EasyPaisa / UPaisa</div>
+            <div class="payment-desc">Send to 03098802364 · Account: Saira Faisal</div>
+          </div>
+          <div class="payment-badge">PKR 3,000</div>
+        </label>
+
+        <label class="payment-option" onclick="selectPayment(this,'bank')">
+          <input type="radio" name="payment" value="bank">
+          <div class="payment-radio"></div>
+          <div class="payment-info">
+            <div class="payment-name">Bank Transfer (Soneri Bank)</div>
+            <div class="payment-desc">IBAN transfer · Account: Saad Faisal</div>
+          </div>
+          <div class="payment-badge">PKR 3,000</div>
+        </label>
+
+      </div>
+
+      <!-- Payment details reveal -->
+      <div class="payment-details-box" id="payDetailsBox">
+
+        <div id="jazzcashDetails" style="display:none;">
+          <div class="pdb-title">📱 Mobile Payment Details</div>
+          <div class="pdb-method">
+            <div class="pdb-method-label">JazzCash / EasyPaisa / UPaisa</div>
+            <div class="pdb-row">
+              <span class="pdb-key">Number</span>
+              <span class="pdb-val">03098802364</span>
+              <button class="copy-btn" onclick="copyText('03098802364', this)">Copy</button>
+            </div>
+            <div class="pdb-row">
+              <span class="pdb-key">Account Title</span>
+              <span class="pdb-val">Saira Faisal</span>
+            </div>
+            <div class="pdb-row">
+              <span class="pdb-key">Amount</span>
+              <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="bankDetails" style="display:none;">
+          <div class="pdb-title">🏦 Bank Transfer Details</div>
+          <div class="pdb-method">
+            <div class="pdb-method-label">Soneri Bank</div>
+            <div class="pdb-row">
+              <span class="pdb-key">Account Title</span>
+              <span class="pdb-val">Saad Faisal</span>
+            </div>
+            <div class="pdb-row">
+              <span class="pdb-key">IBAN</span>
+              <span class="pdb-val" style="font-size:11px;">PK76SONE0005820012462353</span>
+              <button class="copy-btn" onclick="copyText('PK76SONE0005820012462353', this)">Copy</button>
+            </div>
+            <div class="pdb-row">
+              <span class="pdb-key">Amount</span>
+              <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="field-error show" id="err-payment" style="display:none!important;margin-bottom:16px;">Please select a payment method</div>
+
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="goStep(1)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+        <button class="btn-primary" onclick="goStep3()">
+          I've Made the Payment →
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: SCREENSHOT -->
+    <div class="step-panel" id="panel3">
+      <div class="panel-title">Upload payment screenshot</div>
+      <p class="panel-sub">Take a screenshot of your payment confirmation and upload it below. This helps us verify and confirm your seat faster.</p>
+
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('screenshotInput').click()"
+           ondragover="event.preventDefault();this.classList.add('drag')"
+           ondragleave="this.classList.remove('drag')"
+           ondrop="handleDrop(event)">
+        <div class="upload-icon">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="26" rx="4" stroke="#6b7280" stroke-width="1.5"/><path d="M14 20l4-4 4 4M18 16v10" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 28l6-6 4 4 4-5 6 7" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>
+        </div>
+        <div class="upload-text"><strong>Click to upload</strong> or drag and drop</div>
+        <div class="upload-hint">PNG, JPG, JPEG · Max 10MB</div>
+
+        <div class="upload-preview" id="uploadPreview">
+          <img id="previewImg" src="" alt="Payment screenshot">
+          <div class="upload-preview-bar">
+            <span id="previewName"></span>
+            <button class="upload-remove" onclick="removeFile(event)">Remove</button>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="screenshotInput" accept="image/*" onchange="handleFile(this.files[0])">
+      <div class="field-error" id="err-screenshot" style="margin-bottom:16px;">Please upload your payment screenshot</div>
+
+      <div class="btn-row" style="margin-top:20px;">
+        <button class="btn-secondary" onclick="goStep(2)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+        <button class="btn-primary" onclick="goStep4()">
+          Review & Submit →
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4: CONFIRM -->
+    <div class="step-panel" id="panel4">
+      <div class="panel-title">Review your enrollment</div>
+      <p class="panel-sub">Everything look right? Hit submit and we'll confirm your seat on WhatsApp.</p>
+
+      <div class="summary-box">
+        <div class="summary-title">Enrollment Summary</div>
+        <div class="summary-row"><span class="summary-key">Name</span><span class="summary-val" id="sum-name">—</span></div>
+        <div class="summary-row"><span class="summary-key">WhatsApp</span><span class="summary-val" id="sum-phone">—</span></div>
+        <div class="summary-row"><span class="summary-key">Email</span><span class="summary-val" id="sum-email">—</span></div>
+        <div class="summary-row"><span class="summary-key">City</span><span class="summary-val" id="sum-city">—</span></div>
+        <div class="summary-row"><span class="summary-key">Payment Method</span><span class="summary-val" id="sum-payment">—</span></div>
+        <div class="summary-row"><span class="summary-key">Amount Paid</span><span class="summary-val" style="color:var(--g1)">PKR 3,000 (Seat Reservation)</span></div>
+        <div class="summary-row"><span class="summary-key">Remaining Fee</span><span class="summary-val">PKR 11,999 (due before Cohort starts)</span></div>
+        <div class="summary-row"><span class="summary-key">Screenshot</span><span class="summary-val" id="sum-screenshot">—</span></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="goStep(3)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+        <button class="btn-primary" id="submitBtn" onclick="submitEnrollment()">
+          <span id="submitBtnText">Confirm Enrollment</span>
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-panel" id="successPanel">
+      <div class="success-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><polyline points="8,20 16,28 32,12" stroke="var(--g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="success-title">You're registered! 🎉</div>
+      <p class="success-sub">
+        Your enrollment has been submitted. Saad or Wahab will confirm your seat on WhatsApp within 24 hours.<br><br>
+        <strong>Remaining fee: PKR 11,999</strong> — due before the cohort starts on May 12.
+      </p>
+      <a class="success-whatsapp" href="https://wa.me/923098802364?text=Hi!%20I%20just%20submitted%20my%20enrollment%20for%20Cohort%203.%20Please%20confirm%20my%20seat%20%F0%9F%99%8F" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.115 1.524 5.843L.057 23.5l5.81-1.524A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.214-3.727.977.994-3.634-.234-.373A9.818 9.818 0 0112 2.182c5.424 0 9.818 4.394 9.818 9.818 0 5.425-4.394 9.818-9.818 9.818z"/></svg>
+        Message us on WhatsApp
+      </a>
+    </div>
+
+  </div><!-- /form-card -->
+
+  <p class="footer-note">
+    Questions? WhatsApp us at <a href="https://wa.me/923098802364">+92 309 8802364</a> ·
+    <a href="index.html">Back to Academy</a>
+  </p>
+
+</div><!-- /main -->
+
+<script>
+  /* ── STATE ── */
+  var state = {
+    name: '', phone: '', email: '', city: '',
+    payment: '', screenshotFile: null, screenshotBase64: ''
+  };
+  var currentStep = 1;
+
+  /* ── STEP NAVIGATION ── */
+  function goStep(n) {
+    document.getElementById('panel' + currentStep).classList.remove('active');
+    document.getElementById('s' + currentStep).classList.remove('active');
+
+    // Mark previous steps as done
+    for (var i = 1; i < n; i++) {
+      var s = document.getElementById('s' + i);
+      s.classList.remove('active');
+      s.classList.add('done');
+      s.querySelector('.step-circle').innerHTML =
+        '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+
+    currentStep = n;
+    document.getElementById('panel' + n).classList.add('active');
+    document.getElementById('s' + n).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* ── STEP 1 VALIDATION ── */
+  function goStep2() {
+    var name  = document.getElementById('e-name').value.trim();
+    var phone = document.getElementById('e-phone').value.trim();
+    var email = document.getElementById('e-email').value.trim();
+    var city  = document.getElementById('e-city').value;
+    var ok = true;
+
+    toggle('err-name',  !name);  if (!name)  ok = false;
+    toggle('err-phone', !phone); if (!phone) ok = false;
+    toggle('err-email', !email || !email.includes('@')); if (!email || !email.includes('@')) ok = false;
+    toggle('err-city',  !city);  if (!city)  ok = false;
+
+    if (!ok) return;
+    state.name = name; state.phone = phone; state.email = email; state.city = city;
+    goStep(2);
+  }
+
+  /* ── STEP 2 ── */
+  var selectedPaymentEl = null;
+
+  function selectPayment(el, method) {
+    document.querySelectorAll('.payment-option').forEach(function(o) { o.classList.remove('selected'); });
+    el.classList.add('selected');
+    state.payment = method;
+    selectedPaymentEl = el;
+
+    var box = document.getElementById('payDetailsBox');
+    box.classList.add('show');
+    document.getElementById('jazzcashDetails').style.display = method === 'jazzcash' ? 'block' : 'none';
+    document.getElementById('bankDetails').style.display     = method === 'bank'     ? 'block' : 'none';
+    document.getElementById('err-payment').style.display = 'none';
+  }
+
+  function goStep3() {
+    if (!state.payment) {
+      document.getElementById('err-payment').style.removeProperty('display');
+      return;
+    }
+    goStep(3);
+  }
+
+  /* ── STEP 3: FILE UPLOAD ── */
+  function handleFile(file) {
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) { alert('File too large. Max 10MB.'); return; }
+    state.screenshotFile = file;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      state.screenshotBase64 = e.target.result;
+      document.getElementById('previewImg').src = e.target.result;
+      document.getElementById('previewName').textContent = file.name;
+      document.getElementById('uploadPreview').style.display = 'block';
+      document.getElementById('uploadArea').classList.add('has-file');
+      document.getElementById('err-screenshot').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    document.getElementById('uploadArea').classList.remove('drag');
+    var file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) handleFile(file);
+  }
+
+  function removeFile(e) {
+    e.stopPropagation();
+    state.screenshotFile = null; state.screenshotBase64 = '';
+    document.getElementById('screenshotInput').value = '';
+    document.getElementById('uploadPreview').style.display = 'none';
+    document.getElementById('uploadArea').classList.remove('has-file');
+  }
+
+  function goStep4() {
+    if (!state.screenshotFile) {
+      document.getElementById('err-screenshot').style.display = 'block';
+      return;
+    }
+    // Populate summary
+    document.getElementById('sum-name').textContent     = state.name;
+    document.getElementById('sum-phone').textContent    = state.phone;
+    document.getElementById('sum-email').textContent    = state.email;
+    document.getElementById('sum-city').textContent     = state.city;
+    document.getElementById('sum-payment').textContent  = state.payment === 'jazzcash' ? 'JazzCash / EasyPaisa / UPaisa' : 'Bank Transfer (Soneri Bank)';
+    document.getElementById('sum-screenshot').textContent = state.screenshotFile.name;
+    goStep(4);
+  }
+
+  /* ── SUBMIT ── */
+  function submitEnrollment() {
+    var btn  = document.getElementById('submitBtn');
+    var txt  = document.getElementById('submitBtnText');
+    btn.disabled = true;
+    txt.textContent = 'Submitting...';
+
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwPKuJlo5_uF_M__tvl1ZR3OSrgAGGqvRKkBhhlf4BEuX3SevAdqOE6ZxaxdNVmND0/exec';
+
+    var payload = {
+      name:          state.name,
+      phone:         state.phone,
+      email:         state.email,
+      city:          state.city,
+      payment:       state.payment === 'jazzcash' ? 'JazzCash/EasyPaisa/UPaisa' : 'Bank Transfer',
+      amountPaid:    'PKR 3,000',
+      remainingFee:  'PKR 11,999',
+      source:        'Enrollment Page',
+      timestamp:     new Date().toISOString()
+    };
+
+    // 1. Send to Google Sheet
+    fetch(SHEET_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
+
+    // 2. Send WhatsApp notification via wa.me deep link
+    var waMsg = encodeURIComponent(
+      '🎓 *New Enrollment — Sanestix Academy*\n\n' +
+      '👤 *Name:* ' + state.name + '\n' +
+      '📱 *WhatsApp:* ' + state.phone + '\n' +
+      '✉️ *Email:* ' + state.email + '\n' +
+      '🏙️ *City:* ' + state.city + '\n' +
+      '💳 *Payment:* ' + payload.payment + '\n' +
+      '💰 *Amount Paid:* PKR 3,000 (Reservation)\n' +
+      '⏳ *Remaining:* PKR 11,999\n' +
+      '🕐 *Time:* ' + new Date().toLocaleString('en-PK') + '\n\n' +
+      '📎 Payment screenshot attached by student.\n' +
+      '_Please confirm their seat within 24 hours._'
+    );
+
+    // Show success, then open WhatsApp
+    setTimeout(function() {
+      document.getElementById('panel4').classList.remove('active');
+      document.getElementById('s4').classList.remove('active');
+      document.getElementById('s4').classList.add('done');
+      document.getElementById('s4').querySelector('.step-circle').innerHTML =
+        '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      document.getElementById('successPanel').classList.add('show');
+
+      // Auto-open WhatsApp with notification
+      window.open('https://wa.me/923098802364?text=' + waMsg, '_blank');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 1000);
+  }
+
+  /* ── COPY HELPER ── */
+  function copyText(text, btn) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  /* ── FIELD ERROR TOGGLE ── */
+  function toggle(id, show) {
+    var el = document.getElementById(id);
+    if (show) el.classList.add('show');
+    else el.classList.remove('show');
+    var input = el.previousElementSibling;
+    if (input && input.classList.contains('field-input')) {
+      if (show) input.classList.add('error');
+      else input.classList.remove('error');
+    }
+  }
+</script>
+</body>
+</html>
