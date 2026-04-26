@@ -1500,7 +1500,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
       <div>
         <div class="eyebrow">— Cohort 3 · Starts May 12 · 7 Seats Left —</div>
         <h2 class="lead-heading">Your Spot Won't<br><span class="lead-accent">Hold Itself.</span></h2>
-        <p class="lead-sub">Drop your name and number. Saad or Wahab will reach out on WhatsApp within 24 hours — to confirm your seat, walk you through cohort details, and answer any questions before you commit.</p>
+        <p class="lead-sub">Drop your name and number. We will reach out on WhatsApp within 24 hours — to confirm your seat, walk you through cohort details, and answer any questions before you commit.</p>
         <ul class="lead-perks">
           <li>
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--g1)" stroke-width="1.6"/><polyline points="6,10 9,13 14,7" stroke="var(--g1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1552,7 +1552,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
                 <input type="email" id="lc-email" class="lead-input" placeholder="you@example.com" autocomplete="email">
               </div>
             </div>
-            <button class="lead-submit-btn" onclick="window.location.href='enroll.html'">
+            <button class="lead-submit-btn" onclick="goToEnroll()">
               <span id="leadBtnText">Secure My Seat — Cohort 3 →</span>
               <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -1567,7 +1567,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
               <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="var(--g1)" stroke-width="2"/><polyline points="12,20 17,26 28,14" stroke="var(--g1)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h4>You're on the list.</h4>
-            <p>Saad or Wahab will message you on WhatsApp within 24 hours. Check your phone — seats go fast.</p>
+            <p>We will message you on WhatsApp within 24 hours. Check your phone — seats go fast.</p>
           </div>
         </div>
         <p class="lead-slots-note">⚡ <strong>Cohort 3 · May 12</strong> — 7 seats left. Last cohort sold out in 72 hours. <a href="seminar.html" style="color:var(--g1);">Free seminar first →</a></p>
@@ -2020,6 +2020,16 @@ function toggleFaq(btn) {
 }
 
 // Lead form submit
+function goToEnroll() {
+  var name  = document.getElementById('lc-name').value.trim();
+  var phone = document.getElementById('lc-phone').value.trim();
+  var email = document.getElementById('lc-email').value.trim();
+  if (!name)  { document.getElementById('lc-name').focus(); return; }
+  if (!phone) { document.getElementById('lc-phone').focus(); return; }
+  var params = new URLSearchParams({ name: name, phone: phone, email: email });
+  window.location.href = 'enroll.html?' + params.toString();
+}
+
 function handleLeadSubmit() {
   var name  = document.getElementById('lc-name').value.trim();
   var phone = document.getElementById('lc-phone').value.trim();
