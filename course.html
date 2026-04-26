@@ -999,8 +999,8 @@ footer a { color: var(--g1); }
   <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
     <div id="formBody">
-      <h2>Register Your Interest</h2>
-      <p>We'll confirm your spot and cohort details within 24 hours on WhatsApp.</p>
+      <h2>Reserve Your Seat</h2>
+      <p>Takes 30 seconds. We'll confirm your spot and cohort details within 24 hours on WhatsApp.</p>
       <div class="field">
         <label>Full Name</label>
         <input type="text" id="m-name" placeholder="Ahmad Raza" autocomplete="name">
@@ -1009,9 +1009,13 @@ footer a { color: var(--g1); }
         <label>WhatsApp Number</label>
         <input type="tel" id="m-phone" placeholder="+92 300 0000000" autocomplete="tel">
       </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="m-email" placeholder="you@example.com" autocomplete="email">
+      </div>
       <button class="modal-btn" id="submitBtn" onclick="submitForm()">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="2,8 6,12 14,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Confirm My Interest →
+        Secure My Seat — Cohort 3 →
       </button>
       <p class="privacy">
         <svg width="11" height="11" viewBox="0 0 14 14" fill="none"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
@@ -1052,6 +1056,7 @@ function closeOnBg(e) {
 function submitForm() {
   var name  = document.getElementById('m-name').value.trim();
   var phone = document.getElementById('m-phone').value.trim();
+  var email = document.getElementById('m-email').value.trim();
   if (!name)  { document.getElementById('m-name').focus(); return; }
   if (!phone) { document.getElementById('m-phone').focus(); return; }
 
@@ -1059,17 +1064,36 @@ function submitForm() {
   btn.disabled = true;
   btn.innerHTML = 'Saving...';
 
-  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHYXIZ1O_-dnTUvVmKXNDecWZbkb40g3RByXcODEk1hvq0uAqDw0xYeZCRwCI8A0eU/exec';
+  var payload = { name: name, phone: phone, email: email, source: 'Course Page', timestamp: new Date().toISOString() };
 
-  fetch(SHEET_URL, {
-  method: 'POST',
-  headers: { 'Content-Type': 'text/plain' },  // ← key change
-  body: JSON.stringify({ name: name, phone: phone, source: 'Course Page' })
-  })
-  .finally(function() {
+  // 1. Google Sheet
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwPKuJlo5_uF_M__tvl1ZR3OSrgAGGqvRKkBhhlf4BEuX3SevAdqOE6ZxaxdNVmND0/exec';
+  fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+
+  // 2. HubSpot
+  var HS_PORTAL = '246014293';
+  var HS_FORM   = '5b76cd83-2f33-426d-afe1-60da1d224f30';
+  if (HS_PORTAL !== 'YOUR_HUBSPOT_PORTAL_ID') {
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORM, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: [
+          { name: 'firstname', value: name },
+          { name: 'phone',     value: phone },
+          { name: 'email',     value: email || 'noemail@placeholder.com' },
+          { name: 'website',   value: 'Course Page' }
+        ],
+        context: { pageUri: window.location.href, pageName: document.title }
+      })
+    });
+  }
+
+  // Show success regardless
+  setTimeout(function() {
     document.getElementById('formBody').style.display = 'none';
     document.getElementById('successState').style.display = 'block';
-  });
+  }, 800);
 }
 </script>
 </body>
