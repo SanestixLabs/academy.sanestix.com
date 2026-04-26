@@ -639,7 +639,7 @@
   var currentStep = 1;
 
   /* ── N8N WEBHOOK ── replace with your actual n8n webhook URL ── */
-  var N8N_WEBHOOK = 'https://YOUR_N8N_INSTANCE/webhook/enrollment';
+  var N8N_WEBHOOK = 'https://n8n.sanestix.cloud/webhook/sanestix-enrollment';
 
   /* ── PRE-FILL FROM URL PARAMS ── */
   window.addEventListener('DOMContentLoaded', function() {
@@ -790,53 +790,36 @@
     var paymentLabel = state.payment === 'jazzcash' ? 'JazzCash/EasyPaisa/UPaisa' : 'Bank Transfer';
 
     var payload = {
-      name:         state.name,
-      phone:        state.phone,
-      email:        state.email,
-      city:         state.city,
-      payment:      paymentLabel,
-      amountPaid:   'PKR 3,000',
-      remainingFee: 'PKR 11,999',
-      screenshot:   state.screenshotBase64,
-      source:       'Enrollment Page',
-      timestamp:    new Date().toISOString()
+      name:      state.name,
+      phone:     state.phone,
+      email:     state.email,
+      city:      state.city,
+      payment:   paymentLabel,
+      amount:    'PKR 3,000',
+      remaining: 'PKR 11,999',
+      screenshot: state.screenshotBase64,
+      source:    'Enrollment Form',
+      timestamp: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' })
     };
 
-    // 1. Google Sheet (existing)
-    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwPKuJlo5_uF_M__tvl1ZR3OSrgAGGqvRKkBhhlf4BEuX3SevAdqOE6ZxaxdNVmND0/exec';
-    fetch(SHEET_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(payload)
-    });
-
-    // 2. n8n webhook → sends WhatsApp to owner automatically
+    // Send to n8n — which handles WhatsApp alert + Google Sheets + Drive
     fetch(N8N_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name:      state.name,
-        phone:     state.phone,
-        email:     state.email,
-        city:      state.city,
-        payment:   paymentLabel,
-        amount:    'PKR 3,000',
-        remaining: 'PKR 11,999',
-        screenshot: state.screenshotBase64,
-        timestamp: new Date().toLocaleString('en-PK')
-      })
-    }).catch(function() { /* webhook failure silently ignored */ });
+      body: JSON.stringify(payload)
+    })
+    .catch(function() { /* silent fail — student still sees success */ })
+    .finally(function() { showSuccess(); });
+  }
 
-    // Show success screen after brief delay
-    setTimeout(function() {
-      document.getElementById('panel4').classList.remove('active');
-      document.getElementById('s4').classList.remove('active');
-      document.getElementById('s4').classList.add('done');
-      document.getElementById('s4').querySelector('.step-circle').innerHTML =
-        '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      document.getElementById('successPanel').classList.add('show');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1000);
+  function showSuccess() {
+    document.getElementById('panel4').classList.remove('active');
+    document.getElementById('s4').classList.remove('active');
+    document.getElementById('s4').classList.add('done');
+    document.getElementById('s4').querySelector('.step-circle').innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    document.getElementById('successPanel').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   /* ── COPY HELPER ── */
