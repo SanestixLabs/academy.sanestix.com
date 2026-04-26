@@ -1545,6 +1545,13 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 6
                 <input type="tel" id="lc-phone" class="lead-input" placeholder="+92 300 0000000" autocomplete="tel">
               </div>
             </div>
+            <div class="lead-field-wrap">
+              <label class="lead-label" for="lc-email">Email Address</label>
+              <div class="lead-input-wrap">
+                <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3a5e41" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <input type="email" id="lc-email" class="lead-input" placeholder="you@example.com" autocomplete="email">
+              </div>
+            </div>
             <button class="lead-submit-btn" onclick="handleLeadSubmit()">
               <span id="leadBtnText">Secure My Seat — Cohort 3 →</span>
               <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -2016,20 +2023,43 @@ function toggleFaq(btn) {
 function handleLeadSubmit() {
   var name  = document.getElementById('lc-name').value.trim();
   var phone = document.getElementById('lc-phone').value.trim();
+  var email = document.getElementById('lc-email').value.trim();
   var btn   = document.querySelector('.lead-submit-btn');
   if (!name)  { document.getElementById('lc-name').focus(); return; }
   if (!phone) { document.getElementById('lc-phone').focus(); return; }
   btn.disabled = true;
   document.getElementById('leadBtnText').textContent = 'Saving...';
+
+  var payload = { name: name, phone: phone, email: email, source: 'Home Page', timestamp: new Date().toISOString() };
+
+  // 1. Google Sheet
   var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyV2jNzRp0b3ZkShxcd-jOpWUg6u2mebCeusjdS-69oFFPUERKcxIaSvXLsb4rVi3Y/exec';
-  fetch(SHEET_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain' },
-    body: JSON.stringify({ name: name, phone: phone, source: 'Home Page' })
-  }).finally(function() {
+  fetch(SHEET_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+
+  // 2. HubSpot — replace YOUR_HUBSPOT_PORTAL_ID and YOUR_HUBSPOT_FORM_GUID below
+  var HS_PORTAL = 'YOUR_HUBSPOT_PORTAL_ID';
+  var HS_FORM   = 'YOUR_HUBSPOT_FORM_GUID';
+  if (HS_PORTAL !== 'YOUR_HUBSPOT_PORTAL_ID') {
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORM, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: [
+          { name: 'firstname', value: name },
+          { name: 'phone',     value: phone },
+          { name: 'email',     value: email || 'noemail@placeholder.com' },
+          { name: 'website',   value: 'Home Page' }
+        ],
+        context: { pageUri: window.location.href, pageName: document.title }
+      })
+    });
+  }
+
+  // Show success regardless
+  setTimeout(function() {
     document.getElementById('leadFormBody').style.display = 'none';
     document.getElementById('leadSuccess').style.display = 'block';
-  });
+  }, 800);
 }
 </script>
 </body>
