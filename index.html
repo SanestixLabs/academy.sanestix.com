@@ -94,21 +94,38 @@ img{display:block;max-width:100%}
 /* ── BUTTONS ── */
 .btn-green{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--g1);color:#030f05;
+  background:linear-gradient(135deg,var(--g1) 0%,#16a34a 100%);
+  color:#030f05;
   font-family:var(--font-head);font-weight:700;font-size:14px;
-  padding:0 22px;border-radius:8px;border:none;cursor:pointer;
-  transition:background .15s,transform .15s,box-shadow .15s;
+  padding:0 24px;border-radius:10px;border:none;cursor:pointer;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
   white-space:nowrap;min-height:48px;
+  box-shadow:0 2px 12px rgba(34,197,94,.25),inset 0 1px 0 rgba(255,255,255,.15);
+  letter-spacing:.01em;
 }
-.btn-green:hover{background:var(--g3);box-shadow:0 4px 20px rgba(34,197,94,.28);transform:translateY(-1px)}
+.btn-green:hover{
+  background:linear-gradient(135deg,#4ade80 0%,var(--g1) 100%);
+  box-shadow:0 6px 24px rgba(34,197,94,.4),inset 0 1px 0 rgba(255,255,255,.2);
+  transform:translateY(-2px);
+}
+.btn-green:active{transform:translateY(0);box-shadow:0 2px 8px rgba(34,197,94,.2)}
 .btn-ghost{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:transparent;color:var(--text);
+  background:rgba(255,255,255,.04);color:var(--text);
   font-family:var(--font-head);font-weight:500;font-size:14px;
-  padding:0 18px;border-radius:8px;border:1px solid var(--border);
-  cursor:pointer;transition:border-color .15s,background .15s;min-height:48px;
+  padding:0 20px;border-radius:10px;
+  border:1px solid var(--border);
+  cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);min-height:48px;
+  backdrop-filter:blur(8px);
 }
-.btn-ghost:hover{border-color:var(--border2);background:rgba(34,197,94,.05)}
+.btn-ghost:hover{
+  border-color:var(--g1);
+  background:rgba(34,197,94,.07);
+  color:var(--g1);
+  transform:translateY(-1px);
+  box-shadow:0 4px 16px rgba(34,197,94,.12);
+}
+.btn-ghost:active{transform:translateY(0)}
 
 /* ── PULSE DOT ── */
 .pulse-dot{
@@ -292,26 +309,60 @@ img{display:block;max-width:100%}
 .form-eyebrow span{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:.08em}
 .form-title{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin:0 0 4px;line-height:1.2}
 .form-sub{color:var(--text3);font-size:12.5px;margin:0 0 16px;line-height:1.55}
-.f-field{margin-bottom:10px}
+.f-field{margin-bottom:12px;position:relative}
+.f-label{display:block;font-size:11.5px;font-weight:600;color:var(--text2);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase}
 .f-input-wrap{position:relative}
-.f-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none}
+.f-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none;transition:stroke .15s}
 .f-input{
-  width:100%;background:var(--bg3);border:1px solid var(--border);
-  border-radius:8px;padding:13px 13px 13px 42px;
+  width:100%;background:var(--bg3);
+  border:1.5px solid var(--border);
+  border-radius:10px;padding:13px 13px 13px 44px;
   color:var(--text);font-size:15px;outline:none;
-  transition:border-color .15s;font-family:inherit;min-height:48px;
+  transition:border-color .2s,box-shadow .2s,background .2s;
+  font-family:inherit;min-height:50px;
+  box-sizing:border-box;
 }
-.f-input::placeholder{color:var(--text3)}
-.f-input:focus{border-color:var(--g1)}
+.f-input::placeholder{color:var(--text3);font-size:14px}
+.f-input:focus{
+  border-color:var(--g1);
+  background:rgba(34,197,94,.03);
+  box-shadow:0 0 0 3px rgba(34,197,94,.12);
+}
+.f-input:focus + .f-icon, .f-input-wrap:focus-within .f-icon{stroke:#22c55e!important}
+/* Valid state */
+.f-input.valid{border-color:#22c55e;background:rgba(34,197,94,.03)}
+/* Error state */
+.f-input.error{border-color:#ef4444;background:rgba(239,68,68,.03);box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.f-error-msg{
+  font-size:11.5px;color:#ef4444;margin-top:5px;
+  display:none;align-items:center;gap:4px;
+}
+.f-error-msg.show{display:flex}
+.f-tick{
+  position:absolute;right:13px;top:50%;transform:translateY(-50%);
+  display:none;pointer-events:none;
+}
+.f-input.valid ~ .f-tick{display:block}
 .f-submit{
   width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--g1);color:#030f05;border:none;border-radius:8px;
+  background:linear-gradient(135deg,var(--g1) 0%,#16a34a 100%);
+  color:#030f05;border:none;border-radius:10px;
   padding:0 16px;font-size:15px;font-weight:700;cursor:pointer;
-  margin-top:6px;transition:background .15s;font-family:var(--font-head);min-height:50px;
+  margin-top:8px;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
+  font-family:var(--font-head);min-height:52px;
+  box-shadow:0 2px 12px rgba(34,197,94,.3),inset 0 1px 0 rgba(255,255,255,.15);
+  letter-spacing:.02em;
 }
-.f-submit:hover{background:var(--g3)}
-.f-privacy{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--text3);font-size:11px;margin:9px 0 0;text-align:center}
-.f-success{display:none;text-align:center;padding:20px 0}
+.f-submit:hover{
+  background:linear-gradient(135deg,#4ade80 0%,var(--g1) 100%);
+  box-shadow:0 6px 24px rgba(34,197,94,.45);
+  transform:translateY(-2px);
+}
+.f-submit:active{transform:translateY(0)}
+.f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.f-privacy{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--text3);font-size:11px;margin:10px 0 0;text-align:center}
+.f-success{display:none;text-align:center;padding:24px 0}
 .f-success svg{margin:0 auto 12px;display:block}
 .f-success h4{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin:0 0 7px}
 .f-success p{font-size:13px;color:var(--text2);line-height:1.6}
@@ -493,20 +544,44 @@ img{display:block;max-width:100%}
 .lead-input-wrap{position:relative}
 .lead-input-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none}
 .lead-input{
-  width:100%;background:var(--bg4);border:1px solid var(--border);
-  border-radius:8px;padding:12px 12px 12px 40px;
+  width:100%;background:var(--bg4);border:1.5px solid var(--border);
+  border-radius:10px;padding:12px 12px 12px 42px;
   color:var(--text);font-size:14px;outline:none;
-  transition:border-color .15s;font-family:inherit;min-height:46px;
+  transition:border-color .2s,box-shadow .2s,background .2s;font-family:inherit;min-height:48px;
+  box-sizing:border-box;
 }
 .lead-input::placeholder{color:var(--text3)}
-.lead-input:focus{border-color:var(--g1)}
+.lead-input:focus{border-color:var(--g1);box-shadow:0 0 0 3px rgba(34,197,94,.12);background:rgba(34,197,94,.02)}
+.lead-input.lc-error{border-color:#ef4444;background:rgba(239,68,68,.03);box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.lead-input.lc-valid{border-color:#22c55e;background:rgba(34,197,94,.03)}
+.lc-err-msg{
+  font-size:11.5px;color:#ef4444;margin-top:5px;
+  display:none;align-items:center;gap:5px;line-height:1.4;
+}
+.lc-err-msg.show{display:flex}
+.lc-err-msg::before{
+  content:'';display:inline-block;flex-shrink:0;
+  width:12px;height:12px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Ccircle cx='8' cy='8' r='7' stroke='%23ef4444' stroke-width='1.4'/%3E%3Cline x1='8' y1='5' x2='8' y2='9' stroke='%23ef4444' stroke-width='1.4' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='11.5' r='.8' fill='%23ef4444'/%3E%3C/svg%3E") no-repeat center/contain;
+}
 .lead-submit-btn{
   width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--g1);color:#030f05;border:none;border-radius:8px;
+  background:linear-gradient(135deg,var(--g1) 0%,#16a34a 100%);
+  color:#030f05;border:none;border-radius:10px;
   padding:0 16px;font-size:15px;font-weight:700;cursor:pointer;
-  margin-top:6px;transition:background .15s;font-family:var(--font-head);min-height:50px;
+  margin-top:8px;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
+  font-family:var(--font-head);min-height:52px;
+  box-shadow:0 2px 12px rgba(34,197,94,.3),inset 0 1px 0 rgba(255,255,255,.15);
+  letter-spacing:.02em;
 }
-.lead-submit-btn:hover{background:var(--g3)}
+.lead-submit-btn:hover{
+  background:linear-gradient(135deg,#4ade80 0%,var(--g1) 100%);
+  box-shadow:0 6px 24px rgba(34,197,94,.45);
+  transform:translateY(-2px);
+}
+.lead-submit-btn:active{transform:translateY(0)}
+.lead-submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .lead-privacy{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--text3);font-size:11px;margin:10px 0 0;text-align:center}
 .lead-slots-note{font-size:12px;color:var(--text3);margin-top:14px;line-height:1.6;text-align:center}
 
@@ -607,15 +682,27 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0 24
   padding:10px 12px;gap:8px;
 }
 .sticky-cta-bar .btn-primary{
-  flex:1;font-family:var(--font-head);font-weight:700;color:#030f05;background:var(--g1);
-  font-size:14px;border-radius:8px;min-height:48px;border:none;cursor:pointer;transition:background .15s;
+  flex:1;font-family:var(--font-head);font-weight:700;color:#030f05;
+  background:linear-gradient(135deg,var(--g1) 0%,#16a34a 100%);
+  font-size:14px;border-radius:10px;min-height:48px;border:none;cursor:pointer;
+  transition:all .2s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 2px 12px rgba(34,197,94,.3);
+  letter-spacing:.01em;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;
+}
+.sticky-cta-bar .btn-primary:hover{
+  background:linear-gradient(135deg,#4ade80 0%,var(--g1) 100%);
+  box-shadow:0 4px 20px rgba(34,197,94,.45);
 }
 .sticky-cta-bar .btn-secondary{
   display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  color:var(--text2);font-family:var(--font-head);font-size:12px;
-  padding:0 12px;border-radius:8px;min-height:48px;white-space:nowrap;cursor:pointer;text-decoration:none;
+  background:rgba(255,255,255,.06);
+  border:1.5px solid var(--border);
+  color:var(--text2);font-family:var(--font-head);font-size:13px;font-weight:500;
+  padding:0 16px;border-radius:10px;min-height:48px;white-space:nowrap;cursor:pointer;
+  text-decoration:none;transition:all .2s;
 }
+.sticky-cta-bar .btn-secondary:hover{border-color:var(--g1);color:var(--g1);background:rgba(34,197,94,.06)}
 
 /* ══ WA FLOAT ══ */
 .wa-float{
@@ -732,16 +819,26 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0 24
           <div class="f-field">
             <div class="f-input-wrap">
               <svg class="f-icon" width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="#3a5e41" stroke-width="1.5"/><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <input type="text" id="h-name" class="f-input" placeholder="Full name" autocomplete="name">
+              <input type="text" id="h-name" class="f-input" placeholder="Full name" autocomplete="name" oninput="validateHeroName()">
+              <svg class="f-tick" width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="rgba(34,197,94,.15)"/><polyline points="6,10 9,13 14,7" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="f-error-msg" id="h-name-err">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ef4444" stroke-width="1.4"/><line x1="8" y1="5" x2="8" y2="9" stroke="#ef4444" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="#ef4444"/></svg>
+              Please enter your full name
             </div>
           </div>
           <div class="f-field">
             <div class="f-input-wrap">
-              <svg class="f-icon" width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M4 2h3.5l1.5 4-2 1.5a11 11 0 004.5 4.5L13 10l4 1.5V15a2 2 0 01-2 2C7.163 17 3 12.837 3 7.5A2 2 0 014 5.5" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <input type="tel" id="h-phone" class="f-input" placeholder="+92 300 0000000" autocomplete="tel">
+              <svg class="f-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" stroke="#3a5e41" stroke-width="1.3" fill="none"/></svg>
+              <input type="tel" id="h-phone" class="f-input" placeholder="WhatsApp Number (e.g. 03001234567)" autocomplete="tel" oninput="validateHeroPhone()">
+              <svg class="f-tick" width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="rgba(34,197,94,.15)"/><polyline points="6,10 9,13 14,7" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="f-error-msg" id="h-phone-err">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#ef4444" stroke-width="1.4"/><line x1="8" y1="5" x2="8" y2="9" stroke="#ef4444" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="#ef4444"/></svg>
+              Enter a valid WhatsApp number (10–13 digits)
             </div>
           </div>
-          <button class="f-submit" onclick="handleHeroFormSubmit()">
+          <button class="f-submit" id="heroSubmitBtn" onclick="handleHeroFormSubmit()">
             <span id="heroBtnText">Secure My Seat — Cohort 3 →</span>
           </button>
           <p class="f-privacy">
@@ -1123,22 +1220,25 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0 24
               <label class="lead-label" for="lc-name">Full Name</label>
               <div class="lead-input-wrap">
                 <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="#3a5e41" stroke-width="1.5"/><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round"/></svg>
-                <input type="text" id="lc-name" class="lead-input" placeholder="Your full name" autocomplete="name">
+                <input type="text" id="lc-name" class="lead-input" placeholder="Your full name" autocomplete="name" oninput="lcClearState('lc-name','lc-name-err')">
               </div>
+              <div class="lc-err-msg" id="lc-name-err"></div>
             </div>
             <div class="lead-field-wrap">
-              <label class="lead-label" for="lc-phone">Phone Number</label>
+              <label class="lead-label" for="lc-phone">WhatsApp Number</label>
               <div class="lead-input-wrap">
                 <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 2h3.5l1.5 4-2 1.5a11 11 0 004.5 4.5L13 10l4 1.5V15a2 2 0 01-2 2C7.163 17 3 12.837 3 7.5A2 2 0 014 5.5" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <input type="tel" id="lc-phone" class="lead-input" placeholder="+92 300 0000000" autocomplete="tel">
+                <input type="tel" id="lc-phone" class="lead-input" placeholder="WhatsApp Number (e.g. 03001234567)" autocomplete="tel" oninput="lcClearState('lc-phone','lc-phone-err')">
               </div>
+              <div class="lc-err-msg" id="lc-phone-err"></div>
             </div>
             <div class="lead-field-wrap">
               <label class="lead-label" for="lc-email">Email Address</label>
               <div class="lead-input-wrap">
                 <svg class="lead-input-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3a5e41" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="#3a5e41" stroke-width="1.5" stroke-linecap="round"/></svg>
-                <input type="email" id="lc-email" class="lead-input" placeholder="you@example.com" autocomplete="email">
+                <input type="email" id="lc-email" class="lead-input" placeholder="you@example.com" autocomplete="email" oninput="lcClearState('lc-email','lc-email-err')">
               </div>
+              <div class="lc-err-msg" id="lc-email-err"></div>
             </div>
             <button class="lead-submit-btn" onclick="goToEnroll()">
               <span id="leadBtnText">Secure My Seat — Cohort 3 →</span>
@@ -1356,9 +1456,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0 24
 
 <!-- ═══════ STICKY CTA BAR (mobile only) ═══════ -->
 <div class="sticky-cta-bar" id="stickyCta">
-  <button class="btn-primary" onclick="document.getElementById('heroVideoWrap').scrollIntoView({behavior:'smooth'})">
-    Reserve Seat — Cohort 3 →
-  </button>
+  <a href="seminar.html" class="btn-primary">Reserve Seat — Cohort 3 →</a>
   <a href="seminar.html" class="btn-secondary">Free Seminar</a>
 </div>
 
@@ -1565,31 +1663,117 @@ function toggleFaq(btn){
   if(!isOpen)item.classList.add('open');
 }
 
-/* ── Mobile form submit ── */
+/* ── Hero form validation ── */
+function validateHeroName(){
+  var input=document.getElementById('h-name');
+  var err=document.getElementById('h-name-err');
+  var val=input.value.trim();
+  var valid=val.length>=2&&/^[a-zA-Z\u0600-\u06FF\s'-]+$/.test(val);
+  input.classList.toggle('valid',valid);
+  input.classList.toggle('error',!valid&&val.length>0);
+  err.classList.toggle('show',!valid&&val.length>0);
+  return valid;
+}
+function validateHeroPhone(){
+  var input=document.getElementById('h-phone');
+  var err=document.getElementById('h-phone-err');
+  var val=input.value.replace(/[\s\-\(\)]/g,'');
+  var valid=/^[\+]?[0-9]{10,13}$/.test(val);
+  input.classList.toggle('valid',valid);
+  input.classList.toggle('error',!valid&&val.length>0);
+  err.classList.toggle('show',!valid&&val.length>0);
+  return valid;
+}
 function handleHeroFormSubmit(){
-  var name=document.getElementById('h-name').value.trim();
-  var phone=document.getElementById('h-phone').value.trim();
-  var btn=document.getElementById('heroBtnText');
-  if(!name){document.getElementById('h-name').focus();return}
-  if(!phone){document.getElementById('h-phone').focus();return}
-  btn.textContent='Saving...';
-  submitLead(name,phone,'','Hero Form');
-  setTimeout(function(){
-    document.getElementById('heroFormBody').style.display='none';
-    document.getElementById('heroSuccess').style.display='block';
-  },800);
+  var nameOk=validateHeroName();
+  var phoneOk=validateHeroPhone();
+  var name=document.getElementById('h-name');
+  var phone=document.getElementById('h-phone');
+  if(!name.value.trim()){name.classList.add('error');document.getElementById('h-name-err').classList.add('show');name.focus();return}
+  if(!nameOk){name.focus();return}
+  if(!phone.value.trim()){phone.classList.add('error');document.getElementById('h-phone-err').classList.add('show');phone.focus();return}
+  if(!phoneOk){phone.focus();return}
+  var btn=document.getElementById('heroSubmitBtn');
+  var btnText=document.getElementById('heroBtnText');
+  btn.disabled=true;
+  btnText.textContent='Redirecting…';
+  submitLead(name.value.trim(),phone.value.trim(),'','Hero Form');
+  var params=new URLSearchParams({name:name.value.trim(),phone:phone.value.trim()});
+  setTimeout(function(){window.location.href='enroll.html?'+params.toString();},600);
 }
 
 
-/* ── Lead capture section ── */
+/* ── Lead capture section — validation + duplicate check ── */
+
+function lcSetError(inputId, errId, msg){
+  var el=document.getElementById(inputId);
+  var err=document.getElementById(errId);
+  el.classList.add('lc-error');
+  el.classList.remove('lc-valid');
+  if(err){err.textContent=msg;err.classList.add('show')}
+  el.focus();
+}
+function lcSetValid(inputId, errId){
+  var el=document.getElementById(inputId);
+  var err=document.getElementById(errId);
+  el.classList.remove('lc-error');
+  el.classList.add('lc-valid');
+  if(err) err.classList.remove('show');
+}
+function lcClearState(inputId, errId){
+  var el=document.getElementById(inputId);
+  var err=document.getElementById(errId);
+  el.classList.remove('lc-error','lc-valid');
+  if(err) err.classList.remove('show');
+}
+
 function goToEnroll(){
-  var name=document.getElementById('lc-name').value.trim();
-  var phone=document.getElementById('lc-phone').value.trim();
-  var email=document.getElementById('lc-email').value.trim();
-  if(!name){document.getElementById('lc-name').focus();return}
-  if(!phone){document.getElementById('lc-phone').focus();return}
+  var nameEl=document.getElementById('lc-name');
+  var phoneEl=document.getElementById('lc-phone');
+  var emailEl=document.getElementById('lc-email');
+  var name=nameEl.value.trim();
+  var phone=phoneEl.value.trim();
+  var email=emailEl.value.trim();
+  var ok=true;
+
+  // Name
+  if(!name||name.length<2){lcSetError('lc-name','lc-name-err','Please enter your full name');ok=false}
+  else lcSetValid('lc-name','lc-name-err');
+
+  // Phone
+  var rawPhone=phone.replace(/[\s\-\(\)\+]/g,'');
+  if(!rawPhone||!/^\d{10,13}$/.test(rawPhone)){lcSetError('lc-phone','lc-phone-err','Enter a valid phone number (10–13 digits)');ok=false}
+  else lcSetValid('lc-phone','lc-phone-err');
+
+  // Email — format check
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){lcSetError('lc-email','lc-email-err','Enter a valid email address');ok=false}
+  else{
+    // Duplicate check via localStorage
+    try{
+      var submitted=JSON.parse(localStorage.getItem('sanestix_leads')||'[]');
+      var emailLower=email.toLowerCase();
+      var dupEmail=submitted.some(function(e){return e.email&&e.email.toLowerCase()===emailLower});
+      var dupPhone=submitted.some(function(e){return e.phone&&e.phone.replace(/\D/g,'')===rawPhone});
+      if(dupEmail){lcSetError('lc-email','lc-email-err','This email is already registered. Check WhatsApp for confirmation.');ok=false}
+      else if(dupPhone){lcSetError('lc-phone','lc-phone-err','This number is already registered. Check WhatsApp for confirmation.');ok=false}
+      else lcSetValid('lc-email','lc-email-err');
+    }catch(ex){lcSetValid('lc-email','lc-email-err')}
+  }
+
+  if(!ok) return;
+
+  // Save to localStorage
+  try{
+    var leads=JSON.parse(localStorage.getItem('sanestix_leads')||'[]');
+    leads.push({email:email.toLowerCase(),phone:rawPhone,ts:Date.now()});
+    localStorage.setItem('sanestix_leads',JSON.stringify(leads));
+  }catch(ex){}
+
+  var btn=document.getElementById('leadBtnText');
+  if(btn){btn.textContent='Redirecting…';}
+  submitLead(name,phone,email,'Lead Capture');
   var params=new URLSearchParams({name:name,phone:phone,email:email});
-  window.location.href='enroll.html?'+params.toString();
+  setTimeout(function(){window.location.href='enroll.html?'+params.toString();},600);
 }
 
 /* ── Lead submission ── */
