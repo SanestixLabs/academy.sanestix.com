@@ -699,7 +699,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- MAIN -->
 <div class="main">
 
-  <div class="page-eyebrow">Cohort 3 · Starts May 12</div>
+  <div class="page-eyebrow">Cohort 3 · Starts June 19</div>
   <h1 class="page-title">Secure Your <span>Seat</span></h1>
   <p class="page-sub">Reserve your spot with PKR 3,000. Our team will confirm your enrollment on WhatsApp within 24 hours.</p>
 
@@ -711,6 +711,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span style="color:var(--g1);">PKR 15,000</span>
     </div>
     <div style="font-size:12px;color:var(--text2);margin-top:4px;">PKR 3,000 exclusive discount for seminar attendees · Remaining fee: PKR 12,000</div>
+  </div>
+
+  <!-- COUPON DISCOUNT BANNER (shown only when coupon EID26 is applied) -->
+  <div id="couponDiscountBanner" style="display:none; background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(34,197,94,0.08)); border:1.5px solid rgba(34,197,94,0.5); border-radius:14px; padding:16px 20px; margin-bottom:20px; text-align:center; position:relative; overflow:hidden;">
+    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);font-weight:700;margin-bottom:6px;">🎉 Special Eid Coupon Applied</div>
+    <div style="font-size:24px;font-family:var(--font-head);font-weight:800;color:var(--text);">
+      <span style="text-decoration:line-through;color:var(--text3);font-size:16px;margin-right:8px;">PKR 18,000</span>
+      <span style="color:var(--g1);">PKR 9,000</span>
+    </div>
+    <div style="font-size:13px;color:var(--text2);margin-top:4px;">50% exclusive discount (Coupon: <strong>EID26</strong>) · Remaining fee: PKR 6,000</div>
   </div>
 
   <!-- PROGRESS -->
@@ -779,6 +789,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label class="field-label" for="e-email">Email Address</label>
         <input type="email" id="e-email" class="field-input" placeholder="ahmad@email.com" autocomplete="email">
         <div class="field-error" id="err-email">Please enter a valid email address</div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="e-coupon">Coupon Code</label>
+        <div style="display:flex; gap:8px; align-items: stretch;">
+          <input type="text" id="e-coupon" class="field-input" placeholder="E.g. EID26" style="text-transform:uppercase;">
+          <button type="button" class="btn-secondary" onclick="applyCoupon()" style="white-space:nowrap; padding:0 20px; font-weight:600; min-height:48px;">Apply</button>
+        </div>
+        <div id="coupon-message" style="font-size:12px; margin-top:6px; display:none;"></div>
       </div>
 
       <button class="btn-primary" onclick="goStep2()">
@@ -924,6 +943,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="summary-row"><span class="summary-key">City</span><span class="summary-val" id="sum-city">—</span></div>
         <div class="summary-row"><span class="summary-key">Payment Method</span><span class="summary-val" id="sum-payment">—</span></div>
         <div class="summary-row"><span class="summary-key">Amount Paid</span><span class="summary-val" style="color:var(--g1)">PKR 3,000 (Seat Reservation)</span></div>
+        <div class="summary-row" id="sum-discount-row" style="display:none;"><span class="summary-key">Discount Applied</span><span class="summary-val" id="sum-discount" style="color:#ffab40">—</span></div>
+        <div class="summary-row" id="sum-total-row"><span class="summary-key">Total Course Fee</span><span class="summary-val" id="sum-total-fee">PKR 18,000</span></div>
         <div class="summary-row"><span class="summary-key">Remaining Fee</span><span class="summary-val" id="sum-remaining-fee">PKR 15,000 (due before Cohort starts)</span></div>
         <div class="summary-row"><span class="summary-key">Screenshot</span><span class="summary-val" id="sum-screenshot">—</span></div>
       </div>
@@ -1024,7 +1045,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="vtl-icon pending">🎓</div>
           <div class="vtl-body">
             <div class="vtl-label pending-label">Seat reserved</div>
-            <div class="vtl-desc">Access to cohort resources unlocked before May 12.</div>
+            <div class="vtl-desc">Access to cohort resources unlocked before June 19.</div>
           </div>
         </div>
       </div>
@@ -1034,7 +1055,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="verif-eta-icon">⏱</div>
         <div class="verif-eta-text">
           <strong>Expected confirmation: within 24 hours</strong><br>
-          Remaining fee of <strong id="success-remaining-fee">PKR 15,000</strong> is due before the cohort starts on May 12.
+          Remaining fee of <strong id="success-remaining-fee">PKR 15,000</strong> is due before the cohort starts on June 19.
         </div>
       </div>
 
@@ -1070,11 +1091,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* ── N8N WEBHOOK ── */
   var N8N_WEBHOOK = 'https://n8n.sanestix.cloud/webhook/sanestix-enrollment';
 
-  /* ── SEMINAR DISCOUNT LOGIC ── */
+  /* ── DISCOUNT & COUPON LOGIC ── */
   var FULL_PRICE     = 18000;
   var SEMINAR_DISCOUNT = 3000;
   var SEAT_DEPOSIT   = 3000;
   var isSeminarAttendee = false;
+  var couponApplied = false;
+  var couponDiscount = 0;
 
   function detectSeminarSource() {
     var params = new URLSearchParams(window.location.search);
@@ -1083,15 +1106,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return ref === 'seminar' || source === 'seminar';
   }
 
-  function applyDiscountUI() {
-    /* Banner */
-    document.getElementById('seminarDiscountBanner').style.display = 'block';
-    /* Summary row — update remaining fee dynamically */
+  function updatePrices() {
+    var totalFee = FULL_PRICE;
+    var discountText = 'none';
+    var discountAmount = 0;
+
+    if (couponApplied) {
+      discountAmount = couponDiscount;
+      totalFee = FULL_PRICE - discountAmount;
+      discountText = '50% discount (EID26 coupon applied)';
+      document.getElementById('seminarDiscountBanner').style.display = 'none';
+      document.getElementById('couponDiscountBanner').style.display = 'block';
+    } else if (isSeminarAttendee) {
+      discountAmount = SEMINAR_DISCOUNT;
+      totalFee = FULL_PRICE - discountAmount;
+      discountText = 'PKR 3,000 seminar attendee discount';
+      document.getElementById('seminarDiscountBanner').style.display = 'block';
+      document.getElementById('couponDiscountBanner').style.display = 'none';
+    } else {
+      document.getElementById('seminarDiscountBanner').style.display = 'none';
+      document.getElementById('couponDiscountBanner').style.display = 'none';
+    }
+
+    var remainingFee = totalFee - SEAT_DEPOSIT;
+
+    /* Update Step 4 Summary Box */
     var remainingEl = document.getElementById('sum-remaining-fee');
-    if (remainingEl) remainingEl.textContent = 'PKR 12,000 (due before Cohort starts)';
-    /* Success message remaining fee */
+    if (remainingEl) remainingEl.textContent = 'PKR ' + remainingFee.toLocaleString() + ' (due before Cohort starts)';
+
+    /* Update Success Screen Remaining Fee */
     var successRem = document.getElementById('success-remaining-fee');
-    if (successRem) successRem.textContent = 'PKR 12,000';
+    if (successRem) successRem.textContent = 'PKR ' + remainingFee.toLocaleString();
+
+    /* Update Step 4 Summary Rows */
+    var discountRow = document.getElementById('sum-discount-row');
+    var discountVal = document.getElementById('sum-discount');
+    var totalFeeVal = document.getElementById('sum-total-fee');
+
+    if (couponApplied || isSeminarAttendee) {
+      if (discountRow) discountRow.style.display = 'flex';
+      if (discountVal) discountVal.textContent = couponApplied ? '50% Off (EID26)' : 'PKR 3,000 Off (Seminar)';
+    } else {
+      if (discountRow) discountRow.style.display = 'none';
+    }
+
+    if (totalFeeVal) totalFeeVal.textContent = 'PKR ' + totalFee.toLocaleString();
+
+    // Save state
+    state.calculatedTotalFee = 'PKR ' + totalFee.toLocaleString() + (couponApplied ? ' (EID26 applied)' : isSeminarAttendee ? ' (seminar discount applied)' : '');
+    state.calculatedRemaining = 'PKR ' + remainingFee.toLocaleString();
+    state.calculatedDiscount = discountText;
+  }
+
+  function applyCoupon() {
+    var code = document.getElementById('e-coupon').value.trim().toUpperCase();
+    var msg = document.getElementById('coupon-message');
+    if (!code) {
+      msg.style.display = 'block';
+      msg.style.color = 'var(--red)';
+      msg.textContent = 'Please enter a coupon code.';
+      return;
+    }
+
+    if (code === 'EID26') {
+      couponApplied = true;
+      couponDiscount = FULL_PRICE * 0.5;
+      msg.style.display = 'block';
+      msg.style.color = 'var(--g1)';
+      msg.textContent = 'Coupon applied! 50% discount has been successfully activated. 🎉';
+    } else {
+      couponApplied = false;
+      couponDiscount = 0;
+      msg.style.display = 'block';
+      msg.style.color = 'var(--red)';
+      msg.textContent = 'Invalid coupon code. Please try again.';
+    }
+    updatePrices();
   }
 
   /* ── PRE-FILL FROM URL PARAMS ── */
@@ -1106,9 +1196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     /* Seminar discount detection */
     isSeminarAttendee = detectSeminarSource();
-    if (isSeminarAttendee) {
-      applyDiscountUI();
-    }
+    updatePrices();
   });
 
   /* ── OTHER CITY TOGGLE ── */
@@ -1277,11 +1365,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       city:      state.city,
       payment:   paymentLabel,
       amount:    'PKR 3,000',
-      remaining: isSeminarAttendee ? 'PKR 12,000' : 'PKR 15,000',
-      totalFee:  isSeminarAttendee ? 'PKR 15,000 (seminar discount applied)' : 'PKR 18,000',
-      discount:  isSeminarAttendee ? 'PKR 3,000 seminar attendee discount' : 'none',
+      remaining: state.calculatedRemaining || (isSeminarAttendee ? 'PKR 12,000' : 'PKR 15,000'),
+      totalFee:  state.calculatedTotalFee || (isSeminarAttendee ? 'PKR 15,000 (seminar discount applied)' : 'PKR 18,000'),
+      discount:  state.calculatedDiscount || (isSeminarAttendee ? 'PKR 3,000 seminar attendee discount' : 'none'),
       screenshot: state.screenshotBase64 || '',
-      source:    isSeminarAttendee ? 'Seminar Attendee' : 'Enrollment Form',
+      source:    couponApplied ? 'Coupon EID26' : (isSeminarAttendee ? 'Seminar Attendee' : 'Enrollment Form'),
       timestamp: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' })
     };
 
