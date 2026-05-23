@@ -1,1552 +1,2429 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9VDV9BF');</script>
-<!-- End Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P9VDV9BF');</script>
+  <!-- End Google Tag Manager -->
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1153351476932242');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1153351476932242&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enroll — Sanestix Academy</title>
-<meta name="description" content="Secure your seat in Sanestix Academy's Agentic AI Mastery program. PKR 3,000 seat reservation.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1153351476932242');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1153351476932242&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enroll — Sanestix Academy</title>
+  <meta name="description"
+    content="Secure your seat in Sanestix Academy's Agentic AI Mastery program. PKR 3,000 seat reservation.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
 
-<style>
-  :root {
-    --bg:      #0a0f0b;
-    --bg2:     #0f1510;
-    --bg3:     #131a14;
-    --bg4:     #1a241b;
-    --border:  rgba(34,197,94,0.12);
-    --border2: rgba(34,197,94,0.22);
-    --g1:      #22c55e;
-    --g2:      #16a34a;
-    --g3:      #4ade80;
-    --text:    #f0fdf4;
-    --text2:   #d1fae5;
-    --text3:   #6b7280;
-    --text4:   #9ca3af;
-    --red:     #ef4444;
-    --font-head: 'Clash Display', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --radius:  14px;
-  }
+  <style>
+    :root {
+      --bg: #0a0f0b;
+      --bg2: #0f1510;
+      --bg3: #131a14;
+      --bg4: #1a241b;
+      --border: rgba(34, 197, 94, 0.12);
+      --border2: rgba(34, 197, 94, 0.22);
+      --g1: #22c55e;
+      --g2: #16a34a;
+      --g3: #4ade80;
+      --text: #f0fdf4;
+      --text2: #d1fae5;
+      --text3: #6b7280;
+      --text4: #9ca3af;
+      --red: #ef4444;
+      --font-head: 'Clash Display', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 14px;
+    }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-  /* ── BACKGROUND GLOW ── */
-  .bg-glow {
-    position: fixed; inset: 0; pointer-events: none; z-index: 0;
-    background:
-      radial-gradient(ellipse 60% 40% at 20% 10%, rgba(34,197,94,0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(22,163,74,0.05) 0%, transparent 60%);
-  }
+    /* ── BACKGROUND GLOW ── */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 10%, rgba(34, 197, 94, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(22, 163, 74, 0.05) 0%, transparent 60%);
+    }
 
-  /* ── NAV ── */
-  nav {
-    position: relative; z-index: 10;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 32px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(10,15,11,0.8);
-    backdrop-filter: blur(12px);
-  }
-  .nav-logo {
-    font-family: var(--font-head); font-size: 18px; font-weight: 700;
-    color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px;
-  }
-  .nav-logo span { color: var(--g1); }
-  .nav-back {
-    font-size: 13px; color: var(--text3); text-decoration: none;
-    display: flex; align-items: center; gap: 6px; transition: color .2s;
-  }
-  .nav-back:hover { color: var(--g1); }
+    /* ── NAV ── */
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 15, 11, 0.8);
+      backdrop-filter: blur(12px);
+    }
 
-  /* ── MAIN WRAPPER ── */
-  .main {
-    position: relative; z-index: 1;
-    max-width: 680px; margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-
-  /* ── PAGE HEADER ── */
-  .page-eyebrow {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
-    color: var(--g1); text-transform: uppercase; margin-bottom: 14px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .page-eyebrow::before {
-    content: ''; display: block; width: 24px; height: 1px; background: var(--g1);
-  }
-  .page-title {
-    font-family: var(--font-head); font-size: clamp(30px, 5vw, 44px);
-    font-weight: 700; line-height: 1.1; margin-bottom: 12px;
-  }
-  .page-title span { color: var(--g1); }
-  .page-sub {
-    font-size: 15px; color: var(--text3); line-height: 1.7; margin-bottom: 40px;
-  }
-
-  /* ── PROGRESS STEPS ── */
-  .steps {
-    display: flex; align-items: center; gap: 0; margin-bottom: 40px;
-  }
-  .step {
-    display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;
-    position: relative;
-  }
-  .step:not(:last-child)::after {
-    content: ''; position: absolute; top: 16px; left: calc(50% + 16px);
-    width: calc(100% - 32px); height: 1px;
-    background: var(--border2); transition: background .4s;
-  }
-  .step.done:not(:last-child)::after { background: var(--g1); }
-  .step-circle {
-    width: 32px; height: 32px; border-radius: 50%;
-    border: 1.5px solid var(--border2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 600; color: var(--text3);
-    background: var(--bg2); transition: all .3s; position: relative; z-index: 1;
-  }
-  .step.active .step-circle {
-    border-color: var(--g1); color: var(--g1);
-    box-shadow: 0 0 0 4px rgba(34,197,94,0.1);
-  }
-  .step.done .step-circle {
-    background: var(--g1); border-color: var(--g1); color: #000;
-  }
-  .step-label {
-    font-size: 10px; color: var(--text3); letter-spacing: 0.08em;
-    text-transform: uppercase; white-space: nowrap;
-  }
-  .step.active .step-label { color: var(--g1); }
-  .step.done .step-label { color: var(--text4); }
-
-  /* ── FORM CARD ── */
-  .form-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .form-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--g1), transparent);
-    opacity: 0.6;
-  }
-
-  .step-panel { display: none; }
-  .step-panel.active { display: block; animation: fadeIn .3s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-  .panel-title {
-    font-family: var(--font-head); font-size: 20px; font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .panel-sub { font-size: 13.5px; color: var(--text3); margin-bottom: 28px; line-height: 1.6; }
-
-  /* ── FORM FIELDS ── */
-  .field-group { margin-bottom: 20px; }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .field-label {
-    display: block; font-size: 11px; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text4); margin-bottom: 8px;
-  }
-  .field-input {
-    width: 100%; background: var(--bg3);
-    border: 1px solid var(--border2);
-    border-radius: 10px; padding: 13px 16px;
-    color: var(--text); font-family: var(--font-body); font-size: 14px;
-    outline: none; transition: border-color .2s, box-shadow .2s;
-  }
-  .field-input::placeholder { color: var(--text3); }
-  .field-input:focus {
-    border-color: var(--g1);
-    box-shadow: 0 0 0 3px rgba(34,197,94,0.1);
-  }
-  .field-input.error { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
-  .field-error { font-size: 12px; color: var(--red); margin-top: 5px; display: none; }
-  .field-error.show { display: block; }
-
-  /* Country code selector — enroll phone */
-  .e-phone-row{display:flex;gap:8px;align-items:stretch}
-  .e-cc-wrap{position:relative;flex-shrink:0}
-  .e-cc-btn{
-    display:flex;align-items:center;gap:5px;
-    background:var(--bg2);border:1.5px solid var(--border);
-    border-radius:10px;padding:0 11px;height:100%;
-    color:var(--text);font-size:13px;font-weight:600;font-family:inherit;
-    cursor:pointer;white-space:nowrap;min-width:72px;
-    transition:border-color 0.2s;
-  }
-  .e-cc-btn:hover,.e-cc-btn:focus{border-color:var(--green);outline:none}
-  .e-cc-arrow{font-size:9px;color:var(--text3);margin-left:2px}
-  .e-cc-dropdown{
-    display:none;flex-direction:column;
-    position:absolute;top:calc(100% + 6px);left:0;
-    background:var(--bg2);border:1.5px solid var(--border);
-    border-radius:10px;z-index:999;min-width:220px;overflow:hidden;
-    box-shadow:0 8px 24px rgba(0,0,0,0.3);
-  }
-  .e-cc-dropdown.open{display:flex}
-  .e-cc-search{
-    background:transparent;border:none;border-bottom:1px solid var(--border);
-    padding:9px 12px;color:var(--text);font-size:13px;font-family:inherit;outline:none;
-  }
-  .e-cc-search::placeholder{color:var(--text3)}
-  .e-cc-list{max-height:200px;overflow-y:auto;overscroll-behavior:contain}
-  .e-cc-list::-webkit-scrollbar{width:4px}
-  .e-cc-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
-  .e-cc-item{
-    display:flex;align-items:center;gap:8px;padding:9px 12px;
-    cursor:pointer;font-size:13px;color:var(--text2);transition:background 0.15s;
-  }
-  .e-cc-item:hover{background:var(--bg3);color:var(--text)}
-  .e-cc-item.selected{background:rgba(34,197,94,.08);color:var(--green)}
-  .e-cc-item-flag{font-size:15px;width:20px;text-align:center;flex-shrink:0}
-  .e-cc-item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .e-cc-item-code{font-weight:600;color:var(--text3);font-size:12px;flex-shrink:0}
-
-  select.field-input {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-  }
-
-  /* ── PAYMENT OPTIONS ── */
-  .payment-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-  .payment-option {
-    border: 1.5px solid var(--border2);
-    border-radius: 12px; padding: 18px 20px;
-    cursor: pointer; transition: all .2s;
-    display: flex; align-items: flex-start; gap: 14px;
-    background: var(--bg3);
-    position: relative;
-  }
-  .payment-option:hover { border-color: var(--g1); background: var(--bg4); }
-  .payment-option.selected {
-    border-color: var(--g1); background: var(--bg4);
-    box-shadow: 0 0 0 3px rgba(34,197,94,0.08);
-  }
-  .payment-option input[type="radio"] { display: none; }
-  .payment-radio {
-    width: 20px; height: 20px; border-radius: 50%;
-    border: 1.5px solid var(--border2);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 2px; transition: all .2s;
-  }
-  .payment-option.selected .payment-radio {
-    border-color: var(--g1);
-    background: var(--g1);
-  }
-  .payment-option.selected .payment-radio::after {
-    content: ''; width: 8px; height: 8px; border-radius: 50%; background: #000;
-  }
-  .payment-info {}
-  .payment-name {
-    font-family: var(--font-head); font-size: 15px; font-weight: 600;
-    margin-bottom: 3px;
-  }
-  .payment-desc { font-size: 13px; color: var(--text3); line-height: 1.5; }
-  .payment-badge {
-    position: absolute; top: 14px; right: 14px;
-    background: rgba(34,197,94,0.12); color: var(--g1);
-    font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
-    padding: 3px 10px; border-radius: 20px;
-  }
-
-  /* ── PAYMENT DETAILS BOX ── */
-  .payment-details-box {
-    background: var(--bg3); border: 1px solid var(--border2);
-    border-radius: 12px; padding: 20px;
-    margin-bottom: 24px; display: none;
-  }
-  .payment-details-box.show { display: block; animation: fadeIn .3s ease; }
-  .pdb-title {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--g1); margin-bottom: 14px;
-  }
-  .pdb-method { margin-bottom: 14px; }
-  .pdb-method:last-child { margin-bottom: 0; }
-  .pdb-method-label {
-    font-size: 11px; color: var(--text3); font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .pdb-row {
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--bg4); border-radius: 8px; padding: 10px 14px;
-    margin-bottom: 6px;
-  }
-  .pdb-row:last-child { margin-bottom: 0; }
-  .pdb-key { font-size: 12px; color: var(--text3); }
-  .pdb-val { font-size: 13px; font-weight: 500; color: var(--text2); font-family: monospace; }
-  .copy-btn {
-    background: none; border: 1px solid var(--border2); color: var(--text3);
-    font-size: 11px; padding: 3px 10px; border-radius: 6px; cursor: pointer;
-    transition: all .2s; font-family: var(--font-body);
-  }
-  .copy-btn:hover { border-color: var(--g1); color: var(--g1); }
-  .copy-btn.copied { border-color: var(--g1); color: var(--g1); }
-
-  /* ── UPLOAD AREA ── */
-  .upload-area {
-    border: 2px dashed var(--border2); border-radius: 12px;
-    padding: 36px 24px; text-align: center; cursor: pointer;
-    transition: all .2s; background: var(--bg3);
-    margin-bottom: 8px; position: relative;
-  }
-  .upload-area:hover, .upload-area.drag { border-color: var(--g1); background: var(--bg4); }
-  .upload-area.has-file { border-color: var(--g1); border-style: solid; }
-  .upload-icon { margin-bottom: 10px; opacity: 0.5; }
-  .upload-text { font-size: 14px; color: var(--text3); margin-bottom: 4px; }
-  .upload-text strong { color: var(--g1); }
-  .upload-hint { font-size: 12px; color: var(--text3); }
-  #screenshotInput { display: none; }
-  .upload-preview {
-    display: none; margin-top: 16px;
-    border: 1px solid var(--border2); border-radius: 10px; overflow: hidden;
-  }
-  .upload-preview img { width: 100%; max-height: 200px; object-fit: contain; background: var(--bg4); }
-  .upload-preview-bar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 10px 14px; background: var(--bg4);
-    font-size: 12px; color: var(--text3);
-  }
-  .upload-remove {
-    background: none; border: none; color: var(--red); cursor: pointer;
-    font-size: 12px; font-family: var(--font-body);
-  }
-
-  /* ── BUTTONS ── */
-  .btn-primary {
-    width: 100%; padding: 15px; border-radius: 10px; border: none;
-    background: var(--g1); color: #000;
-    font-family: var(--font-head); font-size: 15px; font-weight: 700;
-    cursor: pointer; transition: all .2s; letter-spacing: 0.02em;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .btn-primary:hover { background: var(--g3); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.3); }
-  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
-  .btn-secondary {
-    background: none; border: 1px solid var(--border2); color: var(--text3);
-    font-family: var(--font-body); font-size: 14px; padding: 12px 20px;
-    border-radius: 10px; cursor: pointer; transition: all .2s;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .btn-secondary:hover { border-color: var(--g1); color: var(--g1); }
-  .btn-row { display: flex; gap: 12px; align-items: center; }
-  .btn-row .btn-secondary { flex-shrink: 0; }
-  .btn-row .btn-primary { flex: 1; }
-
-  /* ── SUCCESS STATE ── */
-  .success-panel {
-    display: none; text-align: center; padding: 20px 0;
-  }
-  .success-panel.show { display: block; animation: fadeIn .4s ease; }
-  .success-icon-wrap {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: rgba(34,197,94,0.1); border: 2px solid var(--g1);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px;
-  }
-  .success-title {
-    font-family: var(--font-head); font-size: 26px; font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .success-sub { font-size: 14px; color: var(--text3); line-height: 1.7; margin-bottom: 28px; }
-  .success-whatsapp {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #25d366; color: #fff;
-    font-family: var(--font-head); font-weight: 700; font-size: 14px;
-    padding: 13px 28px; border-radius: 100px; text-decoration: none;
-    transition: all .2s;
-  }
-  .success-whatsapp:hover { background: #1eb857; transform: translateY(-2px); }
-
-  /* ── VERIFICATION SHOWCASE ── */
-  .verif-panel {
-    display: none; animation: fadeIn .5s ease;
-  }
-  .verif-panel.show { display: block; }
-
-  /* Animated scanner ring */
-  .verif-ring-wrap {
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 28px; position: relative; width: 96px; height: 96px;
-  }
-  .verif-ring {
-    width: 96px; height: 96px; border-radius: 50%;
-    border: 2px solid var(--border2);
-    position: absolute; top: 0; left: 0;
-  }
-  .verif-ring-spin {
-    width: 96px; height: 96px; border-radius: 50%;
-    border: 2px solid transparent;
-    border-top-color: var(--g1);
-    border-right-color: rgba(34,197,94,0.3);
-    position: absolute; top: 0; left: 0;
-    animation: spin 1.4s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .verif-ring-inner {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: rgba(34,197,94,0.08);
-    border: 1.5px solid rgba(34,197,94,0.2);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 1;
-  }
-
-  .verif-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25);
-    color: #fbbf24; font-size: 11px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 5px 14px; border-radius: 100px;
-    margin-bottom: 18px;
-    animation: pulse-badge 2s ease-in-out infinite;
-  }
-  @keyframes pulse-badge {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.0); }
-    50%       { box-shadow: 0 0 0 6px rgba(251,191,36,0.08); }
-  }
-  .verif-badge-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: #fbbf24;
-    animation: blink 1.2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  .verif-title {
-    font-family: var(--font-head); font-size: 24px; font-weight: 700;
-    margin-bottom: 8px; text-align: center;
-  }
-  .verif-sub {
-    font-size: 14px; color: var(--text3); line-height: 1.7;
-    margin-bottom: 28px; text-align: center;
-  }
-
-  /* Progress timeline */
-  .verif-timeline {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 14px; padding: 20px 22px; margin-bottom: 24px;
-    text-align: left;
-  }
-  .verif-timeline-title {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--text3); margin-bottom: 18px;
-  }
-  .vtl-step {
-    display: flex; align-items: flex-start; gap: 14px;
-    position: relative; padding-bottom: 18px;
-  }
-  .vtl-step:last-child { padding-bottom: 0; }
-  .vtl-step:not(:last-child)::before {
-    content: ''; position: absolute; left: 15px; top: 30px;
-    width: 1px; height: calc(100% - 16px);
-    background: var(--border2);
-  }
-  .vtl-icon {
-    width: 30px; height: 30px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; font-size: 13px; position: relative; z-index: 1;
-  }
-  .vtl-icon.done  { background: rgba(34,197,94,0.15); border: 1.5px solid var(--g1); color: var(--g1); }
-  .vtl-icon.active { background: rgba(251,191,36,0.12); border: 1.5px solid #fbbf24; color: #fbbf24; animation: pulse-icon 1.5s ease-in-out infinite; }
-  .vtl-icon.pending { background: var(--bg4); border: 1.5px solid var(--border2); color: var(--text3); }
-  @keyframes pulse-icon {
-    0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); }
-    50%      { box-shadow: 0 0 0 5px rgba(251,191,36,0.12); }
-  }
-  .vtl-body { padding-top: 4px; }
-  .vtl-label { font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
-  .vtl-label.done-label  { color: var(--text2); }
-  .vtl-label.active-label { color: #fbbf24; }
-  .vtl-label.pending-label { color: var(--text3); }
-  .vtl-desc { font-size: 12px; color: var(--text3); line-height: 1.5; }
-
-  /* Ref card */
-  .verif-ref-card {
-    background: var(--bg4); border: 1px solid var(--border2);
-    border-radius: 12px; padding: 16px 18px; margin-bottom: 22px;
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  }
-  .verif-ref-left { text-align: left; }
-  .verif-ref-label { font-size: 10px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-  .verif-ref-val { font-family: monospace; font-size: 15px; font-weight: 600; color: var(--g3); letter-spacing: 0.05em; }
-  .verif-ref-time { font-size: 11px; color: var(--text3); margin-top: 2px; }
-  .verif-ref-icon {
-    width: 38px; height: 38px; border-radius: 10px;
-    background: rgba(34,197,94,0.1); border: 1px solid var(--border2);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-
-  /* ETA bar */
-  .verif-eta {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 10px; padding: 14px 16px; margin-bottom: 22px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .verif-eta-icon { font-size: 20px; flex-shrink: 0; }
-  .verif-eta-text { font-size: 13px; color: var(--text3); line-height: 1.5; }
-  .verif-eta-text strong { color: var(--text2); }
-
-  /* Screenshot thumb */
-  .verif-screenshot-row {
-    display: flex; align-items: center; gap: 12px;
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 10px; padding: 12px 14px; margin-bottom: 22px;
-  }
-  .verif-screenshot-thumb {
-    width: 48px; height: 48px; border-radius: 8px;
-    object-fit: cover; border: 1px solid var(--border2); flex-shrink: 0;
-  }
-  .verif-screenshot-info { text-align: left; }
-  .verif-screenshot-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
-  .verif-screenshot-name { font-size: 13px; color: var(--text2); font-weight: 500; }
-  .verif-screenshot-size { font-size: 11px; color: var(--text3); margin-top: 2px; }
-
-  .verif-whatsapp {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #25d366; color: #fff;
-    font-family: var(--font-head); font-weight: 700; font-size: 14px;
-    padding: 13px 28px; border-radius: 100px; text-decoration: none;
-    transition: all .2s; width: 100%; justify-content: center;
-  }
-  .verif-whatsapp:hover { background: #1eb857; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.3); }
-  .verif-home-link {
-    display: block; text-align: center; margin-top: 14px;
-    font-size: 13px; color: var(--text3); text-decoration: none; transition: color .2s;
-  }
-  .verif-home-link:hover { color: var(--g1); }
-
-  /* ── SUMMARY BOX ── */
-  .summary-box {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 12px; padding: 18px 20px; margin-bottom: 24px;
-  }
-  .summary-title {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--text3); margin-bottom: 12px;
-  }
-  .summary-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 0; border-bottom: 1px solid var(--border);
-    font-size: 13.5px;
-  }
-  .summary-row:last-child { border-bottom: none; }
-  .summary-key { color: var(--text3); }
-  .summary-val { color: var(--text2); font-weight: 500; text-align: right; }
-
-  /* ── FOOTER NOTE ── */
-  .footer-note {
-    text-align: center; font-size: 12px; color: var(--text3);
-    margin-top: 24px; line-height: 1.6;
-  }
-  .footer-note a { color: var(--g1); text-decoration: none; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 520px) {
-    .form-card { padding: 24px 16px; }
-    .field-row { grid-template-columns: 1fr; }
-    nav { padding: 16px 20px; }
-    .steps { gap: 0; }
-    .step-label { display: none; }
-
-    /* ── Payment option: stack badge below text on mobile ── */
-    .payment-option {
-      flex-wrap: wrap;
-      padding: 14px 14px;
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
-    .payment-info {
-      flex: 1 1 0;
-      min-width: 0;
-    }
-    .payment-name {
-      font-size: 13px;
-      word-break: break-word;
-    }
-    .payment-desc {
-      font-size: 12px;
-      word-break: break-word;
-    }
-    .payment-badge {
-      position: static;
-      align-self: flex-start;
-      margin-left: auto;
-      flex-shrink: 0;
-      font-size: 11px;
-      padding: 3px 9px;
+
+    .nav-logo span {
+      color: var(--g1);
     }
 
-    /* ── Payment details rows: stack key/value vertically ── */
-    .pdb-row {
-      flex-wrap: wrap;
-      gap: 4px;
-      padding: 10px 12px;
+    .nav-back {
+      font-size: 13px;
+      color: var(--text3);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
     }
-    .pdb-key {
-      flex: 0 0 100%;
+
+    .nav-back:hover {
+      color: var(--g1);
+    }
+
+    /* ── MAIN WRAPPER ── */
+    .main {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--g1);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--g1);
+    }
+
+    .page-title {
+      font-family: var(--font-head);
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .page-title span {
+      color: var(--g1);
+    }
+
+    .page-sub {
+      font-size: 15px;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    /* ── PROGRESS STEPS ── */
+    .steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: calc(50% + 16px);
+      width: calc(100% - 32px);
+      height: 1px;
+      background: var(--border2);
+      transition: background .4s;
+    }
+
+    .step.done:not(:last-child)::after {
+      background: var(--g1);
+    }
+
+    .step-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text3);
+      background: var(--bg2);
+      transition: all .3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step.active .step-circle {
+      border-color: var(--g1);
+      color: var(--g1);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+    }
+
+    .step.done .step-circle {
+      background: var(--g1);
+      border-color: var(--g1);
+      color: #000;
+    }
+
+    .step-label {
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .step.active .step-label {
+      color: var(--g1);
+    }
+
+    .step.done .step-label {
+      color: var(--text4);
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--g1), transparent);
+      opacity: 0.6;
+    }
+
+    .step-panel {
+      display: none;
+    }
+
+    .step-panel.active {
+      display: block;
+      animation: fadeIn .3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .panel-sub {
+      font-size: 13.5px;
+      color: var(--text3);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── FORM FIELDS ── */
+    .field-group {
+      margin-bottom: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text4);
+      margin-bottom: 8px;
+    }
+
+    .field-input {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .field-input::placeholder {
+      color: var(--text3);
+    }
+
+    .field-input:focus {
+      border-color: var(--g1);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+    }
+
+    .field-input.error {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .field-error {
+      font-size: 12px;
+      color: var(--red);
+      margin-top: 5px;
+      display: none;
+    }
+
+    .field-error.show {
+      display: block;
+    }
+
+    /* Country code selector — enroll phone */
+    .e-phone-row {
+      display: flex;
+      gap: 8px;
+      align-items: stretch
+    }
+
+    .e-cc-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    .e-cc-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0 11px;
+      height: 100%;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      min-width: 72px;
+      transition: border-color 0.2s;
+    }
+
+    .e-cc-btn:hover,
+    .e-cc-btn:focus {
+      border-color: var(--green);
+      outline: none
+    }
+
+    .e-cc-arrow {
+      font-size: 9px;
+      color: var(--text3);
+      margin-left: 2px
+    }
+
+    .e-cc-dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      z-index: 999;
+      min-width: 220px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .e-cc-dropdown.open {
+      display: flex
+    }
+
+    .e-cc-search {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 9px 12px;
+      color: var(--text);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .e-cc-search::placeholder {
+      color: var(--text3)
+    }
+
+    .e-cc-list {
+      max-height: 200px;
+      overflow-y: auto;
+      overscroll-behavior: contain
+    }
+
+    .e-cc-list::-webkit-scrollbar {
+      width: 4px
+    }
+
+    .e-cc-list::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px
+    }
+
+    .e-cc-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text2);
+      transition: background 0.15s;
+    }
+
+    .e-cc-item:hover {
+      background: var(--bg3);
+      color: var(--text)
+    }
+
+    .e-cc-item.selected {
+      background: rgba(34, 197, 94, .08);
+      color: var(--green)
+    }
+
+    .e-cc-item-flag {
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0
+    }
+
+    .e-cc-item-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .e-cc-item-code {
+      font-weight: 600;
+      color: var(--text3);
+      font-size: 12px;
+      flex-shrink: 0
+    }
+
+    select.field-input {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* ── PAYMENT OPTIONS ── */
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .payment-option {
+      border: 1.5px solid var(--border2);
+      border-radius: 12px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg3);
+      position: relative;
+    }
+
+    .payment-option:hover {
+      border-color: var(--g1);
+      background: var(--bg4);
+    }
+
+    .payment-option.selected {
+      border-color: var(--g1);
+      background: var(--bg4);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+    }
+
+    .payment-option input[type="radio"] {
+      display: none;
+    }
+
+    .payment-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all .2s;
+    }
+
+    .payment-option.selected .payment-radio {
+      border-color: var(--g1);
+      background: var(--g1);
+    }
+
+    .payment-option.selected .payment-radio::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #000;
+    }
+
+    .payment-info {}
+
+    .payment-name {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .payment-desc {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+
+    .payment-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--g1);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── PAYMENT DETAILS BOX ── */
+    .payment-details-box {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    .payment-details-box.show {
+      display: block;
+      animation: fadeIn .3s ease;
+    }
+
+    .pdb-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--g1);
+      margin-bottom: 14px;
+    }
+
+    .pdb-method {
+      margin-bottom: 14px;
+    }
+
+    .pdb-method:last-child {
+      margin-bottom: 0;
+    }
+
+    .pdb-method-label {
       font-size: 11px;
       color: var(--text3);
-      margin-bottom: 2px;
-    }
-    .pdb-val {
-      flex: 1 1 auto;
-      font-size: 12px;
-      word-break: break-all;
-    }
-    .copy-btn {
-      flex-shrink: 0;
-      align-self: center;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* ── Button row: stack on very small screens ── */
-    .btn-row {
-      flex-direction: column-reverse;
-      gap: 10px;
+    .pdb-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg4);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 6px;
     }
+
+    .pdb-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .pdb-key {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    .pdb-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text2);
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--border2);
+      color: var(--text3);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: var(--font-body);
+    }
+
+    .copy-btn:hover {
+      border-color: var(--g1);
+      color: var(--g1);
+    }
+
+    .copy-btn.copied {
+      border-color: var(--g1);
+      color: var(--g1);
+    }
+
+    /* ── UPLOAD AREA ── */
+    .upload-area {
+      border: 2px dashed var(--border2);
+      border-radius: 12px;
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .2s;
+      background: var(--bg3);
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .upload-area:hover,
+    .upload-area.drag {
+      border-color: var(--g1);
+      background: var(--bg4);
+    }
+
+    .upload-area.has-file {
+      border-color: var(--g1);
+      border-style: solid;
+    }
+
+    .upload-icon {
+      margin-bottom: 10px;
+      opacity: 0.5;
+    }
+
+    .upload-text {
+      font-size: 14px;
+      color: var(--text3);
+      margin-bottom: 4px;
+    }
+
+    .upload-text strong {
+      color: var(--g1);
+    }
+
+    .upload-hint {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    #screenshotInput {
+      display: none;
+    }
+
+    .upload-preview {
+      display: none;
+      margin-top: 16px;
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .upload-preview img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      background: var(--bg4);
+    }
+
+    .upload-preview-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--bg4);
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    .upload-remove {
+      background: none;
+      border: none;
+      color: var(--red);
+      cursor: pointer;
+      font-size: 12px;
+      font-family: var(--font-body);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      background: var(--g1);
+      color: #000;
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: var(--g3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(34, 197, 94, 0.3);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      background: none;
+      border: 1px solid var(--border2);
+      color: var(--text3);
+      font-family: var(--font-body);
+      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--g1);
+      color: var(--g1);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
     .btn-row .btn-secondary {
+      flex-shrink: 0;
+    }
+
+    .btn-row .btn-primary {
+      flex: 1;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .success-panel.show {
+      display: block;
+      animation: fadeIn .4s ease;
+    }
+
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.1);
+      border: 2px solid var(--g1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .success-title {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .success-sub {
+      font-size: 14px;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .success-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25d366;
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .success-whatsapp:hover {
+      background: #1eb857;
+      transform: translateY(-2px);
+    }
+
+    /* ── VERIFICATION SHOWCASE ── */
+    .verif-panel {
+      display: none;
+      animation: fadeIn .5s ease;
+    }
+
+    .verif-panel.show {
+      display: block;
+    }
+
+    /* Animated scanner ring */
+    .verif-ring-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+      width: 96px;
+      height: 96px;
+    }
+
+    .verif-ring {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid var(--border2);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .verif-ring-spin {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: var(--g1);
+      border-right-color: rgba(34, 197, 94, 0.3);
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: spin 1.4s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .verif-ring-inner {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1.5px solid rgba(34, 197, 94, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .verif-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      color: #fbbf24;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-badge {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.0);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.08);
+      }
+    }
+
+    .verif-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fbbf24;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .verif-title {
+      font-family: var(--font-head);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .verif-sub {
+      font-size: 14px;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    /* Progress timeline */
+    .verif-timeline {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .verif-timeline-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 18px;
+    }
+
+    .vtl-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      position: relative;
+      padding-bottom: 18px;
+    }
+
+    .vtl-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .vtl-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 30px;
+      width: 1px;
+      height: calc(100% - 16px);
+      background: var(--border2);
+    }
+
+    .vtl-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .vtl-icon.done {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1.5px solid var(--g1);
+      color: var(--g1);
+    }
+
+    .vtl-icon.active {
+      background: rgba(251, 191, 36, 0.12);
+      border: 1.5px solid #fbbf24;
+      color: #fbbf24;
+      animation: pulse-icon 1.5s ease-in-out infinite;
+    }
+
+    .vtl-icon.pending {
+      background: var(--bg4);
+      border: 1.5px solid var(--border2);
+      color: var(--text3);
+    }
+
+    @keyframes pulse-icon {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 0 5px rgba(251, 191, 36, 0.12);
+      }
+    }
+
+    .vtl-body {
+      padding-top: 4px;
+    }
+
+    .vtl-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .vtl-label.done-label {
+      color: var(--text2);
+    }
+
+    .vtl-label.active-label {
+      color: #fbbf24;
+    }
+
+    .vtl-label.pending-label {
+      color: var(--text3);
+    }
+
+    .vtl-desc {
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+
+    /* Ref card */
+    .verif-ref-card {
+      background: var(--bg4);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .verif-ref-left {
+      text-align: left;
+    }
+
+    .verif-ref-label {
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .verif-ref-val {
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--g3);
+      letter-spacing: 0.05em;
+    }
+
+    .verif-ref-time {
+      font-size: 11px;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    .verif-ref-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ETA bar */
+    .verif-eta {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .verif-eta-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .verif-eta-text {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+
+    .verif-eta-text strong {
+      color: var(--text2);
+    }
+
+    /* Screenshot thumb */
+    .verif-screenshot-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 22px;
+    }
+
+    .verif-screenshot-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border2);
+      flex-shrink: 0;
+    }
+
+    .verif-screenshot-info {
+      text-align: left;
+    }
+
+    .verif-screenshot-label {
+      font-size: 10px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 3px;
+    }
+
+    .verif-screenshot-name {
+      font-size: 13px;
+      color: var(--text2);
+      font-weight: 500;
+    }
+
+    .verif-screenshot-size {
+      font-size: 11px;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    .verif-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25d366;
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all .2s;
       width: 100%;
       justify-content: center;
     }
 
-    /* ── Summary values wrap properly ── */
-    .summary-row {
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .summary-val {
-      word-break: break-word;
+    .verif-whatsapp:hover {
+      background: #1eb857;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.3);
     }
 
-    /* ── Verification ref card ── */
-    .verif-ref-card {
-      flex-wrap: wrap;
-    }
-    .verif-ref-val {
+    .verif-home-link {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
       font-size: 13px;
-      word-break: break-all;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color .2s;
     }
-  }
-</style>
+
+    .verif-home-link:hover {
+      color: var(--g1);
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+
+    .summary-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-key {
+      color: var(--text3);
+    }
+
+    .summary-val {
+      color: var(--text2);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text3);
+      margin-top: 24px;
+      line-height: 1.6;
+    }
+
+    .footer-note a {
+      color: var(--g1);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      .form-card {
+        padding: 24px 16px;
+      }
+
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 16px 20px;
+      }
+
+      .steps {
+        gap: 0;
+      }
+
+      .step-label {
+        display: none;
+      }
+
+      /* ── Payment option: stack badge below text on mobile ── */
+      .payment-option {
+        flex-wrap: wrap;
+        padding: 14px 14px;
+        gap: 10px;
+      }
+
+      .payment-info {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      .payment-name {
+        font-size: 13px;
+        word-break: break-word;
+      }
+
+      .payment-desc {
+        font-size: 12px;
+        word-break: break-word;
+      }
+
+      .payment-badge {
+        position: static;
+        align-self: flex-start;
+        margin-left: auto;
+        flex-shrink: 0;
+        font-size: 11px;
+        padding: 3px 9px;
+      }
+
+      /* ── Payment details rows: stack key/value vertically ── */
+      .pdb-row {
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 10px 12px;
+      }
+
+      .pdb-key {
+        flex: 0 0 100%;
+        font-size: 11px;
+        color: var(--text3);
+        margin-bottom: 2px;
+      }
+
+      .pdb-val {
+        flex: 1 1 auto;
+        font-size: 12px;
+        word-break: break-all;
+      }
+
+      .copy-btn {
+        flex-shrink: 0;
+        align-self: center;
+      }
+
+      /* ── Button row: stack on very small screens ── */
+      .btn-row {
+        flex-direction: column-reverse;
+        gap: 10px;
+      }
+
+      .btn-row .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* ── Summary values wrap properly ── */
+      .summary-row {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .summary-val {
+        word-break: break-word;
+      }
+
+      /* ── Verification ref card ── */
+      .verif-ref-card {
+        flex-wrap: wrap;
+      }
+
+      .verif-ref-val {
+        font-size: 13px;
+        word-break: break-all;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9VDV9BF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9VDV9BF" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<div class="bg-glow"></div>
+  <div class="bg-glow"></div>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 64" fill="none" height="36" style="display:block;">
-      <!-- Graduation cap -->
-      <polygon points="36,18 58,26 36,34 14,26" fill="#22c55e"/>
-      <path d="M27,26 L27,40 Q36,46 45,40 L45,26 L36,34 Z" fill="#16a34a"/>
-      <line x1="58" y1="26" x2="58" y2="37" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="58" cy="39.5" r="2.5" fill="#22c55e"/>
-      <!-- Sanestix -->
-      <text x="70" y="35" font-family="'Clash Display','DM Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="-0.5">Sanestix</text>
-      <line x1="70" y1="41" x2="175" y2="41" stroke="#22c55e" stroke-width="1.2" opacity="0.85"/>
-      <text x="70" y="56" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="#22c55e" letter-spacing="5.2">ACADEMY</text>
-    </svg>
-  </a>
-  <a href="index.html" class="nav-back">
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to home
-  </a>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 64" fill="none" height="36" style="display:block;">
+        <!-- Graduation cap -->
+        <polygon points="36,18 58,26 36,34 14,26" fill="#22c55e" />
+        <path d="M27,26 L27,40 Q36,46 45,40 L45,26 L36,34 Z" fill="#16a34a" />
+        <line x1="58" y1="26" x2="58" y2="37" stroke="#22c55e" stroke-width="2" stroke-linecap="round" />
+        <circle cx="58" cy="39.5" r="2.5" fill="#22c55e" />
+        <!-- Sanestix -->
+        <text x="70" y="35" font-family="'Clash Display','DM Sans',sans-serif" font-size="22" font-weight="700"
+          fill="#ffffff" letter-spacing="-0.5">Sanestix</text>
+        <line x1="70" y1="41" x2="175" y2="41" stroke="#22c55e" stroke-width="1.2" opacity="0.85" />
+        <text x="70" y="56" font-family="'DM Sans',sans-serif" font-size="9.5" font-weight="500" fill="#22c55e"
+          letter-spacing="5.2">ACADEMY</text>
+      </svg>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      Back to home
+    </a>
+  </nav>
 
-<!-- MAIN -->
-<div class="main">
+  <!-- MAIN -->
+  <div class="main">
 
-  <div class="page-eyebrow">Cohort 3 · Starts June 19</div>
-  <h1 class="page-title">Secure Your <span>Seat</span></h1>
-  <p class="page-sub">Reserve your spot with PKR 3,000. Our team will confirm your enrollment on WhatsApp within 24 hours.</p>
+    <div class="page-eyebrow">Cohort 3 · Starts June 19</div>
+    <h1 class="page-title">Secure Your <span>Seat</span></h1>
+    <p class="page-sub">Reserve your spot with PKR 3,000. Our team will confirm your enrollment on WhatsApp within 24
+      hours.</p>
 
-  <!-- SEMINAR DISCOUNT BANNER (shown only when ?ref=seminar) -->
-  <div id="seminarDiscountBanner" style="display:none; background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.06)); border:1.5px solid rgba(34,197,94,0.4); border-radius:14px; padding:16px 20px; margin-bottom:20px; text-align:center;">
-    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);font-weight:700;margin-bottom:6px;">🎓 Seminar Attendee Discount Applied</div>
-    <div style="font-size:22px;font-family:var(--font-head);font-weight:800;color:var(--text1);">
-      <span style="text-decoration:line-through;color:var(--text3);font-size:15px;margin-right:8px;">PKR 18,000</span>
-      <span style="color:var(--g1);">PKR 15,000</span>
-    </div>
-    <div style="font-size:12px;color:var(--text2);margin-top:4px;">PKR 3,000 exclusive discount for seminar attendees · Remaining fee: PKR 12,000</div>
-  </div>
-
-  <!-- COUPON DISCOUNT BANNER (shown only when coupon EID26 is applied) -->
-  <div id="couponDiscountBanner" style="display:none; background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(34,197,94,0.08)); border:1.5px solid rgba(34,197,94,0.5); border-radius:14px; padding:16px 20px; margin-bottom:20px; text-align:center; position:relative; overflow:hidden;">
-    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);font-weight:700;margin-bottom:6px;">🎉 Special Eid Coupon Applied</div>
-    <div style="font-size:24px;font-family:var(--font-head);font-weight:800;color:var(--text);">
-      <span style="text-decoration:line-through;color:var(--text3);font-size:16px;margin-right:8px;">PKR 18,000</span>
-      <span style="color:var(--g1);">PKR 9,000</span>
-    </div>
-    <div style="font-size:13px;color:var(--text2);margin-top:4px;">50% exclusive discount (Coupon: <strong>EID26</strong>) · Remaining fee: PKR 6,000</div>
-  </div>
-
-  <!-- PROGRESS -->
-  <div class="steps" id="stepsBar">
-    <div class="step active" id="s1"><div class="step-circle">1</div><div class="step-label">Your Info</div></div>
-    <div class="step" id="s2"><div class="step-circle">2</div><div class="step-label">Payment</div></div>
-    <div class="step" id="s3"><div class="step-circle">3</div><div class="step-label">Screenshot</div></div>
-    <div class="step" id="s4"><div class="step-circle">4</div><div class="step-label">Confirm</div></div>
-  </div>
-
-  <!-- FORM CARD -->
-  <div class="form-card">
-
-    <!-- STEP 1: YOUR INFO -->
-    <div class="step-panel active" id="panel1">
-      <div class="panel-title">Tell us about yourself</div>
-      <p class="panel-sub">We'll use this to set up your student profile and contact you on WhatsApp.</p>
-
-      <div class="field-row field-group">
-        <div>
-          <label class="field-label" for="e-name">Full Name</label>
-          <input type="text" id="e-name" class="field-input" placeholder="Ahmad Raza" autocomplete="name">
-          <div class="field-error" id="err-name">Please enter your full name</div>
-        </div>
-        <div>
-          <label class="field-label" for="e-city">City</label>
-          <select id="e-city" class="field-input" onchange="toggleOtherCity(this)">
-            <option value="">Select city</option>
-            <option>Karachi</option>
-            <option>Lahore</option>
-            <option>Islamabad</option>
-            <option>Rawalpindi</option>
-            <option>Faisalabad</option>
-            <option>Multan</option>
-            <option>Peshawar</option>
-            <option>Quetta</option>
-            <option>Hyderabad</option>
-            <option>Other</option>
-          </select>
-          <div class="field-error" id="err-city">Please select your city</div>
-          <input type="text" id="e-city-other" class="field-input" placeholder="Enter your city" style="display:none;margin-top:10px;">
-          <div class="field-error" id="err-city-other">Please enter your city</div>
-        </div>
+    <!-- SEMINAR DISCOUNT BANNER (shown only when ?ref=seminar) -->
+    <div id="seminarDiscountBanner"
+      style="display:none; background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.06)); border:1.5px solid rgba(34,197,94,0.4); border-radius:14px; padding:16px 20px; margin-bottom:20px; text-align:center;">
+      <div
+        style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);font-weight:700;margin-bottom:6px;">
+        🎓 Seminar Attendee Discount Applied</div>
+      <div style="font-size:22px;font-family:var(--font-head);font-weight:800;color:var(--text1);">
+        <span style="text-decoration:line-through;color:var(--text3);font-size:15px;margin-right:8px;">PKR 18,000</span>
+        <span style="color:var(--g1);">PKR 15,000</span>
       </div>
-
-      <div class="field-group">
-        <label class="field-label" for="e-phone">WhatsApp Number</label>
-        <div class="e-phone-row">
-          <div class="e-cc-wrap" id="eCcWrap">
-            <button type="button" class="e-cc-btn" id="eCcBtn" onclick="eToggleCC(event)">
-              <span id="eCcFlag">🇵🇰</span>
-              <span id="eCcCode">+92</span>
-              <span class="e-cc-arrow">▾</span>
-            </button>
-            <div class="e-cc-dropdown" id="eCcDropdown">
-              <input class="e-cc-search" type="text" placeholder="Search country…" oninput="eFilterCC(this.value)" onclick="event.stopPropagation()">
-              <div class="e-cc-list" id="eCcList"></div>
-            </div>
-          </div>
-          <input type="tel" id="e-phone" class="field-input" placeholder="300 0000000" autocomplete="tel" style="flex:1;min-width:0;padding-left:14px;">
-        </div>
-        <div class="field-error" id="err-phone">Please enter a valid WhatsApp number</div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="e-email">Email Address</label>
-        <input type="email" id="e-email" class="field-input" placeholder="ahmad@email.com" autocomplete="email">
-        <div class="field-error" id="err-email">Please enter a valid email address</div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="e-coupon">Coupon Code</label>
-        <div style="display:flex; gap:8px; align-items: stretch;">
-          <input type="text" id="e-coupon" class="field-input" placeholder="E.g. EID26" style="text-transform:uppercase;">
-          <button type="button" class="btn-secondary" onclick="applyCoupon()" style="white-space:nowrap; padding:0 20px; font-weight:600; min-height:48px;">Apply</button>
-        </div>
-        <div id="coupon-message" style="font-size:12px; margin-top:6px; display:none;"></div>
-      </div>
-
-      <button class="btn-primary" onclick="goStep2()">
-        Continue to Payment
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+      <div style="font-size:12px;color:var(--text2);margin-top:4px;">PKR 3,000 exclusive discount for seminar attendees
+        · Remaining fee: PKR 12,000</div>
     </div>
 
-    <!-- STEP 2: PAYMENT OPTION -->
-    <div class="step-panel" id="panel2">
-      <div class="panel-title">Choose payment method</div>
-      <p class="panel-sub">Select how you'd like to pay your PKR 3,000 seat reservation fee.</p>
-
-      <div class="payment-options">
-
-        <label class="payment-option" onclick="selectPayment(this,'jazzcash')">
-          <input type="radio" name="payment" value="jazzcash">
-          <div class="payment-radio"></div>
-          <div class="payment-info">
-            <div class="payment-name">JazzCash / EasyPaisa / UPaisa</div>
-            <div class="payment-desc">Send to 03098802364 · Account: Saira Faisal</div>
-          </div>
-          <div class="payment-badge">PKR 3,000</div>
-        </label>
-
-        <label class="payment-option" onclick="selectPayment(this,'bank')">
-          <input type="radio" name="payment" value="bank">
-          <div class="payment-radio"></div>
-          <div class="payment-info">
-            <div class="payment-name">Bank Transfer (Soneri Bank)</div>
-            <div class="payment-desc">IBAN transfer · Account: Saad Faisal</div>
-          </div>
-          <div class="payment-badge">PKR 3,000</div>
-        </label>
-
+    <!-- COUPON DISCOUNT BANNER (shown only when coupon EIDSPECIAL26 is applied) -->
+    <div id="couponDiscountBanner"
+      style="display:none; background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(34,197,94,0.08)); border:1.5px solid rgba(34,197,94,0.5); border-radius:14px; padding:16px 20px; margin-bottom:20px; text-align:center; position:relative; overflow:hidden;">
+      <div
+        style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);font-weight:700;margin-bottom:6px;">
+        🎉 Special Eid Coupon Applied</div>
+      <div style="font-size:24px;font-family:var(--font-head);font-weight:800;color:var(--text);">
+        <span style="text-decoration:line-through;color:var(--text3);font-size:16px;margin-right:8px;">PKR 18,000</span>
+        <span style="color:var(--g1);">PKR 9,000</span>
       </div>
+      <div style="font-size:13px;color:var(--text2);margin-top:4px;">50% exclusive discount (Coupon:
+        <strong>EIDSPECIAL26</strong>) · Remaining fee: PKR 6,000</div>
+    </div>
 
-      <!-- Payment details reveal -->
-      <div class="payment-details-box" id="payDetailsBox">
-
-        <div id="jazzcashDetails" style="display:none;">
-          <div class="pdb-title">📱 Mobile Payment Details</div>
-          <div class="pdb-method">
-            <div class="pdb-method-label">JazzCash / EasyPaisa / UPaisa</div>
-            <div class="pdb-row">
-              <span class="pdb-key">Number</span>
-              <span class="pdb-val">03098802364</span>
-              <button class="copy-btn" onclick="copyText('03098802364', this)">Copy</button>
-            </div>
-            <div class="pdb-row">
-              <span class="pdb-key">Account Title</span>
-              <span class="pdb-val">Saira Faisal</span>
-            </div>
-            <div class="pdb-row">
-              <span class="pdb-key">Amount</span>
-              <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
-            </div>
-          </div>
-        </div>
-
-        <div id="bankDetails" style="display:none;">
-          <div class="pdb-title">🏦 Bank Transfer Details</div>
-          <div class="pdb-method">
-            <div class="pdb-method-label">Soneri Bank</div>
-            <div class="pdb-row">
-              <span class="pdb-key">Account Title</span>
-              <span class="pdb-val">Saad Faisal</span>
-            </div>
-            <div class="pdb-row">
-              <span class="pdb-key">IBAN</span>
-              <span class="pdb-val" style="font-size:11px;">PK76SONE0005820012462353</span>
-              <button class="copy-btn" onclick="copyText('PK76SONE0005820012462353', this)">Copy</button>
-            </div>
-            <div class="pdb-row">
-              <span class="pdb-key">Amount</span>
-              <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
-            </div>
-          </div>
-        </div>
-
+    <!-- PROGRESS -->
+    <div class="steps" id="stepsBar">
+      <div class="step active" id="s1">
+        <div class="step-circle">1</div>
+        <div class="step-label">Your Info</div>
       </div>
-
-      <div class="field-error show" id="err-payment" style="display:none!important;margin-bottom:16px;">Please select a payment method</div>
-
-      <div class="btn-row">
-        <button class="btn-secondary" onclick="goStep(1)">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Back
-        </button>
-        <button class="btn-primary" onclick="goStep3()">
-          I've Made the Payment →
-        </button>
+      <div class="step" id="s2">
+        <div class="step-circle">2</div>
+        <div class="step-label">Payment</div>
+      </div>
+      <div class="step" id="s3">
+        <div class="step-circle">3</div>
+        <div class="step-label">Screenshot</div>
+      </div>
+      <div class="step" id="s4">
+        <div class="step-circle">4</div>
+        <div class="step-label">Confirm</div>
       </div>
     </div>
 
-    <!-- STEP 3: SCREENSHOT -->
-    <div class="step-panel" id="panel3">
-      <div class="panel-title">Upload payment screenshot</div>
-      <p class="panel-sub">Take a screenshot of your payment confirmation and upload it below. This helps us verify and confirm your seat faster.</p>
+    <!-- FORM CARD -->
+    <div class="form-card">
 
-      <div class="upload-area" id="uploadArea" onclick="document.getElementById('screenshotInput').click()"
-           ondragover="event.preventDefault();this.classList.add('drag')"
-           ondragleave="this.classList.remove('drag')"
-           ondrop="handleDrop(event)">
-        <div class="upload-icon">
-          <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="26" rx="4" stroke="#6b7280" stroke-width="1.5"/><path d="M14 20l4-4 4 4M18 16v10" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 28l6-6 4 4 4-5 6 7" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>
-        </div>
-        <div class="upload-text"><strong>Click to upload</strong> or drag and drop</div>
-        <div class="upload-hint">PNG, JPG, JPEG · Max 10MB</div>
+      <!-- STEP 1: YOUR INFO -->
+      <div class="step-panel active" id="panel1">
+        <div class="panel-title">Tell us about yourself</div>
+        <p class="panel-sub">We'll use this to set up your student profile and contact you on WhatsApp.</p>
 
-        <div class="upload-preview" id="uploadPreview">
-          <img id="previewImg" src="" alt="Payment screenshot">
-          <div class="upload-preview-bar">
-            <span id="previewName"></span>
-            <button class="upload-remove" onclick="removeFile(event)">Remove</button>
+        <div class="field-row field-group">
+          <div>
+            <label class="field-label" for="e-name">Full Name</label>
+            <input type="text" id="e-name" class="field-input" placeholder="Ahmad Raza" autocomplete="name">
+            <div class="field-error" id="err-name">Please enter your full name</div>
+          </div>
+          <div>
+            <label class="field-label" for="e-city">City</label>
+            <select id="e-city" class="field-input" onchange="toggleOtherCity(this)">
+              <option value="">Select city</option>
+              <option>Karachi</option>
+              <option>Lahore</option>
+              <option>Islamabad</option>
+              <option>Rawalpindi</option>
+              <option>Faisalabad</option>
+              <option>Multan</option>
+              <option>Peshawar</option>
+              <option>Quetta</option>
+              <option>Hyderabad</option>
+              <option>Other</option>
+            </select>
+            <div class="field-error" id="err-city">Please select your city</div>
+            <input type="text" id="e-city-other" class="field-input" placeholder="Enter your city"
+              style="display:none;margin-top:10px;">
+            <div class="field-error" id="err-city-other">Please enter your city</div>
           </div>
         </div>
-      </div>
-      <input type="file" id="screenshotInput" accept="image/*" onchange="handleFile(this.files[0])">
-      <div class="field-error" id="err-screenshot" style="margin-bottom:16px;">Please upload your payment screenshot</div>
 
-      <div class="btn-row" style="margin-top:20px;">
-        <button class="btn-secondary" onclick="goStep(2)">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Back
+        <div class="field-group">
+          <label class="field-label" for="e-phone">WhatsApp Number</label>
+          <div class="e-phone-row">
+            <div class="e-cc-wrap" id="eCcWrap">
+              <button type="button" class="e-cc-btn" id="eCcBtn" onclick="eToggleCC(event)">
+                <span id="eCcFlag">🇵🇰</span>
+                <span id="eCcCode">+92</span>
+                <span class="e-cc-arrow">▾</span>
+              </button>
+              <div class="e-cc-dropdown" id="eCcDropdown">
+                <input class="e-cc-search" type="text" placeholder="Search country…" oninput="eFilterCC(this.value)"
+                  onclick="event.stopPropagation()">
+                <div class="e-cc-list" id="eCcList"></div>
+              </div>
+            </div>
+            <input type="tel" id="e-phone" class="field-input" placeholder="300 0000000" autocomplete="tel"
+              style="flex:1;min-width:0;padding-left:14px;">
+          </div>
+          <div class="field-error" id="err-phone">Please enter a valid WhatsApp number</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="e-email">Email Address</label>
+          <input type="email" id="e-email" class="field-input" placeholder="ahmad@email.com" autocomplete="email">
+          <div class="field-error" id="err-email">Please enter a valid email address</div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="e-coupon">Coupon Code</label>
+          <div style="display:flex; gap:8px; align-items: stretch;">
+            <input type="text" id="e-coupon" class="field-input" placeholder="Enter coupon code"
+              style="text-transform:uppercase;">
+            <button type="button" class="btn-secondary" onclick="applyCoupon()"
+              style="white-space:nowrap; padding:0 20px; font-weight:600; min-height:48px;">Apply</button>
+          </div>
+          <div id="coupon-message" style="font-size:12px; margin-top:6px; display:none;"></div>
+        </div>
+
+        <button class="btn-primary" onclick="goStep2()">
+          Continue to Payment
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
-        <button class="btn-primary" onclick="goStep4()">
-          Review & Submit →
-        </button>
-      </div>
-    </div>
-
-    <!-- STEP 4: CONFIRM -->
-    <div class="step-panel" id="panel4">
-      <div class="panel-title">Review your enrollment</div>
-      <p class="panel-sub">Everything look right? Hit submit and we'll confirm your seat on WhatsApp.</p>
-
-      <div class="summary-box">
-        <div class="summary-title">Enrollment Summary</div>
-        <div class="summary-row"><span class="summary-key">Name</span><span class="summary-val" id="sum-name">—</span></div>
-        <div class="summary-row"><span class="summary-key">WhatsApp</span><span class="summary-val" id="sum-phone">—</span></div>
-        <div class="summary-row"><span class="summary-key">Email</span><span class="summary-val" id="sum-email">—</span></div>
-        <div class="summary-row"><span class="summary-key">City</span><span class="summary-val" id="sum-city">—</span></div>
-        <div class="summary-row"><span class="summary-key">Payment Method</span><span class="summary-val" id="sum-payment">—</span></div>
-        <div class="summary-row"><span class="summary-key">Amount Paid</span><span class="summary-val" style="color:var(--g1)">PKR 3,000 (Seat Reservation)</span></div>
-        <div class="summary-row" id="sum-discount-row" style="display:none;"><span class="summary-key">Discount Applied</span><span class="summary-val" id="sum-discount" style="color:#ffab40">—</span></div>
-        <div class="summary-row" id="sum-total-row"><span class="summary-key">Total Course Fee</span><span class="summary-val" id="sum-total-fee">PKR 18,000</span></div>
-        <div class="summary-row"><span class="summary-key">Remaining Fee</span><span class="summary-val" id="sum-remaining-fee">PKR 15,000 (due before Cohort starts)</span></div>
-        <div class="summary-row"><span class="summary-key">Screenshot</span><span class="summary-val" id="sum-screenshot">—</span></div>
       </div>
 
-      <div class="btn-row">
-        <button class="btn-secondary" onclick="goStep(3)">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Back
-        </button>
-        <button class="btn-primary" id="submitBtn" onclick="submitEnrollment()">
-          <span id="submitBtnText">Confirm Enrollment</span>
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+      <!-- STEP 2: PAYMENT OPTION -->
+      <div class="step-panel" id="panel2">
+        <div class="panel-title">Choose payment method</div>
+        <p class="panel-sub">Select how you'd like to pay your PKR 3,000 seat reservation fee.</p>
+
+        <div class="payment-options">
+
+          <label class="payment-option" onclick="selectPayment(this,'jazzcash')">
+            <input type="radio" name="payment" value="jazzcash">
+            <div class="payment-radio"></div>
+            <div class="payment-info">
+              <div class="payment-name">JazzCash / EasyPaisa / UPaisa</div>
+              <div class="payment-desc">Send to 03098802364 · Account: Saira Faisal</div>
+            </div>
+            <div class="payment-badge">PKR 3,000</div>
+          </label>
+
+          <label class="payment-option" onclick="selectPayment(this,'bank')">
+            <input type="radio" name="payment" value="bank">
+            <div class="payment-radio"></div>
+            <div class="payment-info">
+              <div class="payment-name">Bank Transfer (Soneri Bank)</div>
+              <div class="payment-desc">IBAN transfer · Account: Saad Faisal</div>
+            </div>
+            <div class="payment-badge">PKR 3,000</div>
+          </label>
+
+        </div>
+
+        <!-- Payment details reveal -->
+        <div class="payment-details-box" id="payDetailsBox">
+
+          <div id="jazzcashDetails" style="display:none;">
+            <div class="pdb-title">📱 Mobile Payment Details</div>
+            <div class="pdb-method">
+              <div class="pdb-method-label">JazzCash / EasyPaisa / UPaisa</div>
+              <div class="pdb-row">
+                <span class="pdb-key">Number</span>
+                <span class="pdb-val">03098802364</span>
+                <button class="copy-btn" onclick="copyText('03098802364', this)">Copy</button>
+              </div>
+              <div class="pdb-row">
+                <span class="pdb-key">Account Title</span>
+                <span class="pdb-val">Saira Faisal</span>
+              </div>
+              <div class="pdb-row">
+                <span class="pdb-key">Amount</span>
+                <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bankDetails" style="display:none;">
+            <div class="pdb-title">🏦 Bank Transfer Details</div>
+            <div class="pdb-method">
+              <div class="pdb-method-label">Soneri Bank</div>
+              <div class="pdb-row">
+                <span class="pdb-key">Account Title</span>
+                <span class="pdb-val">Saad Faisal</span>
+              </div>
+              <div class="pdb-row">
+                <span class="pdb-key">IBAN</span>
+                <span class="pdb-val" style="font-size:11px;">PK76SONE0005820012462353</span>
+                <button class="copy-btn" onclick="copyText('PK76SONE0005820012462353', this)">Copy</button>
+              </div>
+              <div class="pdb-row">
+                <span class="pdb-key">Amount</span>
+                <span class="pdb-val" style="color:var(--g1);font-family:var(--font-head)">PKR 3,000</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="field-error show" id="err-payment" style="display:none!important;margin-bottom:16px;">Please select
+          a payment method</div>
+
+        <div class="btn-row">
+          <button class="btn-secondary" onclick="goStep(1)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Back
+          </button>
+          <button class="btn-primary" onclick="goStep3()">
+            I've Made the Payment →
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- SUCCESS / VERIFICATION SHOWCASE -->
-    <div class="verif-panel" id="successPanel">
+      <!-- STEP 3: SCREENSHOT -->
+      <div class="step-panel" id="panel3">
+        <div class="panel-title">Upload payment screenshot</div>
+        <p class="panel-sub">Take a screenshot of your payment confirmation and upload it below. This helps us verify
+          and confirm your seat faster.</p>
 
-      <!-- Spinner ring -->
-      <div style="text-align:center; margin-bottom: 6px;">
-        <div class="verif-ring-wrap">
-          <div class="verif-ring"></div>
-          <div class="verif-ring-spin"></div>
-          <div class="verif-ring-inner">
-            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16.5l6 6L26 10" stroke="var(--g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="upload-area" id="uploadArea" onclick="document.getElementById('screenshotInput').click()"
+          ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')"
+          ondrop="handleDrop(event)">
+          <div class="upload-icon">
+            <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="8" width="32" height="26" rx="4" stroke="#6b7280" stroke-width="1.5" />
+              <path d="M14 20l4-4 4 4M18 16v10" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10 28l6-6 4 4 4-5 6 7" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" opacity=".5" />
+            </svg>
+          </div>
+          <div class="upload-text"><strong>Click to upload</strong> or drag and drop</div>
+          <div class="upload-hint">PNG, JPG, JPEG · Max 10MB</div>
+
+          <div class="upload-preview" id="uploadPreview">
+            <img id="previewImg" src="" alt="Payment screenshot">
+            <div class="upload-preview-bar">
+              <span id="previewName"></span>
+              <button class="upload-remove" onclick="removeFile(event)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <input type="file" id="screenshotInput" accept="image/*" onchange="handleFile(this.files[0])">
+        <div class="field-error" id="err-screenshot" style="margin-bottom:16px;">Please upload your payment screenshot
+        </div>
+
+        <div class="btn-row" style="margin-top:20px;">
+          <button class="btn-secondary" onclick="goStep(2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Back
+          </button>
+          <button class="btn-primary" onclick="goStep4()">
+            Review & Submit →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: CONFIRM -->
+      <div class="step-panel" id="panel4">
+        <div class="panel-title">Review your enrollment</div>
+        <p class="panel-sub">Everything look right? Hit submit and we'll confirm your seat on WhatsApp.</p>
+
+        <div class="summary-box">
+          <div class="summary-title">Enrollment Summary</div>
+          <div class="summary-row"><span class="summary-key">Name</span><span class="summary-val" id="sum-name">—</span>
+          </div>
+          <div class="summary-row"><span class="summary-key">WhatsApp</span><span class="summary-val"
+              id="sum-phone">—</span></div>
+          <div class="summary-row"><span class="summary-key">Email</span><span class="summary-val"
+              id="sum-email">—</span></div>
+          <div class="summary-row"><span class="summary-key">City</span><span class="summary-val" id="sum-city">—</span>
+          </div>
+          <div class="summary-row"><span class="summary-key">Payment Method</span><span class="summary-val"
+              id="sum-payment">—</span></div>
+          <div class="summary-row"><span class="summary-key">Amount Paid</span><span class="summary-val"
+              style="color:var(--g1)">PKR 3,000 (Seat Reservation)</span></div>
+          <div class="summary-row" id="sum-discount-row" style="display:none;"><span class="summary-key">Discount
+              Applied</span><span class="summary-val" id="sum-discount" style="color:#ffab40">—</span></div>
+          <div class="summary-row" id="sum-total-row"><span class="summary-key">Total Course Fee</span><span
+              class="summary-val" id="sum-total-fee">PKR 18,000</span></div>
+          <div class="summary-row"><span class="summary-key">Remaining Fee</span><span class="summary-val"
+              id="sum-remaining-fee">PKR 15,000 (due before Cohort starts)</span></div>
+          <div class="summary-row"><span class="summary-key">Screenshot</span><span class="summary-val"
+              id="sum-screenshot">—</span></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn-secondary" onclick="goStep(3)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Back
+          </button>
+          <button class="btn-primary" id="submitBtn" onclick="submitEnrollment()">
+            <span id="submitBtnText">Confirm Enrollment</span>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS / VERIFICATION SHOWCASE -->
+      <div class="verif-panel" id="successPanel">
+
+        <!-- Spinner ring -->
+        <div style="text-align:center; margin-bottom: 6px;">
+          <div class="verif-ring-wrap">
+            <div class="verif-ring"></div>
+            <div class="verif-ring-spin"></div>
+            <div class="verif-ring-inner">
+              <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                <path d="M6 16.5l6 6L26 10" stroke="var(--g1)" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="verif-badge">
+            <span class="verif-badge-dot"></span>
+            Payment Under Verification
+          </div>
+
+          <div class="verif-title">Enrollment Submitted! 🎉</div>
+          <p class="verif-sub">
+            Your payment screenshot has been received.<br>
+            Our team is verifying your transfer right now.
+          </p>
+        </div>
+
+        <!-- Reference card -->
+        <div class="verif-ref-card">
+          <div class="verif-ref-left">
+            <div class="verif-ref-label">Reference ID</div>
+            <div class="verif-ref-val" id="verif-ref-id">—</div>
+            <div class="verif-ref-time" id="verif-ref-time">—</div>
+          </div>
+          <div class="verif-ref-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="var(--g1)" stroke-width="1.5" />
+              <path d="M8 12h8M8 8h5M8 16h3" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round" />
             </svg>
           </div>
         </div>
 
-        <div class="verif-badge">
-          <span class="verif-badge-dot"></span>
-          Payment Under Verification
+        <!-- Screenshot thumb -->
+        <div class="verif-screenshot-row" id="verif-screenshot-row" style="display:none;">
+          <img class="verif-screenshot-thumb" id="verif-thumb" src="" alt="">
+          <div class="verif-screenshot-info">
+            <div class="verif-screenshot-label">Payment Screenshot</div>
+            <div class="verif-screenshot-name" id="verif-fname">—</div>
+            <div class="verif-screenshot-size">✓ Uploaded successfully</div>
+          </div>
         </div>
 
-        <div class="verif-title">Enrollment Submitted! 🎉</div>
-        <p class="verif-sub">
-          Your payment screenshot has been received.<br>
-          Our team is verifying your transfer right now.
-        </p>
-      </div>
+        <!-- Verification timeline -->
+        <div class="verif-timeline">
+          <div class="verif-timeline-title">Verification Progress</div>
 
-      <!-- Reference card -->
-      <div class="verif-ref-card">
-        <div class="verif-ref-left">
-          <div class="verif-ref-label">Reference ID</div>
-          <div class="verif-ref-val" id="verif-ref-id">—</div>
-          <div class="verif-ref-time" id="verif-ref-time">—</div>
+          <div class="vtl-step">
+            <div class="vtl-icon done">✓</div>
+            <div class="vtl-body">
+              <div class="vtl-label done-label">Form submitted</div>
+              <div class="vtl-desc">Your details and screenshot received by our system.</div>
+            </div>
+          </div>
+
+          <div class="vtl-step">
+            <div class="vtl-icon active">⏳</div>
+            <div class="vtl-body">
+              <div class="vtl-label active-label">Payment being verified</div>
+              <div class="vtl-desc">Our team is cross-checking your transfer with bank records.</div>
+            </div>
+          </div>
+
+          <div class="vtl-step">
+            <div class="vtl-icon pending">💬</div>
+            <div class="vtl-body">
+              <div class="vtl-label pending-label">WhatsApp confirmation</div>
+              <div class="vtl-desc">You'll get a confirmation message once verified.</div>
+            </div>
+          </div>
+
+          <div class="vtl-step">
+            <div class="vtl-icon pending">🎓</div>
+            <div class="vtl-body">
+              <div class="vtl-label pending-label">Seat reserved</div>
+              <div class="vtl-desc">Access to cohort resources unlocked before June 19.</div>
+            </div>
+          </div>
         </div>
-        <div class="verif-ref-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="18" height="18" rx="3" stroke="var(--g1)" stroke-width="1.5"/>
-            <path d="M8 12h8M8 8h5M8 16h3" stroke="var(--g1)" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- ETA note -->
+        <div class="verif-eta">
+          <div class="verif-eta-icon">⏱</div>
+          <div class="verif-eta-text">
+            <strong>Expected confirmation: within 24 hours</strong><br>
+            Remaining fee of <strong id="success-remaining-fee">PKR 15,000</strong> is due before the cohort starts on
+            June 19.
+          </div>
+        </div>
+
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/923098802364" target="_blank" class="verif-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
+            <path
+              d="M16 3C9.373 3 4 8.373 4 15c0 2.385.68 4.61 1.86 6.49L4 29l7.72-1.83A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3z"
+              fill="#fff" fill-opacity=".9" />
+            <path
+              d="M21.5 18.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"
+              fill="#25d366" />
           </svg>
-        </div>
+          Message Us on WhatsApp
+        </a>
+        <a href="index.html" class="verif-home-link">← Back to Sanestix Academy</a>
+
       </div>
 
-      <!-- Screenshot thumb -->
-      <div class="verif-screenshot-row" id="verif-screenshot-row" style="display:none;">
-        <img class="verif-screenshot-thumb" id="verif-thumb" src="" alt="">
-        <div class="verif-screenshot-info">
-          <div class="verif-screenshot-label">Payment Screenshot</div>
-          <div class="verif-screenshot-name" id="verif-fname">—</div>
-          <div class="verif-screenshot-size">✓ Uploaded successfully</div>
-        </div>
-      </div>
+    </div><!-- /form-card -->
 
-      <!-- Verification timeline -->
-      <div class="verif-timeline">
-        <div class="verif-timeline-title">Verification Progress</div>
+    <p class="footer-note">
+      Questions? WhatsApp us at <a href="https://wa.me/923098802364">+92 309 8802364</a> ·
+      <a href="index.html">Back to Academy</a>
+    </p>
 
-        <div class="vtl-step">
-          <div class="vtl-icon done">✓</div>
-          <div class="vtl-body">
-            <div class="vtl-label done-label">Form submitted</div>
-            <div class="vtl-desc">Your details and screenshot received by our system.</div>
-          </div>
-        </div>
+  </div><!-- /main -->
 
-        <div class="vtl-step">
-          <div class="vtl-icon active">⏳</div>
-          <div class="vtl-body">
-            <div class="vtl-label active-label">Payment being verified</div>
-            <div class="vtl-desc">Our team is cross-checking your transfer with bank records.</div>
-          </div>
-        </div>
-
-        <div class="vtl-step">
-          <div class="vtl-icon pending">💬</div>
-          <div class="vtl-body">
-            <div class="vtl-label pending-label">WhatsApp confirmation</div>
-            <div class="vtl-desc">You'll get a confirmation message once verified.</div>
-          </div>
-        </div>
-
-        <div class="vtl-step">
-          <div class="vtl-icon pending">🎓</div>
-          <div class="vtl-body">
-            <div class="vtl-label pending-label">Seat reserved</div>
-            <div class="vtl-desc">Access to cohort resources unlocked before June 19.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ETA note -->
-      <div class="verif-eta">
-        <div class="verif-eta-icon">⏱</div>
-        <div class="verif-eta-text">
-          <strong>Expected confirmation: within 24 hours</strong><br>
-          Remaining fee of <strong id="success-remaining-fee">PKR 15,000</strong> is due before the cohort starts on June 19.
-        </div>
-      </div>
-
-      <!-- WhatsApp CTA -->
-      <a href="https://wa.me/923098802364" target="_blank" class="verif-whatsapp">
-        <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
-          <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.68 4.61 1.86 6.49L4 29l7.72-1.83A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3z" fill="#fff" fill-opacity=".9"/>
-          <path d="M21.5 18.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="#25d366"/>
-        </svg>
-        Message Us on WhatsApp
-      </a>
-      <a href="index.html" class="verif-home-link">← Back to Sanestix Academy</a>
-
-    </div>
-
-  </div><!-- /form-card -->
-
-  <p class="footer-note">
-    Questions? WhatsApp us at <a href="https://wa.me/923098802364">+92 309 8802364</a> ·
-    <a href="index.html">Back to Academy</a>
-  </p>
-
-</div><!-- /main -->
-
-<script>
-  /* ── STATE ── */
-  var state = {
-    name: '', phone: '', email: '', city: '',
-    payment: '', screenshotFile: null, screenshotBase64: ''
-  };
-  var currentStep = 1;
-
-  /* ── N8N WEBHOOK ── */
-  var N8N_WEBHOOK = 'https://n8n.sanestix.cloud/webhook/sanestix-enrollment';
-
-  /* ── DISCOUNT & COUPON LOGIC ── */
-  var FULL_PRICE     = 18000;
-  var SEMINAR_DISCOUNT = 3000;
-  var SEAT_DEPOSIT   = 3000;
-  var isSeminarAttendee = false;
-  var couponApplied = false;
-  var couponDiscount = 0;
-
-  function detectSeminarSource() {
-    var params = new URLSearchParams(window.location.search);
-    var ref    = (params.get('ref')    || '').toLowerCase();
-    var source = (params.get('source') || '').toLowerCase();
-    return ref === 'seminar' || source === 'seminar';
-  }
-
-  function updatePrices() {
-    var totalFee = FULL_PRICE;
-    var discountText = 'none';
-    var discountAmount = 0;
-
-    if (couponApplied) {
-      discountAmount = couponDiscount;
-      totalFee = FULL_PRICE - discountAmount;
-      discountText = '50% discount (EID26 coupon applied)';
-      document.getElementById('seminarDiscountBanner').style.display = 'none';
-      document.getElementById('couponDiscountBanner').style.display = 'block';
-    } else if (isSeminarAttendee) {
-      discountAmount = SEMINAR_DISCOUNT;
-      totalFee = FULL_PRICE - discountAmount;
-      discountText = 'PKR 3,000 seminar attendee discount';
-      document.getElementById('seminarDiscountBanner').style.display = 'block';
-      document.getElementById('couponDiscountBanner').style.display = 'none';
-    } else {
-      document.getElementById('seminarDiscountBanner').style.display = 'none';
-      document.getElementById('couponDiscountBanner').style.display = 'none';
-    }
-
-    var remainingFee = totalFee - SEAT_DEPOSIT;
-
-    /* Update Step 4 Summary Box */
-    var remainingEl = document.getElementById('sum-remaining-fee');
-    if (remainingEl) remainingEl.textContent = 'PKR ' + remainingFee.toLocaleString() + ' (due before Cohort starts)';
-
-    /* Update Success Screen Remaining Fee */
-    var successRem = document.getElementById('success-remaining-fee');
-    if (successRem) successRem.textContent = 'PKR ' + remainingFee.toLocaleString();
-
-    /* Update Step 4 Summary Rows */
-    var discountRow = document.getElementById('sum-discount-row');
-    var discountVal = document.getElementById('sum-discount');
-    var totalFeeVal = document.getElementById('sum-total-fee');
-
-    if (couponApplied || isSeminarAttendee) {
-      if (discountRow) discountRow.style.display = 'flex';
-      if (discountVal) discountVal.textContent = couponApplied ? '50% Off (EID26)' : 'PKR 3,000 Off (Seminar)';
-    } else {
-      if (discountRow) discountRow.style.display = 'none';
-    }
-
-    if (totalFeeVal) totalFeeVal.textContent = 'PKR ' + totalFee.toLocaleString();
-
-    // Save state
-    state.calculatedTotalFee = 'PKR ' + totalFee.toLocaleString() + (couponApplied ? ' (EID26 applied)' : isSeminarAttendee ? ' (seminar discount applied)' : '');
-    state.calculatedRemaining = 'PKR ' + remainingFee.toLocaleString();
-    state.calculatedDiscount = discountText;
-  }
-
-  function applyCoupon() {
-    var code = document.getElementById('e-coupon').value.trim().toUpperCase();
-    var msg = document.getElementById('coupon-message');
-    if (!code) {
-      msg.style.display = 'block';
-      msg.style.color = 'var(--red)';
-      msg.textContent = 'Please enter a coupon code.';
-      return;
-    }
-
-    if (code === 'EID26') {
-      couponApplied = true;
-      couponDiscount = FULL_PRICE * 0.5;
-      msg.style.display = 'block';
-      msg.style.color = 'var(--g1)';
-      msg.textContent = 'Coupon applied! 50% discount has been successfully activated. 🎉';
-    } else {
-      couponApplied = false;
-      couponDiscount = 0;
-      msg.style.display = 'block';
-      msg.style.color = 'var(--red)';
-      msg.textContent = 'Invalid coupon code. Please try again.';
-    }
-    updatePrices();
-  }
-
-  /* ── PRE-FILL FROM URL PARAMS ── */
-  window.addEventListener('DOMContentLoaded', function() {
-    var params = new URLSearchParams(window.location.search);
-    var name  = params.get('name')  || '';
-    var phone = params.get('phone') || '';
-    var email = params.get('email') || '';
-    if (name)  document.getElementById('e-name').value  = name;
-    if (phone) document.getElementById('e-phone').value = phone;
-    if (email) document.getElementById('e-email').value = email;
-
-    /* Seminar discount detection */
-    isSeminarAttendee = detectSeminarSource();
-    updatePrices();
-  });
-
-  /* ── OTHER CITY TOGGLE ── */
-  function toggleOtherCity(sel) {
-    var otherInput = document.getElementById('e-city-other');
-    if (sel.value === 'Other') {
-      otherInput.style.display = 'block';
-    } else {
-      otherInput.style.display = 'none';
-      otherInput.value = '';
-    }
-  }
-
-  /* ── STEP NAVIGATION ── */
-  function goStep(n) {
-    document.getElementById('panel' + currentStep).classList.remove('active');
-    document.getElementById('s' + currentStep).classList.remove('active');
-
-    for (var i = 1; i < n; i++) {
-      var s = document.getElementById('s' + i);
-      s.classList.remove('active');
-      s.classList.add('done');
-      s.querySelector('.step-circle').innerHTML =
-        '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    }
-
-    currentStep = n;
-    document.getElementById('panel' + n).classList.add('active');
-    document.getElementById('s' + n).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  /* ── STEP 1 VALIDATION ── */
-  function goStep2() {
-    var name  = document.getElementById('e-name').value.trim();
-    var phoneRaw = document.getElementById('e-phone').value.trim();
-    var eDialCode = document.getElementById('eCcCode') ? document.getElementById('eCcCode').textContent.trim() : '+92';
-    var phone = phoneRaw ? eDialCode + phoneRaw.replace(/^0+/, '') : '';
-    var email = document.getElementById('e-email').value.trim();
-    var city  = document.getElementById('e-city').value;
-    var cityOther = document.getElementById('e-city-other').value.trim();
-    var ok = true;
-
-    toggle('err-name',  !name);  if (!name)  ok = false;
-    toggle('err-phone', !phone); if (!phone) ok = false;
-    toggle('err-email', !email || !email.includes('@')); if (!email || !email.includes('@')) ok = false;
-    toggle('err-city',  !city);  if (!city)  ok = false;
-
-    // If "Other" selected, validate the text field
-    if (city === 'Other') {
-      toggle('err-city-other', !cityOther);
-      if (!cityOther) ok = false;
-    }
-
-    if (!ok) return;
-    state.name  = name;
-    state.phone = phone;
-    state.email = email;
-    state.city  = city === 'Other' ? cityOther : city;
-    goStep(2);
-  }
-
-  /* ── STEP 2 ── */
-  var selectedPaymentEl = null;
-
-  function selectPayment(el, method) {
-    document.querySelectorAll('.payment-option').forEach(function(o) { o.classList.remove('selected'); });
-    el.classList.add('selected');
-    state.payment = method;
-    selectedPaymentEl = el;
-
-    var box = document.getElementById('payDetailsBox');
-    box.classList.add('show');
-    document.getElementById('jazzcashDetails').style.display = method === 'jazzcash' ? 'block' : 'none';
-    document.getElementById('bankDetails').style.display     = method === 'bank'     ? 'block' : 'none';
-    document.getElementById('err-payment').style.display = 'none';
-  }
-
-  function goStep3() {
-    if (!state.payment) {
-      document.getElementById('err-payment').style.removeProperty('display');
-      return;
-    }
-    goStep(3);
-  }
-
-  /* ── STEP 3: FILE UPLOAD ── */
-  /* Compress image to max 1200px wide, JPEG quality 0.75 → keeps payload < 300KB */
-  function compressImage(file, callback) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      var img = new Image();
-      img.onload = function() {
-        var MAX = 1200;
-        var w = img.width, h = img.height;
-        if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
-        var canvas = document.createElement('canvas');
-        canvas.width = w; canvas.height = h;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, w, h);
-        var compressed = canvas.toDataURL('image/jpeg', 0.75);
-        callback(compressed);
-      };
-      img.src = e.target.result;
+  <script>
+    /* ── STATE ── */
+    var state = {
+      name: '', phone: '', email: '', city: '',
+      payment: '', screenshotFile: null, screenshotBase64: ''
     };
-    reader.readAsDataURL(file);
-  }
+    var currentStep = 1;
 
-  function handleFile(file) {
-    if (!file) return;
-    if (file.size > 10 * 1024 * 1024) { alert('File too large. Max 10MB.'); return; }
-    state.screenshotFile = file;
+    /* ── N8N WEBHOOK ── */
+    var N8N_WEBHOOK = 'https://n8n.sanestix.cloud/webhook/sanestix-enrollment';
 
-    compressImage(file, function(compressed) {
-      state.screenshotBase64 = compressed;
-      document.getElementById('previewImg').src = compressed;
-      document.getElementById('previewName').textContent = file.name;
-      document.getElementById('uploadPreview').style.display = 'block';
-      document.getElementById('uploadArea').classList.add('has-file');
-      document.getElementById('err-screenshot').style.display = 'none';
-    });
-  }
+    /* ── DISCOUNT & COUPON LOGIC ── */
+    var FULL_PRICE = 18000;
+    var SEMINAR_DISCOUNT = 3000;
+    var SEAT_DEPOSIT = 3000;
+    var isSeminarAttendee = false;
+    var couponApplied = false;
+    var couponDiscount = 0;
 
-  function handleDrop(e) {
-    e.preventDefault();
-    document.getElementById('uploadArea').classList.remove('drag');
-    var file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) handleFile(file);
-  }
-
-  function removeFile(e) {
-    e.stopPropagation();
-    state.screenshotFile = null; state.screenshotBase64 = '';
-    document.getElementById('screenshotInput').value = '';
-    document.getElementById('uploadPreview').style.display = 'none';
-    document.getElementById('uploadArea').classList.remove('has-file');
-  }
-
-  function goStep4() {
-    if (!state.screenshotFile) {
-      document.getElementById('err-screenshot').style.display = 'block';
-      return;
+    function detectSeminarSource() {
+      var params = new URLSearchParams(window.location.search);
+      var ref = (params.get('ref') || '').toLowerCase();
+      var source = (params.get('source') || '').toLowerCase();
+      return ref === 'seminar' || source === 'seminar';
     }
-    document.getElementById('sum-name').textContent     = state.name;
-    document.getElementById('sum-phone').textContent    = state.phone;
-    document.getElementById('sum-email').textContent    = state.email;
-    document.getElementById('sum-city').textContent     = state.city;
-    document.getElementById('sum-payment').textContent  = state.payment === 'jazzcash' ? 'JazzCash / EasyPaisa / UPaisa' : 'Bank Transfer (Soneri Bank)';
-    document.getElementById('sum-screenshot').textContent = state.screenshotFile.name;
-    goStep(4);
-  }
 
-  /* ── SUBMIT → n8n webhook ── */
-  function submitEnrollment() {
-    var btn  = document.getElementById('submitBtn');
-    var txt  = document.getElementById('submitBtnText');
-    btn.disabled = true;
-    txt.textContent = 'Submitting…';
+    function updatePrices() {
+      var totalFee = FULL_PRICE;
+      var discountText = 'none';
+      var discountAmount = 0;
 
-    var paymentLabel = state.payment === 'jazzcash' ? 'JazzCash/EasyPaisa/UPaisa' : 'Bank Transfer (Soneri Bank)';
-
-    var payload = {
-      name:      state.name,
-      phone:     state.phone,
-      email:     state.email,
-      city:      state.city,
-      payment:   paymentLabel,
-      amount:    'PKR 3,000',
-      remaining: state.calculatedRemaining || (isSeminarAttendee ? 'PKR 12,000' : 'PKR 15,000'),
-      totalFee:  state.calculatedTotalFee || (isSeminarAttendee ? 'PKR 15,000 (seminar discount applied)' : 'PKR 18,000'),
-      discount:  state.calculatedDiscount || (isSeminarAttendee ? 'PKR 3,000 seminar attendee discount' : 'none'),
-      screenshot: state.screenshotBase64 || '',
-      source:    couponApplied ? 'Coupon EID26' : (isSeminarAttendee ? 'Seminar Attendee' : 'Enrollment Form'),
-      timestamp: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' })
-    };
-
-    sendWithRetry(payload, 2, function(ok) {
-      if (ok) {
-        showSuccess();
+      if (couponApplied) {
+        discountAmount = couponDiscount;
+        totalFee = FULL_PRICE - discountAmount;
+        discountText = '50% discount (EIDSPECIAL26 coupon applied)';
+        document.getElementById('seminarDiscountBanner').style.display = 'none';
+        document.getElementById('couponDiscountBanner').style.display = 'block';
+      } else if (isSeminarAttendee) {
+        discountAmount = SEMINAR_DISCOUNT;
+        totalFee = FULL_PRICE - discountAmount;
+        discountText = 'PKR 3,000 seminar attendee discount';
+        document.getElementById('seminarDiscountBanner').style.display = 'block';
+        document.getElementById('couponDiscountBanner').style.display = 'none';
       } else {
-        /* Webhook failed after retries — still show success to student
-           but log the data so it's not lost */
-        console.error('[Sanestix] Enrollment webhook failed. Payload:', JSON.stringify({
-          name: payload.name,
-          phone: payload.phone,
-          email: payload.email,
-          city: payload.city,
-          payment: payload.payment,
-          timestamp: payload.timestamp
-        }));
-        showSuccess(); /* UX: student shouldn't be blocked — follow up manually */
+        document.getElementById('seminarDiscountBanner').style.display = 'none';
+        document.getElementById('couponDiscountBanner').style.display = 'none';
       }
-    });
-  }
 
-  function sendWithRetry(payload, retriesLeft, done) {
-    var ENROLLMENT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyPIfjXp1jPemqh-6vLsN2w0FXPxhc6W_eh1sBqjGRV1VI-YEQv9_aXjZDP2GDUaGNU/exec';
+      var remainingFee = totalFee - SEAT_DEPOSIT;
 
-    // Build a sheet-safe payload (no base64 screenshot — too large for GET querystring)
-    var sheetPayload = {
-      name:      payload.name,
-      phone:     payload.phone,
-      email:     payload.email,
-      city:      payload.city,
-      payment:   payload.payment,
-      amount:    payload.amount,
-      remaining: payload.remaining,
-      totalFee:  payload.totalFee,
-      discount:  payload.discount,
-      source:    payload.source,
-      timestamp: payload.timestamp
-    };
-    var qs = '?data=' + encodeURIComponent(JSON.stringify(sheetPayload));
+      /* Update Step 4 Summary Box */
+      var remainingEl = document.getElementById('sum-remaining-fee');
+      if (remainingEl) remainingEl.textContent = 'PKR ' + remainingFee.toLocaleString() + ' (due before Cohort starts)';
 
-    // Single sheet write via fetch — beacon removed to prevent double-entry
-    try {
-      fetch(ENROLLMENT_SHEET_URL + qs, { method: 'GET', mode: 'no-cors', cache: 'no-store' });
-    } catch(e) {}
+      /* Update Success Screen Remaining Fee */
+      var successRem = document.getElementById('success-remaining-fee');
+      if (successRem) successRem.textContent = 'PKR ' + remainingFee.toLocaleString();
 
-    // n8n webhook (carries full payload including screenshot)
-    fetch(N8N_WEBHOOK, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-    .then(function(res) {
-      if (res.ok) { done(true); }
-      else if (retriesLeft > 0) {
-        setTimeout(function() { sendWithRetry(payload, retriesLeft - 1, done); }, 2000);
-      } else { done(false); }
-    })
-    .catch(function() {
-      if (retriesLeft > 0) {
-        setTimeout(function() { sendWithRetry(payload, retriesLeft - 1, done); }, 2000);
-      } else { done(false); }
-    });
-  }
+      /* Update Step 4 Summary Rows */
+      var discountRow = document.getElementById('sum-discount-row');
+      var discountVal = document.getElementById('sum-discount');
+      var totalFeeVal = document.getElementById('sum-total-fee');
 
-  function showSuccess() {
-    document.getElementById('panel4').classList.remove('active');
-    document.getElementById('s4').classList.remove('active');
-    document.getElementById('s4').classList.add('done');
-    document.getElementById('s4').querySelector('.step-circle').innerHTML =
-      '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      if (couponApplied || isSeminarAttendee) {
+        if (discountRow) discountRow.style.display = 'flex';
+        if (discountVal) discountVal.textContent = couponApplied ? '50% Off (EIDSPECIAL26)' : 'PKR 3,000 Off (Seminar)';
+      } else {
+        if (discountRow) discountRow.style.display = 'none';
+      }
 
-    /* Populate verification panel */
-    var refId = 'SNX-' + Date.now().toString(36).toUpperCase().slice(-6);
-    var now   = new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi', dateStyle: 'medium', timeStyle: 'short' });
-    document.getElementById('verif-ref-id').textContent   = refId;
-    document.getElementById('verif-ref-time').textContent = 'Submitted: ' + now;
+      if (totalFeeVal) totalFeeVal.textContent = 'PKR ' + totalFee.toLocaleString();
 
-    if (state.screenshotBase64 && state.screenshotFile) {
-      document.getElementById('verif-thumb').src = state.screenshotBase64;
-      document.getElementById('verif-fname').textContent = state.screenshotFile.name;
-      document.getElementById('verif-screenshot-row').style.display = 'flex';
+      // Save state
+      state.calculatedTotalFee = 'PKR ' + totalFee.toLocaleString() + (couponApplied ? ' (EIDSPECIAL26 applied)' : isSeminarAttendee ? ' (seminar discount applied)' : '');
+      state.calculatedRemaining = 'PKR ' + remainingFee.toLocaleString();
+      state.calculatedDiscount = discountText;
     }
 
-    document.getElementById('successPanel').classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    function applyCoupon() {
+      var code = document.getElementById('e-coupon').value.trim().toUpperCase();
+      var msg = document.getElementById('coupon-message');
+      if (!code) {
+        msg.style.display = 'block';
+        msg.style.color = 'var(--red)';
+        msg.textContent = 'Please enter a coupon code.';
+        return;
+      }
 
-  /* ── COPY HELPER ── */
-  function copyText(text, btn) {
-    navigator.clipboard.writeText(text).then(function() {
-      btn.textContent = 'Copied!';
-      btn.classList.add('copied');
-      setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-    });
-  }
-
-  /* ── FIELD ERROR TOGGLE ── */
-  function toggle(id, show) {
-    var el = document.getElementById(id);
-    if (show) el.classList.add('show');
-    else el.classList.remove('show');
-    var input = el.previousElementSibling;
-    if (input && input.classList.contains('field-input')) {
-      if (show) input.classList.add('error');
-      else input.classList.remove('error');
+      if (code === 'EIDSPECIAL26') {
+        couponApplied = true;
+        couponDiscount = FULL_PRICE * 0.5;
+        msg.style.display = 'block';
+        msg.style.color = 'var(--g1)';
+        msg.textContent = 'Coupon applied! 50% discount has been successfully activated. 🎉';
+      } else {
+        couponApplied = false;
+        couponDiscount = 0;
+        msg.style.display = 'block';
+        msg.style.color = 'var(--red)';
+        msg.textContent = 'Invalid coupon code. Please try again.';
+      }
+      updatePrices();
     }
-  }
 
-  // ── Enroll Country Code ──
-  var E_COUNTRIES=[
-    {flag:'🇵🇰',name:'Pakistan',code:'+92',fmt:'300 0000000'},
-    {flag:'🇺🇸',name:'United States',code:'+1',fmt:'201 555 0123'},
-    {flag:'🇬🇧',name:'United Kingdom',code:'+44',fmt:'7911 123456'},
-    {flag:'🇦🇪',name:'UAE',code:'+971',fmt:'50 123 4567'},
-    {flag:'🇸🇦',name:'Saudi Arabia',code:'+966',fmt:'50 123 4567'},
-    {flag:'🇮🇳',name:'India',code:'+91',fmt:'98765 43210'},
-    {flag:'🇧🇩',name:'Bangladesh',code:'+880',fmt:'1812 345678'},
-    {flag:'🇨🇦',name:'Canada',code:'+1',fmt:'204 555 0123'},
-    {flag:'🇦🇺',name:'Australia',code:'+61',fmt:'412 345 678'},
-    {flag:'🇩🇪',name:'Germany',code:'+49',fmt:'1512 3456789'},
-    {flag:'🇫🇷',name:'France',code:'+33',fmt:'6 12 34 56 78'},
-    {flag:'🇸🇬',name:'Singapore',code:'+65',fmt:'8123 4567'},
-    {flag:'🇲🇾',name:'Malaysia',code:'+60',fmt:'12-345 6789'},
-    {flag:'🇳🇬',name:'Nigeria',code:'+234',fmt:'802 123 4567'},
-    {flag:'🇹🇷',name:'Turkey',code:'+90',fmt:'532 123 4567'},
-    {flag:'🇪🇬',name:'Egypt',code:'+20',fmt:'100 123 4567'},
-    {flag:'🇵🇭',name:'Philippines',code:'+63',fmt:'917 123 4567'},
-    {flag:'🇮🇩',name:'Indonesia',code:'+62',fmt:'812-3456-789'},
-    {flag:'🇧🇷',name:'Brazil',code:'+55',fmt:'11 91234-5678'},
-    {flag:'🇴🇲',name:'Oman',code:'+968',fmt:'9123 4567'},
-    {flag:'🇶🇦',name:'Qatar',code:'+974',fmt:'3312 3456'},
-    {flag:'🇧🇭',name:'Bahrain',code:'+973',fmt:'3600 1234'},
-    {flag:'🇰🇼',name:'Kuwait',code:'+965',fmt:'5012 3456'},
-    {flag:'🇯🇴',name:'Jordan',code:'+962',fmt:'7 9012 3456'},
-    {flag:'🇱🇰',name:'Sri Lanka',code:'+94',fmt:'71 234 5678'},
-    {flag:'🇳🇵',name:'Nepal',code:'+977',fmt:'984-1234567'},
-    {flag:'🇿🇦',name:'South Africa',code:'+27',fmt:'71 123 4567'},
-    {flag:'🇰🇪',name:'Kenya',code:'+254',fmt:'712 345678'},
-    {flag:'🇮🇶',name:'Iraq',code:'+964',fmt:'790 123 4567'}
-  ];
-  var eSelectedCC=E_COUNTRIES[0];
-  function eBuildCCList(list){
-    var ul=document.getElementById('eCcList');if(!ul)return;
-    ul.innerHTML='';
-    list.forEach(function(c){
-      var div=document.createElement('div');
-      div.className='e-cc-item'+(c===eSelectedCC?' selected':'');
-      div.innerHTML='<span class="e-cc-item-flag">'+c.flag+'</span><span class="e-cc-item-name">'+c.name+'</span><span class="e-cc-item-code">'+c.code+'</span>';
-      div.onclick=function(e){e.stopPropagation();eSelectCC(c);};
-      ul.appendChild(div);
+    /* ── PRE-FILL FROM URL PARAMS ── */
+    window.addEventListener('DOMContentLoaded', function () {
+      var params = new URLSearchParams(window.location.search);
+      var name = params.get('name') || '';
+      var phone = params.get('phone') || '';
+      var email = params.get('email') || '';
+      if (name) document.getElementById('e-name').value = name;
+      if (phone) document.getElementById('e-phone').value = phone;
+      if (email) document.getElementById('e-email').value = email;
+
+      /* Seminar discount detection */
+      isSeminarAttendee = detectSeminarSource();
+      updatePrices();
     });
-  }
-  function eSelectCC(c){
-    eSelectedCC=c;
-    document.getElementById('eCcFlag').textContent=c.flag;
-    document.getElementById('eCcCode').textContent=c.code;
-    document.getElementById('e-phone').placeholder=c.fmt||'Phone number';
-    document.getElementById('e-phone').value='';
-    document.getElementById('eCcDropdown').classList.remove('open');
-    eBuildCCList(E_COUNTRIES);
-  }
-  function eToggleCC(e){
-    e.stopPropagation();
-    var dd=document.getElementById('eCcDropdown');
-    var open=dd.classList.toggle('open');
-    if(open){eBuildCCList(E_COUNTRIES);dd.querySelector('.e-cc-item.selected')?.scrollIntoView({block:'nearest'});}
-  }
-  function eFilterCC(q){
-    var f=q.toLowerCase();
-    eBuildCCList(E_COUNTRIES.filter(function(c){return c.name.toLowerCase().includes(f)||c.code.includes(f);}));
-  }
-  document.addEventListener('click',function(e){
-    var wrap=document.getElementById('eCcWrap');
-    if(wrap&&!wrap.contains(e.target)){document.getElementById('eCcDropdown').classList.remove('open');}
-  });
-  window.addEventListener('DOMContentLoaded',function(){eBuildCCList(E_COUNTRIES);});
-</script>
+
+    /* ── OTHER CITY TOGGLE ── */
+    function toggleOtherCity(sel) {
+      var otherInput = document.getElementById('e-city-other');
+      if (sel.value === 'Other') {
+        otherInput.style.display = 'block';
+      } else {
+        otherInput.style.display = 'none';
+        otherInput.value = '';
+      }
+    }
+
+    /* ── STEP NAVIGATION ── */
+    function goStep(n) {
+      document.getElementById('panel' + currentStep).classList.remove('active');
+      document.getElementById('s' + currentStep).classList.remove('active');
+
+      for (var i = 1; i < n; i++) {
+        var s = document.getElementById('s' + i);
+        s.classList.remove('active');
+        s.classList.add('done');
+        s.querySelector('.step-circle').innerHTML =
+          '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+
+      currentStep = n;
+      document.getElementById('panel' + n).classList.add('active');
+      document.getElementById('s' + n).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── STEP 1 VALIDATION ── */
+    function goStep2() {
+      var name = document.getElementById('e-name').value.trim();
+      var phoneRaw = document.getElementById('e-phone').value.trim();
+      var eDialCode = document.getElementById('eCcCode') ? document.getElementById('eCcCode').textContent.trim() : '+92';
+      var phone = phoneRaw ? eDialCode + phoneRaw.replace(/^0+/, '') : '';
+      var email = document.getElementById('e-email').value.trim();
+      var city = document.getElementById('e-city').value;
+      var cityOther = document.getElementById('e-city-other').value.trim();
+      var ok = true;
+
+      toggle('err-name', !name); if (!name) ok = false;
+      toggle('err-phone', !phone); if (!phone) ok = false;
+      toggle('err-email', !email || !email.includes('@')); if (!email || !email.includes('@')) ok = false;
+      toggle('err-city', !city); if (!city) ok = false;
+
+      // If "Other" selected, validate the text field
+      if (city === 'Other') {
+        toggle('err-city-other', !cityOther);
+        if (!cityOther) ok = false;
+      }
+
+      if (!ok) return;
+      state.name = name;
+      state.phone = phone;
+      state.email = email;
+      state.city = city === 'Other' ? cityOther : city;
+      goStep(2);
+    }
+
+    /* ── STEP 2 ── */
+    var selectedPaymentEl = null;
+
+    function selectPayment(el, method) {
+      document.querySelectorAll('.payment-option').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      state.payment = method;
+      selectedPaymentEl = el;
+
+      var box = document.getElementById('payDetailsBox');
+      box.classList.add('show');
+      document.getElementById('jazzcashDetails').style.display = method === 'jazzcash' ? 'block' : 'none';
+      document.getElementById('bankDetails').style.display = method === 'bank' ? 'block' : 'none';
+      document.getElementById('err-payment').style.display = 'none';
+    }
+
+    function goStep3() {
+      if (!state.payment) {
+        document.getElementById('err-payment').style.removeProperty('display');
+        return;
+      }
+      goStep(3);
+    }
+
+    /* ── STEP 3: FILE UPLOAD ── */
+    /* Compress image to max 1200px wide, JPEG quality 0.75 → keeps payload < 300KB */
+    function compressImage(file, callback) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var img = new Image();
+        img.onload = function () {
+          var MAX = 1200;
+          var w = img.width, h = img.height;
+          if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
+          var canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          var ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          var compressed = canvas.toDataURL('image/jpeg', 0.75);
+          callback(compressed);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleFile(file) {
+      if (!file) return;
+      if (file.size > 10 * 1024 * 1024) { alert('File too large. Max 10MB.'); return; }
+      state.screenshotFile = file;
+
+      compressImage(file, function (compressed) {
+        state.screenshotBase64 = compressed;
+        document.getElementById('previewImg').src = compressed;
+        document.getElementById('previewName').textContent = file.name;
+        document.getElementById('uploadPreview').style.display = 'block';
+        document.getElementById('uploadArea').classList.add('has-file');
+        document.getElementById('err-screenshot').style.display = 'none';
+      });
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      document.getElementById('uploadArea').classList.remove('drag');
+      var file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) handleFile(file);
+    }
+
+    function removeFile(e) {
+      e.stopPropagation();
+      state.screenshotFile = null; state.screenshotBase64 = '';
+      document.getElementById('screenshotInput').value = '';
+      document.getElementById('uploadPreview').style.display = 'none';
+      document.getElementById('uploadArea').classList.remove('has-file');
+    }
+
+    function goStep4() {
+      if (!state.screenshotFile) {
+        document.getElementById('err-screenshot').style.display = 'block';
+        return;
+      }
+      document.getElementById('sum-name').textContent = state.name;
+      document.getElementById('sum-phone').textContent = state.phone;
+      document.getElementById('sum-email').textContent = state.email;
+      document.getElementById('sum-city').textContent = state.city;
+      document.getElementById('sum-payment').textContent = state.payment === 'jazzcash' ? 'JazzCash / EasyPaisa / UPaisa' : 'Bank Transfer (Soneri Bank)';
+      document.getElementById('sum-screenshot').textContent = state.screenshotFile.name;
+      goStep(4);
+    }
+
+    /* ── SUBMIT → n8n webhook ── */
+    function submitEnrollment() {
+      var btn = document.getElementById('submitBtn');
+      var txt = document.getElementById('submitBtnText');
+      btn.disabled = true;
+      txt.textContent = 'Submitting…';
+
+      var paymentLabel = state.payment === 'jazzcash' ? 'JazzCash/EasyPaisa/UPaisa' : 'Bank Transfer (Soneri Bank)';
+
+      var payload = {
+        name: state.name,
+        phone: state.phone,
+        email: state.email,
+        city: state.city,
+        payment: paymentLabel,
+        amount: 'PKR 3,000',
+        remaining: state.calculatedRemaining || (isSeminarAttendee ? 'PKR 12,000' : 'PKR 15,000'),
+        totalFee: state.calculatedTotalFee || (isSeminarAttendee ? 'PKR 15,000 (seminar discount applied)' : 'PKR 18,000'),
+        discount: state.calculatedDiscount || (isSeminarAttendee ? 'PKR 3,000 seminar attendee discount' : 'none'),
+        screenshot: state.screenshotBase64 || '',
+        source: couponApplied ? 'Coupon EIDSPECIAL26' : (isSeminarAttendee ? 'Seminar Attendee' : 'Enrollment Form'),
+        timestamp: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' })
+      };
+
+      sendWithRetry(payload, 2, function (ok) {
+        if (ok) {
+          showSuccess();
+        } else {
+          /* Webhook failed after retries — still show success to student
+             but log the data so it's not lost */
+          console.error('[Sanestix] Enrollment webhook failed. Payload:', JSON.stringify({
+            name: payload.name,
+            phone: payload.phone,
+            email: payload.email,
+            city: payload.city,
+            payment: payload.payment,
+            timestamp: payload.timestamp
+          }));
+          showSuccess(); /* UX: student shouldn't be blocked — follow up manually */
+        }
+      });
+    }
+
+    function sendWithRetry(payload, retriesLeft, done) {
+      var ENROLLMENT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyPIfjXp1jPemqh-6vLsN2w0FXPxhc6W_eh1sBqjGRV1VI-YEQv9_aXjZDP2GDUaGNU/exec';
+
+      // Build a sheet-safe payload (no base64 screenshot — too large for GET querystring)
+      var sheetPayload = {
+        name: payload.name,
+        phone: payload.phone,
+        email: payload.email,
+        city: payload.city,
+        payment: payload.payment,
+        amount: payload.amount,
+        remaining: payload.remaining,
+        totalFee: payload.totalFee,
+        discount: payload.discount,
+        source: payload.source,
+        timestamp: payload.timestamp
+      };
+      var qs = '?data=' + encodeURIComponent(JSON.stringify(sheetPayload));
+
+      // Single sheet write via fetch — beacon removed to prevent double-entry
+      try {
+        fetch(ENROLLMENT_SHEET_URL + qs, { method: 'GET', mode: 'no-cors', cache: 'no-store' });
+      } catch (e) { }
+
+      // n8n webhook (carries full payload including screenshot)
+      fetch(N8N_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          if (res.ok) { done(true); }
+          else if (retriesLeft > 0) {
+            setTimeout(function () { sendWithRetry(payload, retriesLeft - 1, done); }, 2000);
+          } else { done(false); }
+        })
+        .catch(function () {
+          if (retriesLeft > 0) {
+            setTimeout(function () { sendWithRetry(payload, retriesLeft - 1, done); }, 2000);
+          } else { done(false); }
+        });
+    }
+
+    function showSuccess() {
+      document.getElementById('panel4').classList.remove('active');
+      document.getElementById('s4').classList.remove('active');
+      document.getElementById('s4').classList.add('done');
+      document.getElementById('s4').querySelector('.step-circle').innerHTML =
+        '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8 6,11 13,4" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      /* Populate verification panel */
+      var refId = 'SNX-' + Date.now().toString(36).toUpperCase().slice(-6);
+      var now = new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi', dateStyle: 'medium', timeStyle: 'short' });
+      document.getElementById('verif-ref-id').textContent = refId;
+      document.getElementById('verif-ref-time').textContent = 'Submitted: ' + now;
+
+      if (state.screenshotBase64 && state.screenshotFile) {
+        document.getElementById('verif-thumb').src = state.screenshotBase64;
+        document.getElementById('verif-fname').textContent = state.screenshotFile.name;
+        document.getElementById('verif-screenshot-row').style.display = 'flex';
+      }
+
+      document.getElementById('successPanel').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ── COPY HELPER ── */
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+
+    /* ── FIELD ERROR TOGGLE ── */
+    function toggle(id, show) {
+      var el = document.getElementById(id);
+      if (show) el.classList.add('show');
+      else el.classList.remove('show');
+      var input = el.previousElementSibling;
+      if (input && input.classList.contains('field-input')) {
+        if (show) input.classList.add('error');
+        else input.classList.remove('error');
+      }
+    }
+
+    // ── Enroll Country Code ──
+    var E_COUNTRIES = [
+      { flag: '🇵🇰', name: 'Pakistan', code: '+92', fmt: '300 0000000' },
+      { flag: '🇺🇸', name: 'United States', code: '+1', fmt: '201 555 0123' },
+      { flag: '🇬🇧', name: 'United Kingdom', code: '+44', fmt: '7911 123456' },
+      { flag: '🇦🇪', name: 'UAE', code: '+971', fmt: '50 123 4567' },
+      { flag: '🇸🇦', name: 'Saudi Arabia', code: '+966', fmt: '50 123 4567' },
+      { flag: '🇮🇳', name: 'India', code: '+91', fmt: '98765 43210' },
+      { flag: '🇧🇩', name: 'Bangladesh', code: '+880', fmt: '1812 345678' },
+      { flag: '🇨🇦', name: 'Canada', code: '+1', fmt: '204 555 0123' },
+      { flag: '🇦🇺', name: 'Australia', code: '+61', fmt: '412 345 678' },
+      { flag: '🇩🇪', name: 'Germany', code: '+49', fmt: '1512 3456789' },
+      { flag: '🇫🇷', name: 'France', code: '+33', fmt: '6 12 34 56 78' },
+      { flag: '🇸🇬', name: 'Singapore', code: '+65', fmt: '8123 4567' },
+      { flag: '🇲🇾', name: 'Malaysia', code: '+60', fmt: '12-345 6789' },
+      { flag: '🇳🇬', name: 'Nigeria', code: '+234', fmt: '802 123 4567' },
+      { flag: '🇹🇷', name: 'Turkey', code: '+90', fmt: '532 123 4567' },
+      { flag: '🇪🇬', name: 'Egypt', code: '+20', fmt: '100 123 4567' },
+      { flag: '🇵🇭', name: 'Philippines', code: '+63', fmt: '917 123 4567' },
+      { flag: '🇮🇩', name: 'Indonesia', code: '+62', fmt: '812-3456-789' },
+      { flag: '🇧🇷', name: 'Brazil', code: '+55', fmt: '11 91234-5678' },
+      { flag: '🇴🇲', name: 'Oman', code: '+968', fmt: '9123 4567' },
+      { flag: '🇶🇦', name: 'Qatar', code: '+974', fmt: '3312 3456' },
+      { flag: '🇧🇭', name: 'Bahrain', code: '+973', fmt: '3600 1234' },
+      { flag: '🇰🇼', name: 'Kuwait', code: '+965', fmt: '5012 3456' },
+      { flag: '🇯🇴', name: 'Jordan', code: '+962', fmt: '7 9012 3456' },
+      { flag: '🇱🇰', name: 'Sri Lanka', code: '+94', fmt: '71 234 5678' },
+      { flag: '🇳🇵', name: 'Nepal', code: '+977', fmt: '984-1234567' },
+      { flag: '🇿🇦', name: 'South Africa', code: '+27', fmt: '71 123 4567' },
+      { flag: '🇰🇪', name: 'Kenya', code: '+254', fmt: '712 345678' },
+      { flag: '🇮🇶', name: 'Iraq', code: '+964', fmt: '790 123 4567' }
+    ];
+    var eSelectedCC = E_COUNTRIES[0];
+    function eBuildCCList(list) {
+      var ul = document.getElementById('eCcList'); if (!ul) return;
+      ul.innerHTML = '';
+      list.forEach(function (c) {
+        var div = document.createElement('div');
+        div.className = 'e-cc-item' + (c === eSelectedCC ? ' selected' : '');
+        div.innerHTML = '<span class="e-cc-item-flag">' + c.flag + '</span><span class="e-cc-item-name">' + c.name + '</span><span class="e-cc-item-code">' + c.code + '</span>';
+        div.onclick = function (e) { e.stopPropagation(); eSelectCC(c); };
+        ul.appendChild(div);
+      });
+    }
+    function eSelectCC(c) {
+      eSelectedCC = c;
+      document.getElementById('eCcFlag').textContent = c.flag;
+      document.getElementById('eCcCode').textContent = c.code;
+      document.getElementById('e-phone').placeholder = c.fmt || 'Phone number';
+      document.getElementById('e-phone').value = '';
+      document.getElementById('eCcDropdown').classList.remove('open');
+      eBuildCCList(E_COUNTRIES);
+    }
+    function eToggleCC(e) {
+      e.stopPropagation();
+      var dd = document.getElementById('eCcDropdown');
+      var open = dd.classList.toggle('open');
+      if (open) { eBuildCCList(E_COUNTRIES); dd.querySelector('.e-cc-item.selected')?.scrollIntoView({ block: 'nearest' }); }
+    }
+    function eFilterCC(q) {
+      var f = q.toLowerCase();
+      eBuildCCList(E_COUNTRIES.filter(function (c) { return c.name.toLowerCase().includes(f) || c.code.includes(f); }));
+    }
+    document.addEventListener('click', function (e) {
+      var wrap = document.getElementById('eCcWrap');
+      if (wrap && !wrap.contains(e.target)) { document.getElementById('eCcDropdown').classList.remove('open'); }
+    });
+    window.addEventListener('DOMContentLoaded', function () { eBuildCCList(E_COUNTRIES); });
+  </script>
 </body>
+
 </html>
